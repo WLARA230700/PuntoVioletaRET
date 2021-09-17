@@ -1,0 +1,136 @@
+@import "colores";
+@import "media_queries";
+@import "utilidades";
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;1,400&display=swap');
+
+//TAGS
+body {
+    margin: 0;
+    padding: 0;
+    @include set_text ('Raleway', 400, 2em, $moradoBase);
+    text-align: center;
+    background-color: $moradoMedio;
+}
+//CLASES
+.min-height{
+    min-height: 100vh;
+}
+.container-fluid{
+    margin: 0;
+    padding: 0;
+}
+.row{
+    margin: 0;
+    padding: 0;
+}
+.col{
+    margin: 0;
+    padding: 0;
+}
+.nav{
+    z-index: 5;
+    position: fixed;
+    margin: 0;
+    padding: .938em 1.875em .938em 1.875em;
+    text-align: left;
+    width: 100%;
+    height: fit-content;
+    @include set_text ('Raleway', 400, 0.75em, #ffffff);
+    
+    background-color: rgba($color: #c395e8, $alpha: 0.3);
+    box-shadow: 0 .25em .625em rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(.625em);
+
+    img{
+        vertical-align: middle;
+        padding-left: .939em;
+        height: 1.25em;
+        float: right;
+    }
+
+    span{
+        font-weight: 700;
+    }
+}
+.footer {
+    background-color: $moradoBase;
+    color: #ffffff;
+    padding: .938em 1.875em .938em 1.875em;
+    font-size: .75em;
+    line-height: 0.7em;
+}
+.left-text{
+    text-align: left;
+}
+.right-text{
+    text-align: right;
+}
+//--------------------------------------------INDEX--------------------------------------------//
+.nav-list{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+
+    li{
+        margin: 0;
+        padding: 0 .313em 0 .313em;
+        display: inline-block;
+        :hover{
+            font-weight: 700;
+        }
+        a{
+            margin: 0;
+            padding: 0;
+            text-decoration: none;    
+            display: block;
+            color: #ffffff;
+        }
+    }
+}
+.header{    
+    background-image: url("../imgs/PuntoVioleta_bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ffffff;
+    position: relative;
+    div{
+        padding: 9em 0 0 0;
+        background: rgba(91, 43, 111, 0.3);
+        position: absolute;   
+        display: block;
+        width: 100%;
+        height: 100%;
+        h2{
+            font-size: .938em;
+        }
+        h1{
+            font-weight: 700;
+            font-size: 3em;
+        }
+    } 
+    section{
+        padding: .938em 1.875em .938em 1.875em;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        img{
+            display: block;
+            height: 1.5em;
+            margin-top: .313em;
+        }
+    }
+       
+}
+.btn-up{
+    padding: .938em 1.875em .938em 1.875em;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    img{
+        display: block;
+        height: 1.5em;
+    }
+}
