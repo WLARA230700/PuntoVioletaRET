@@ -7,7 +7,16 @@ body {
   font-size: 2em;
   color: #6A3381;
   text-align: center;
-  background-color: #DABEF1;
+  background-color: #F2E7F9;
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: 1.875em;
+  color: #6A3381;
 }
 
 .min-height {
@@ -62,7 +71,7 @@ body {
 .footer {
   background-color: #6A3381;
   color: #ffffff;
-  padding: 0.938em 1.875em 0.938em 1.875em;
+  padding: 2em 1.875em;
   font-size: 0.75em;
   line-height: 0.7em;
 }
@@ -106,7 +115,7 @@ body {
   position: relative;
 }
 .header div {
-  padding: 9em 0 0 0;
+  padding: 40vh 0 0 0;
   background: rgba(91, 43, 111, 0.3);
   position: absolute;
   display: block;
@@ -114,7 +123,9 @@ body {
   height: 100%;
 }
 .header div h2 {
+  font-weight: 400;
   font-size: 0.938em;
+  color: #ffffff;
 }
 .header div h1 {
   font-weight: 700;
@@ -141,4 +152,253 @@ body {
 .btn-up img {
   display: block;
   height: 1.5em;
+}
+
+.quienes-somos {
+  margin: 0;
+  padding: 5em 7em 2.5em 7em;
+}
+.quienes-somos h3 {
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 1.25em;
+  color: #6A3381;
+}
+.quienes-somos p {
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 0.813em;
+  color: #6A3381;
+  line-height: 2em;
+}
+.quienes-somos img {
+  margin: 2em auto;
+  padding: 0;
+  width: auto;
+  height: 2.5em;
+}
+.quienes-somos .row {
+  padding-bottom: 2.5em;
+}
+.quienes-somos .col-4 {
+  margin: 0 auto;
+  padding: 0.938em;
+  width: 30%;
+  background-color: #DABEF1;
+  border-radius: 1.5em;
+}
+
+.testimonios {
+  padding: 0 0.938em;
+  background-color: #DABEF1;
+}
+.testimonios h2 {
+  margin: 3em 0 2em;
+  padding: 0;
+}
+.testimonios .col-1 {
+  margin: auto;
+  padding: 0;
+  height: 100%;
+}
+.testimonios .col-1 span {
+  display: block;
+  margin: auto;
+  width: 2.688em;
+  height: 2.688em;
+}
+.testimonios .col-4 {
+  margin: 0 auto;
+  padding: 0.938em;
+  width: 30%;
+  background-color: #F2E7F9;
+  border-radius: 1.5em;
+}
+.testimonios .col-4 span {
+  display: block;
+  margin: 2em auto 0 auto;
+  padding: 0;
+  border-radius: 100%;
+  width: 6.25em;
+  height: 6.25em;
+  overflow: hidden;
+}
+.testimonios .col-4 .row p {
+  margin: 0;
+  padding-bottom: 4em;
+}
+.testimonios .cita {
+  display: block;
+  margin: 2em 0;
+  padding: 0;
+  height: 30%;
+  font-size: 0.813em;
+  font-family: "Raleway";
+  font-style: italic;
+}
+
+.contacto {
+  margin: 0;
+  padding: 5em 7em;
+}
+.contacto .col-6 {
+  margin: 0;
+  padding: 0 1em;
+}
+.contacto .col-6 form input {
+  display: block;
+  margin: 0.938em 0;
+  padding: 0.1em 0.5em;
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 1.25em;
+  color: #C27EDF;
+  background: none;
+  border: 0.07em solid #C27EDF;
+  border-radius: 1em;
+  width: 100%;
+}
+.contacto .col-6 form input::-webkit-input-placeholder {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 0.938em;
+  color: #C27EDF;
+}
+.contacto .col-6 form input::-moz-placeholder {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 0.938em;
+  color: #C27EDF;
+}
+.contacto .col-6 form input:-ms-input-placeholder {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 0.938em;
+  color: #C27EDF;
+}
+.contacto .col-6 form input::-ms-input-placeholder {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 0.938em;
+  color: #C27EDF;
+}
+.contacto .col-6 form input::placeholder {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 0.938em;
+  color: #C27EDF;
+}
+.contacto .col-6 form textarea {
+  display: block;
+  margin: 0.938em 0;
+  padding: 0.5em;
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 1.25em;
+  color: #C27EDF;
+  background: none;
+  border: 0.07em solid #C27EDF;
+  border-radius: 1em;
+  width: 100%;
+}
+.contacto .col-6 form textarea::-webkit-input-placeholder {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 0.938em;
+  color: #C27EDF;
+}
+.contacto .col-6 form textarea::-moz-placeholder {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 0.938em;
+  color: #C27EDF;
+}
+.contacto .col-6 form textarea:-ms-input-placeholder {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 0.938em;
+  color: #C27EDF;
+}
+.contacto .col-6 form textarea::-ms-input-placeholder {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 0.938em;
+  color: #C27EDF;
+}
+.contacto .col-6 form textarea::placeholder {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 0.938em;
+  color: #C27EDF;
+}
+.contacto .col-6 form button {
+  display: block;
+  margin: 0.938em 0;
+  padding: 0.5em;
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 1.25em;
+  color: #C27EDF;
+  background: #FCF9FF;
+  border: 0.07em solid #C27EDF;
+  border-radius: 1em;
+  width: 100%;
+  text-transform: uppercase;
+}
+.contacto .col-6 form button:hover {
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: 1.25em;
+  color: #FCF9FF;
+  background: #C27EDF;
+}
+.contacto .col-6 .card-contacto {
+  margin: 0.938em 0;
+  padding: 0.938em;
+  background: #FCF9FF;
+  border-radius: 1em;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.contacto .col-6 .card-contacto .row {
+  margin: auto;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.contacto .col-6 .card-contacto .row span {
+  display: inline-block;
+  margin: 0;
+  height: 2em;
+  width: 2em;
+}
+.contacto .col-6 .card-contacto .row p {
+  display: inline-block;
+  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  color: #C27EDF;
+}
+.contacto .col-6 .card-ubicacion h3 {
+  margin: 1.5em 0 1em;
+  text-align: left;
+  width: 100%;
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: 0.938em;
+  color: #C27EDF;
+}
+.contacto .col-6 .card-ubicacion span {
+  display: block;
+  overflow: hidden;
+  border-radius: 1em;
 }
