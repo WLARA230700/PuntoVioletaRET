@@ -18,7 +18,7 @@ body {
 h2{
     margin: 0;
     padding: 0;
-    @include set_text("Raleway", $bold, 1.875em, $moradoBase);
+    @include set_text("Raleway", $bold, 1.25em, $moradoBase);
 }
 //CLASES
 .min-height{
@@ -40,11 +40,11 @@ h2{
     z-index: 5;
     position: fixed;
     margin: 0;
-    padding: .938em 1.875em .938em 1.875em;
+    padding: .938em;
     text-align: left;
     width: 100%;
     height: fit-content;
-    @include set_text ('Raleway', 400, 0.75em, #ffffff);
+    @include set_text ('Raleway', 400, 0.5em, #ffffff);
     
     background-color: rgba($color: #c395e8, $alpha: 0.3);
     box-shadow: 0 .25em .625em rgba(0, 0, 0, 0.1);
@@ -57,16 +57,23 @@ h2{
         float: right;
     }
 
-    span{
-        font-weight: 700;
+    a{
+        text-decoration: none;
+        color: #ffffff;
+        span{
+            font-weight: 700;
+        }
     }
 }
 .footer {
     background-color: $moradoBase;
     color: #ffffff;
-    padding: 2em 1.875em;
-    font-size: .75em;
+    padding: 2em 6em 1.5em;
+    font-size: .5em;
     line-height: 0.7em;
+    .left-text{
+        margin: auto 0;
+    }
 }
 .left-text{
     text-align: left;
@@ -122,7 +129,7 @@ h2{
         }
     } 
     section{
-        padding: .938em 1.875em .938em 1.875em;
+        padding: .938em;
         position: fixed;
         bottom: 0;
         left: 0;
@@ -135,7 +142,7 @@ h2{
        
 }
 .btn-up{
-    padding: .938em 1.875em .938em 1.875em;
+    padding: .938em;
     position: fixed;
     bottom: 0;
     right: 0;
@@ -146,40 +153,40 @@ h2{
 }
 .quienes-somos{
     margin: 0;
-    padding: 5em 7em 2.5em 7em;
+    padding: 2.5em 5em;
     h3{
         margin: 0;
         padding: 0;
-        @include set_text("Raleway", $regular, 1.250em, $moradoBase);
+        @include set_text("Raleway", $regular, .938em, $moradoBase);
     }
     p{
         margin: 0;
         padding: 0;
-        @include set_text("Raleway", $regular, 0.813em, $moradoBase);
+        @include set_text("Raleway", $regular, 0.5em, $moradoBase);
         line-height: 2em;
     }
     img{
-        margin: 2em auto;
+        margin: 1em auto;
         padding: 0;
         width: auto;
-        height: 2.5em;
+        height: 1.5em;
     }
     .row{
-        padding-bottom: 2.5em;
+        padding-bottom: 1em;
     }
     .col-4{
         margin: 0 auto;
         padding: .938em;
         width: 30%;
         background-color: $moradoMedio;
-        border-radius: 1.5em;
+        border-radius: .8em;
     }
 }
 .testimonios{
-    padding: 0 .938em;
+    padding: 3em 1em;
     background-color: $moradoMedio;
     h2{
-        margin: 3em 0 2em;
+        margin: 0 0 1em;
         padding: 0;
     }
     .col-1{
@@ -189,8 +196,8 @@ h2{
         span{
             display: block;
             margin: auto;
-            width: 2.688em;
-            height: 2.688em;
+            width: 2em;
+            height: 2em;
         }
     }
     .col-4{
@@ -201,15 +208,19 @@ h2{
         border-radius: 1.5em;
         span{
             display: block;
-            margin: 2em auto 0 auto;
+            margin: 1em auto 0 auto;
             padding: 0;
             border-radius: 100%;
-            width: 6.25em;
-            height: 6.25em;
+            width: 4em;
+            height: 4em;
             overflow: hidden;
+            img{
+                width: 100%;
+            }
         }
         .row{
             p{
+                font-size: .5em;
                 margin: 0;
                 padding-bottom: 4em;
             }
@@ -220,7 +231,7 @@ h2{
         margin: 2em 0;
         padding: 0;
         height: 30%;
-        font-size: .813em;
+        font-size: .5em;
         font-family: "Raleway";
         font-style: italic;
     }
@@ -228,7 +239,10 @@ h2{
 
 .contacto{
     margin: 0;
-    padding: 5em 7em;
+    padding: 2.5em 5em;
+    h3{
+        font-size: .7em;
+    }
     .col-6{
         margin: 0;
         padding: 0 1em;
@@ -237,47 +251,55 @@ h2{
                 display: block;
                 margin: .938em 0;
                 padding: .1em .5em;
-                @include set_text("Raleway", $regular, 1.25em, $moradoLetrasForm);
+                @include set_text("Raleway", $regular, .7em, $moradoLetrasForm);
                 background: none;
                 border: .07em solid $moradoLetrasForm;
                 border-radius: 1em;
                 width: 100%;
+                &:focus{
+                    outline: none !important;
+                    border: .07em solid $moradoBase;
+                }
                 &::placeholder{
-                    @include set_text("Raleway", $regular, .938em, $moradoLetrasForm);
+                    @include set_text("Raleway", $regular, .8em, $moradoLetrasForm);
                 }
             }
             textarea{
                 display: block;
                 margin: .938em 0;
                 padding: .5em;
-                @include set_text("Raleway", $regular, 1.25em, $moradoLetrasForm);
+                @include set_text("Raleway", $regular, .7em, $moradoLetrasForm);
                 background: none;
                 border: .07em solid $moradoLetrasForm;
                 border-radius: 1em;
                 width: 100%;
                 &::placeholder{
-                    @include set_text("Raleway", $regular, .938em, $moradoLetrasForm);
+                    @include set_text("Raleway", $regular, .8em, $moradoLetrasForm);
+                }
+                &:focus{
+                    outline: none !important;
+                    border: .07em solid $moradoBase;
                 }
             }
             button{
                 display: block;
                 margin: .938em 0;
                 padding: .5em;
-                @include set_text("Raleway", $regular, 1.25em, $moradoLetrasForm);
+                @include set_text("Raleway", $regular, .7em, $moradoLetrasForm);
                 background: $moradoMuyClaro;
                 border: .07em solid $moradoLetrasForm;
                 border-radius: 1em;
                 width: 100%;
                 text-transform: uppercase;
                 &:hover{
-                    @include set_text("Raleway", $bold, 1.25em, $moradoMuyClaro);
+                    @include set_text("Raleway", $bold, .7em, $moradoMuyClaro);
                     background: $moradoLetrasForm;
                 }
             }
         }
         .card-contacto{
-            margin: .938em 0;
-            padding: .938em;
+            margin: .65em 0 .938em;
+            padding: 1em;
             background: $moradoMuyClaro;
             border-radius: 1em;
             height: fit-content;
@@ -287,12 +309,13 @@ h2{
                 span{
                     display: inline-block;
                     margin: 0;
-                    height: 2em;
-                    width: 2em;
+                    height: 1.5em;
+                    width: 1.5em;
                 }
                 p{
+                    font-size: .6em;
                     display: inline-block;
-                    margin: 0;
+                    margin: auto 0;
                     width: fit-content;
                     height: fit-content;
                     color: $moradoLetrasForm;
@@ -301,15 +324,18 @@ h2{
         }
         .card-ubicacion{
             h3{
-                margin: 1.5em 0 1em;
+                margin: 0em 0 1em;
                 text-align: left;
                 width: 100%;
-                @include set_text("Raleway", $bold, .938em, $moradoLetrasForm);
+                @include set_text("Raleway", $bold, .7em, $moradoLetrasForm);
             }
             span{
                 display: block;
                 overflow: hidden;
                 border-radius: 1em;
+                img{
+                    width: 100%;
+                }
             }
         }
     }

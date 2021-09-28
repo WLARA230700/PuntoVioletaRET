@@ -15,7 +15,7 @@ h2 {
   padding: 0;
   font-family: "Raleway";
   font-weight: 700;
-  font-size: 1.875em;
+  font-size: 1.25em;
   color: #6A3381;
 }
 
@@ -42,7 +42,7 @@ h2 {
   z-index: 5;
   position: fixed;
   margin: 0;
-  padding: 0.938em 1.875em 0.938em 1.875em;
+  padding: 0.938em;
   text-align: left;
   width: 100%;
   height: -webkit-fit-content;
@@ -50,7 +50,7 @@ h2 {
   height: fit-content;
   font-family: "Raleway";
   font-weight: 400;
-  font-size: 0.75em;
+  font-size: 0.5em;
   color: #ffffff;
   background-color: rgba(195, 149, 232, 0.3);
   -webkit-box-shadow: 0 0.25em 0.625em rgba(0, 0, 0, 0.1);
@@ -64,16 +64,23 @@ h2 {
   height: 1.25em;
   float: right;
 }
-.nav span {
+.nav a {
+  text-decoration: none;
+  color: #ffffff;
+}
+.nav a span {
   font-weight: 700;
 }
 
 .footer {
   background-color: #6A3381;
   color: #ffffff;
-  padding: 2em 1.875em;
-  font-size: 0.75em;
+  padding: 2em 6em 1.5em;
+  font-size: 0.5em;
   line-height: 0.7em;
+}
+.footer .left-text {
+  margin: auto 0;
 }
 
 .left-text {
@@ -132,7 +139,7 @@ h2 {
   font-size: 3em;
 }
 .header section {
-  padding: 0.938em 1.875em 0.938em 1.875em;
+  padding: 0.938em;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -144,7 +151,7 @@ h2 {
 }
 
 .btn-up {
-  padding: 0.938em 1.875em 0.938em 1.875em;
+  padding: 0.938em;
   position: fixed;
   bottom: 0;
   right: 0;
@@ -156,14 +163,14 @@ h2 {
 
 .quienes-somos {
   margin: 0;
-  padding: 5em 7em 2.5em 7em;
+  padding: 2.5em 5em;
 }
 .quienes-somos h3 {
   margin: 0;
   padding: 0;
   font-family: "Raleway";
   font-weight: 400;
-  font-size: 1.25em;
+  font-size: 0.938em;
   color: #6A3381;
 }
 .quienes-somos p {
@@ -171,33 +178,33 @@ h2 {
   padding: 0;
   font-family: "Raleway";
   font-weight: 400;
-  font-size: 0.813em;
+  font-size: 0.5em;
   color: #6A3381;
   line-height: 2em;
 }
 .quienes-somos img {
-  margin: 2em auto;
+  margin: 1em auto;
   padding: 0;
   width: auto;
-  height: 2.5em;
+  height: 1.5em;
 }
 .quienes-somos .row {
-  padding-bottom: 2.5em;
+  padding-bottom: 1em;
 }
 .quienes-somos .col-4 {
   margin: 0 auto;
   padding: 0.938em;
   width: 30%;
   background-color: #DABEF1;
-  border-radius: 1.5em;
+  border-radius: 0.8em;
 }
 
 .testimonios {
-  padding: 0 0.938em;
+  padding: 3em 1em;
   background-color: #DABEF1;
 }
 .testimonios h2 {
-  margin: 3em 0 2em;
+  margin: 0 0 1em;
   padding: 0;
 }
 .testimonios .col-1 {
@@ -208,8 +215,8 @@ h2 {
 .testimonios .col-1 span {
   display: block;
   margin: auto;
-  width: 2.688em;
-  height: 2.688em;
+  width: 2em;
+  height: 2em;
 }
 .testimonios .col-4 {
   margin: 0 auto;
@@ -220,14 +227,18 @@ h2 {
 }
 .testimonios .col-4 span {
   display: block;
-  margin: 2em auto 0 auto;
+  margin: 1em auto 0 auto;
   padding: 0;
   border-radius: 100%;
-  width: 6.25em;
-  height: 6.25em;
+  width: 4em;
+  height: 4em;
   overflow: hidden;
 }
+.testimonios .col-4 span img {
+  width: 100%;
+}
 .testimonios .col-4 .row p {
+  font-size: 0.5em;
   margin: 0;
   padding-bottom: 4em;
 }
@@ -236,14 +247,17 @@ h2 {
   margin: 2em 0;
   padding: 0;
   height: 30%;
-  font-size: 0.813em;
+  font-size: 0.5em;
   font-family: "Raleway";
   font-style: italic;
 }
 
 .contacto {
   margin: 0;
-  padding: 5em 7em;
+  padding: 2.5em 5em;
+}
+.contacto h3 {
+  font-size: 0.7em;
 }
 .contacto .col-6 {
   margin: 0;
@@ -255,41 +269,45 @@ h2 {
   padding: 0.1em 0.5em;
   font-family: "Raleway";
   font-weight: 400;
-  font-size: 1.25em;
+  font-size: 0.7em;
   color: #C27EDF;
   background: none;
   border: 0.07em solid #C27EDF;
   border-radius: 1em;
   width: 100%;
 }
+.contacto .col-6 form input:focus {
+  outline: none !important;
+  border: 0.07em solid #6A3381;
+}
 .contacto .col-6 form input::-webkit-input-placeholder {
   font-family: "Raleway";
   font-weight: 400;
-  font-size: 0.938em;
+  font-size: 0.8em;
   color: #C27EDF;
 }
 .contacto .col-6 form input::-moz-placeholder {
   font-family: "Raleway";
   font-weight: 400;
-  font-size: 0.938em;
+  font-size: 0.8em;
   color: #C27EDF;
 }
 .contacto .col-6 form input:-ms-input-placeholder {
   font-family: "Raleway";
   font-weight: 400;
-  font-size: 0.938em;
+  font-size: 0.8em;
   color: #C27EDF;
 }
 .contacto .col-6 form input::-ms-input-placeholder {
   font-family: "Raleway";
   font-weight: 400;
-  font-size: 0.938em;
+  font-size: 0.8em;
   color: #C27EDF;
 }
 .contacto .col-6 form input::placeholder {
   font-family: "Raleway";
   font-weight: 400;
-  font-size: 0.938em;
+  font-size: 0.8em;
   color: #C27EDF;
 }
 .contacto .col-6 form textarea {
@@ -298,7 +316,7 @@ h2 {
   padding: 0.5em;
   font-family: "Raleway";
   font-weight: 400;
-  font-size: 1.25em;
+  font-size: 0.7em;
   color: #C27EDF;
   background: none;
   border: 0.07em solid #C27EDF;
@@ -308,32 +326,36 @@ h2 {
 .contacto .col-6 form textarea::-webkit-input-placeholder {
   font-family: "Raleway";
   font-weight: 400;
-  font-size: 0.938em;
+  font-size: 0.8em;
   color: #C27EDF;
 }
 .contacto .col-6 form textarea::-moz-placeholder {
   font-family: "Raleway";
   font-weight: 400;
-  font-size: 0.938em;
+  font-size: 0.8em;
   color: #C27EDF;
 }
 .contacto .col-6 form textarea:-ms-input-placeholder {
   font-family: "Raleway";
   font-weight: 400;
-  font-size: 0.938em;
+  font-size: 0.8em;
   color: #C27EDF;
 }
 .contacto .col-6 form textarea::-ms-input-placeholder {
   font-family: "Raleway";
   font-weight: 400;
-  font-size: 0.938em;
+  font-size: 0.8em;
   color: #C27EDF;
 }
 .contacto .col-6 form textarea::placeholder {
   font-family: "Raleway";
   font-weight: 400;
-  font-size: 0.938em;
+  font-size: 0.8em;
   color: #C27EDF;
+}
+.contacto .col-6 form textarea:focus {
+  outline: none !important;
+  border: 0.07em solid #6A3381;
 }
 .contacto .col-6 form button {
   display: block;
@@ -341,7 +363,7 @@ h2 {
   padding: 0.5em;
   font-family: "Raleway";
   font-weight: 400;
-  font-size: 1.25em;
+  font-size: 0.7em;
   color: #C27EDF;
   background: #FCF9FF;
   border: 0.07em solid #C27EDF;
@@ -352,13 +374,13 @@ h2 {
 .contacto .col-6 form button:hover {
   font-family: "Raleway";
   font-weight: 700;
-  font-size: 1.25em;
+  font-size: 0.7em;
   color: #FCF9FF;
   background: #C27EDF;
 }
 .contacto .col-6 .card-contacto {
-  margin: 0.938em 0;
-  padding: 0.938em;
+  margin: 0.65em 0 0.938em;
+  padding: 1em;
   background: #FCF9FF;
   border-radius: 1em;
   height: -webkit-fit-content;
@@ -374,12 +396,13 @@ h2 {
 .contacto .col-6 .card-contacto .row span {
   display: inline-block;
   margin: 0;
-  height: 2em;
-  width: 2em;
+  height: 1.5em;
+  width: 1.5em;
 }
 .contacto .col-6 .card-contacto .row p {
+  font-size: 0.6em;
   display: inline-block;
-  margin: 0;
+  margin: auto 0;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -389,16 +412,19 @@ h2 {
   color: #C27EDF;
 }
 .contacto .col-6 .card-ubicacion h3 {
-  margin: 1.5em 0 1em;
+  margin: 0em 0 1em;
   text-align: left;
   width: 100%;
   font-family: "Raleway";
   font-weight: 700;
-  font-size: 0.938em;
+  font-size: 0.7em;
   color: #C27EDF;
 }
 .contacto .col-6 .card-ubicacion span {
   display: block;
   overflow: hidden;
   border-radius: 1em;
+}
+.contacto .col-6 .card-ubicacion span img {
+  width: 100%;
 }
