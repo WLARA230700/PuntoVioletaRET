@@ -74,6 +74,14 @@ h2{
     .left-text{
         margin: auto 0;
     }
+    .icons-footer{
+        text-align: center;
+        display: block;
+        margin: auto;
+        img{            
+            height: 2.5em;
+        }
+    }
 }
 .left-text{
     text-align: left;
@@ -338,5 +346,78 @@ h2{
                 }
             }
         }
+    }
+}
+.cards{
+    color: $moradoBase;
+    position: relative;
+    h1{
+        padding: 2.5em 0 .5em;
+        font-weight: $bold;
+    }
+    .container-cards{
+        padding: 0 5em 2em;
+        h2{
+            @include set_text("Raleway", $bold, 1em, $moradoBase);
+            text-align: left;
+            padding: .25em 0 .5em;
+        }
+        p{
+            @include set_text("Raleway", $regular, .5em, $moradoBase);
+            text-align: left;
+            padding: .5em 0;
+        }
+    }
+}
+.btn-repo{
+    margin: 0 auto .5em;
+    padding: .5em 1em;
+    border: .1em solid $moradoMedio;
+    border-radius: .7em;
+    text-decoration: none;
+    display: block;
+    @include set_text("Raleway", $regular, .7em, $moradoBase);
+    &:hover{
+        background: $moradoMedio;
+        @include set_text("Raleway", $bold, .7em, $moradoBase);
+    }
+}
+.card-derechos{
+    padding: .5em;
+    margin: 0 .5em .5em 0;
+    background: $moradoMedio;
+    border-radius: .5em;
+    width: 30%;
+    .card-p{
+        margin: 0;
+        @include set_text("Raleway", $bold, .7em, $moradoBase);
+        font-weight: 700 !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    img{
+        margin: 1em auto;
+        width: 35%;
+    }
+}
+.card-galeria{
+    padding: 0;
+    margin: 0 .5em .5em 0;
+    background: $moradoMedio;
+    border-radius: .5em;
+    width: 30%;
+    overflow: hidden;
+    .card-p{
+        padding: 1em !important;
+        margin: 0;
+        @include set_text("Raleway", $bold, .7em, $moradoBase);
+        font-weight: 700 !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    img{
+        width: 100%;
     }
 }

@@ -82,6 +82,14 @@ h2 {
 .footer .left-text {
   margin: auto 0;
 }
+.footer .icons-footer {
+  text-align: center;
+  display: block;
+  margin: auto;
+}
+.footer .icons-footer img {
+  height: 2.5em;
+}
 
 .left-text {
   text-align: left;
@@ -426,5 +434,100 @@ h2 {
   border-radius: 1em;
 }
 .contacto .col-6 .card-ubicacion span img {
+  width: 100%;
+}
+
+.cards {
+  color: #6A3381;
+  position: relative;
+}
+.cards h1 {
+  padding: 2.5em 0 0.5em;
+  font-weight: 700;
+}
+.cards .container-cards {
+  padding: 0 5em 2em;
+}
+.cards .container-cards h2 {
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: 1em;
+  color: #6A3381;
+  text-align: left;
+  padding: 0.25em 0 0.5em;
+}
+.cards .container-cards p {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 0.5em;
+  color: #6A3381;
+  text-align: left;
+  padding: 0.5em 0;
+}
+
+.btn-repo {
+  margin: 0 auto 0.5em;
+  padding: 0.5em 1em;
+  border: 0.1em solid #DABEF1;
+  border-radius: 0.7em;
+  text-decoration: none;
+  display: block;
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 0.7em;
+  color: #6A3381;
+}
+.btn-repo:hover {
+  background: #DABEF1;
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: 0.7em;
+  color: #6A3381;
+}
+
+.card-derechos {
+  padding: 0.5em;
+  margin: 0 0.5em 0.5em 0;
+  background: #DABEF1;
+  border-radius: 0.5em;
+  width: 30%;
+}
+.card-derechos .card-p {
+  margin: 0;
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: 0.7em;
+  color: #6A3381;
+  font-weight: 700 !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card-derechos img {
+  margin: 1em auto;
+  width: 35%;
+}
+
+.card-galeria {
+  padding: 0;
+  margin: 0 0.5em 0.5em 0;
+  background: #DABEF1;
+  border-radius: 0.5em;
+  width: 30%;
+  overflow: hidden;
+}
+.card-galeria .card-p {
+  padding: 1em !important;
+  margin: 0;
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: 0.7em;
+  color: #6A3381;
+  font-weight: 700 !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card-galeria img {
   width: 100%;
 }
