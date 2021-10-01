@@ -531,3 +531,102 @@ h2 {
 .card-galeria img {
   width: 100%;
 }
+
+.temas-interes-header {
+  margin: 0 auto;
+  padding: 4em 8em 2em 8em;
+}
+.temas-interes-header h1 {
+  font-size: 2em;
+  font-weight: 700;
+}
+.temas-interes-header p {
+  margin: 2em 0;
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 0.6em;
+  color: #6A3381;
+}
+.temas-interes-header .btn-repo {
+  margin-right: 1em;
+}
+
+.cards-temas-interes {
+  margin: 0;
+  padding: 0 4em;
+}
+.cards-temas-interes .col-6 {
+  margin: 0;
+  padding: 0.7em 0.7em 0;
+}
+.cards-temas-interes .col-6 div {
+  margin: 0 0 1.5em;
+  padding: 0;
+  background: #DABEF1;
+  border-radius: 0.7em;
+  overflow: hidden;
+}
+.cards-temas-interes .col-6 div h2 {
+  padding: 0.7em;
+  background: #6A3381;
+  font-size: 0.938em;
+  color: #ffffff;
+  -webkit-box-shadow: 0 0.25em 0.625em rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.25em 0.625em rgba(0, 0, 0, 0.1);
+}
+.cards-temas-interes .col-6 div div {
+  margin: 0;
+  padding: 1.5em;
+}
+.cards-temas-interes .col-6 div div h3 {
+  text-align: left;
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: 0.7em;
+  color: #6A3381;
+}
+.cards-temas-interes .col-6 div div p {
+  text-align: left;
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 0.7em;
+  color: #6A3381;
+}
+.cards-temas-interes .col-6 div div hr {
+  margin: 0 auto 1em;
+  width: 70%;
+  height: 3px;
+}
+
+.row-card-colaborador {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0;
+  padding: 0 4em 2em;
+}
+.row-card-colaborador .card-colaborador {
+  padding: 0;
+  margin: 0.5em auto;
+  border-radius: 0.5em;
+  width: 45%;
+  background: #EAE0F0;
+}
+.row-card-colaborador .card-colaborador img {
+  margin: 1em auto;
+  padding: 0;
+  width: auto;
+  height: 2em;
+}
+.row-card-colaborador .card-colaborador h2 {
+  font-size: 0.9em;
+}
+.row-card-colaborador .card-colaborador p {
+  padding: 0.5em 1.5em;
+  font-size: 0.6em;
+}
+.row-card-colaborador .card-colaborador .p-bold {
+  font-weight: 700;
+}

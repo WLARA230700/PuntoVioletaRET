@@ -421,3 +421,86 @@ h2{
         width: 100%;
     }
 }
+.temas-interes-header{
+    margin: 0 auto;
+    padding: 4em 8em 2em 8em;
+    h1{
+        font-size: 2em;
+        font-weight: $bold;
+    }
+    p{
+        margin: 2em 0;
+        @include set_text("Raleway", $regular, .6em, $moradoBase);
+    }
+    .btn-repo{
+        margin-right: 1em;
+    }
+}
+.cards-temas-interes{
+    margin: 0;
+    padding: 0 4em;
+    .col-6{
+        margin: 0;
+        padding: .7em .7em 0;
+        div{
+            margin: 0 0 1.5em;
+            padding: 0;
+            background: $moradoMedio;
+            border-radius: .7em;
+            overflow: hidden;
+            h2{
+                padding: .7em;
+                background: $moradoBase;
+                font-size: .938em;
+                color: #ffffff;
+                box-shadow: 0 .25em .625em rgba(0, 0, 0, 0.1);
+            }
+            div{
+                margin: 0;
+                padding: 1.5em;
+                h3{
+                    text-align: left;
+                    @include set_text("Raleway", $bold, .7em, $moradoBase);
+                }
+                p{
+                    text-align: left;
+                    @include set_text("Raleway", $regular, .7em, $moradoBase);
+                }
+                hr{
+                    margin: 0 auto 1em;
+                    width: 70%;
+                    height: 3px;
+                }
+            }
+        }
+    }
+}
+.row-card-colaborador{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0 4em 2em;
+    .card-colaborador{
+        padding: 0;
+        margin: .5em auto;
+        border-radius: .5em;
+        width: 45%;
+        background:  #EAE0F0;
+        img{
+            margin: 1em auto;
+            padding: 0;
+            width: auto;
+            height: 2em;
+        }
+        h2{
+            font-size: .9em;
+        }
+        p{
+            padding: .5em 1.5em;
+            font-size: .6em;
+        }
+        .p-bold{
+            font-weight: $bold;
+        }
+    }
+}
