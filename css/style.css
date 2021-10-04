@@ -441,8 +441,12 @@ h2 {
   color: #6A3381;
   position: relative;
 }
+.cards p {
+  text-align: left;
+}
 .cards h1 {
   padding: 2.5em 0 0.5em;
+  font-size: 1.5em;
   font-weight: 700;
 }
 .cards .container-cards {
@@ -537,11 +541,12 @@ h2 {
   padding: 4em 8em 2em 8em;
 }
 .temas-interes-header h1 {
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: 700;
 }
 .temas-interes-header p {
   margin: 2em 0;
+  text-align: left;
   font-family: "Raleway";
   font-weight: 400;
   font-size: 0.6em;
@@ -629,4 +634,53 @@ h2 {
 }
 .row-card-colaborador .card-colaborador .p-bold {
   font-weight: 700;
+}
+
+.redes-comunitarias-header {
+  margin: 0 auto;
+  padding: 4em 8em;
+}
+.redes-comunitarias-header h1 {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+.redes-comunitarias-header h2 {
+  text-align: left;
+  font-size: 1em;
+}
+.redes-comunitarias-header p {
+  margin: 2em 0;
+  text-align: left;
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 0.6em;
+  color: #6A3381;
+}
+.redes-comunitarias-header .btn-repo {
+  margin-right: 1em;
+}
+.redes-comunitarias-header .card-iniciativas {
+  margin: 0;
+  padding: 1.5em;
+  border-radius: 1em;
+  background: #EAE0F0;
+}
+.redes-comunitarias-header .card-iniciativas div {
+  margin-top: 0.5em;
+}
+.redes-comunitarias-header .card-iniciativas .col-6 {
+  padding: 0 1em;
+}
+.redes-comunitarias-header .card-iniciativas h2 {
+  text-align: center;
+}
+.redes-comunitarias-header .card-iniciativas p {
+  margin: 0;
+  text-align: center;
+}
+.redes-comunitarias-header .card-iniciativas img {
+  height: 1.5em;
+  width: auto;
+  margin: 1em auto;
 }

@@ -351,8 +351,12 @@ h2{
 .cards{
     color: $moradoBase;
     position: relative;
+    p{
+        text-align: left;
+    }
     h1{
         padding: 2.5em 0 .5em;
+        font-size: 1.5em;
         font-weight: $bold;
     }
     .container-cards{
@@ -425,11 +429,12 @@ h2{
     margin: 0 auto;
     padding: 4em 8em 2em 8em;
     h1{
-        font-size: 2em;
+        font-size: 1.5em;
         font-weight: $bold;
     }
     p{
         margin: 2em 0;
+        text-align: left;
         @include set_text("Raleway", $regular, .6em, $moradoBase);
     }
     .btn-repo{
@@ -501,6 +506,52 @@ h2{
         }
         .p-bold{
             font-weight: $bold;
+        }
+    }
+}
+.redes-comunitarias-header{
+    margin: 0 auto;
+    padding: 4em 8em;
+    h1{
+        font-size: 1.5em;
+        font-weight: $bold;
+        margin-bottom: 1em;
+    }
+    h2{
+
+        text-align: left;
+        font-size: 1em;
+    }
+    p{
+        margin: 2em 0;
+        text-align: left;
+        @include set_text("Raleway", $regular, .6em, $moradoBase);
+    }
+    .btn-repo{
+        margin-right: 1em;
+    }
+    .card-iniciativas{
+        margin: 0;
+        padding: 1.5em;
+        border-radius: 1em;
+        background: #EAE0F0;
+        div{
+            margin-top: .5em;
+        }
+        .col-6{
+            padding: 0 1em;
+        }
+        h2{
+            text-align: center;
+        }
+        p{
+            margin: 0;
+            text-align: center;
+        }
+        img{
+            height: 1.5em;
+            width: auto;
+            margin: 1em auto;
         }
     }
 }
