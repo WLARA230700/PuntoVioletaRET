@@ -16,22 +16,25 @@
     <section class="container-fluid min-height">
 
         <!-- TOP NAV -->
-        <nav class="row nav">
-            <div class="col-2">
-                <a href="./index.html"><span>PUNTO VIOLETA</span></a>
-            </div>
-            <div class="col-8">
+        <nav class="nav">
+            <svg class="menu-ham" width="26" height="23" viewBox="0 0 26 23" fill="currentcolor" xmlns="http://www.w3.org/2000/svg" onclick="mostrarMenu()">
+                <path d="M26 4.6V0H0V4.6H26ZM26 13.8V9.2H0V13.8H26ZM26 23V18.4H0V23H26Z" fill="currentcolor"/>
+            </svg>
+            <a class="logo-nav" href="./index.html"><span>PUNTO VIOLETA</span></a>
+            <div>
                 <ul class="nav-list">
                     <li><a href="./html/temas_interes.html">Temas de interés</a></li>
                     <li><a href="./html/derechos.html">Derechos</a></li>
                     <li><a href="./html/redes_comunitarias.html">Redes comunitarias</a></li>
                     <li><a href="./html/colaboradores.html">Colaboradores</a></li>
                     <li><a href="./html/galeria.html">Galería</a></li>
-                </ul>
+                </ul>  
+                <div class="nav-list-bg" onclick="mostrarMenu()"></div>
+                </div>              
             </div>
-            <div class="col-2">
+            <span>
                 <a href="#"><img src="./imgs/svg/instagram_icon.svg" alt="instagram_icon"></a>
-            </div>
+            </span>
         </nav>
         <!-- TOP NAV -->
 
@@ -56,20 +59,20 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-4">
+                <div class="col-sm-4">
                     <img src="./imgs/svg/point_icon.svg" alt="point icon">
                     <p>Somos una iniciativa impulsada por RET Internacional, donde promovemos la prevención de la
                         violencia hacia las mujeres y población LGTBI+, migrantes solicitantes de refugio y refugiadas
                         que se encuentran en Costa Rica.</p>
                 </div>
-                <div class="col-4">
+                <div class="col-sm-4">
                     <img src="./imgs/svg/people_icon.svg" alt="people icon">
                     <p>A través de la promoción de espacios de encuentro e intercambio de saberes desde los distintos
                         proyectos ejecutados por nuestra organización, compartimos información y herramientas que
                         erradiquen la violencia basada en género y fortalezcan el conocimiento y reivindicación de los
                         derechos sexuales y reproductivos.</p>
                 </div>
-                <div class="col-4">
+                <div class="col-sm-4">
                     <img src="./imgs/svg/calendar_icon.svg" alt="calendar icon">
                     <p>Ofrecemos espacios de encuentro para compartir y reflexionar en torno a la violencia, derechos
                         sexuales y empleabilidad desde una propuesta creativa, inclusiva y respetuosa.
@@ -92,21 +95,21 @@
                 </div>
                 <div class="col-10">
                     <div class="row">
-                        <div class="col-4">
+                        <div class="col-4 testimonios-laterales">
                             <span><img src="./imgs/testimonio1.png" alt="testimonio1"></span>
                             <p class="cita">“Porque resistir también es informarse”</p>
                             <div class="row">
                                 <p>Managing Director</p>
                             </div>
                         </div>
-                        <div class="col-4">
+                        <div class="col-4 testimonios">
                             <span><img src="./imgs/testimonio2.png" alt="testimonio2"></span>
                             <p class="cita">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris feugiat ornare metus, eget congue magna condimentum vel. Quisque commodo”</p>
                             <div class="row">
                                 <p>Designer</p>
                             </div>
                         </div>
-                        <div class="col-4">
+                        <div class="col-4 testimonios-laterales">
                             <span><img src="./imgs/testimonio3.png" alt="testimonio3"></span>
                             <p class="cita">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean dignissim ullamcorper commodo.”</p>
                             <div class="row">
@@ -131,7 +134,7 @@
                 <h3>¿Tienes alguna consulta?</h3>
             </div>
             <div class="row">
-                <div class="col-6">
+                <div class="col-sm-6">
                     <form action="">
                         <input type="text" placeholder="Nombre completo *">
                         <input type="email" placeholder="Correo electrónico *">
@@ -140,7 +143,7 @@
                         <button type="submit">Enviar</button>
                     </form>
                 </div>
-                <div class="col-6">
+                <div class="col-sm-6">
                     <div class="row card-contacto">
                         <div class="row">
                             <span><img src="./imgs/svg/telefono_icon.svg" alt="telefono"></span>
@@ -162,17 +165,17 @@
 
         <!-- FOTTER -->
         <footer class="row footer">
-            <div class="col left-text">
+            <div class="col-sm left-text">
                 <p>©2021</p>
                 <p>Todos los derechos reservados</p>
             </div>
-            <div class="col icons-footer">
+            <div class="col-sm icons-footer">
                 <img src="./imgs/svg/icon_punto-violeta.svg" alt="Logo Punto Violeta">
             </div>
-            <div class="col icons-footer">
+            <div class="col-sm icons-footer">
                 <img src="./imgs/svg/icon_ret.svg" alt="Logo RET">
             </div>
-            <div class="col right-text">
+            <div class="col-sm right-text">
                 <p>By Willy Lara Campos</p>
                 <p>By Ronald Chaves González</p>
                 <p>By Benjamín Álvarez Rodríguez</p>
@@ -181,6 +184,8 @@
         <!-- FOTTER -->
 
     </section>
+
+    <script src="./js/main.js"></script>
 
 </body>
 

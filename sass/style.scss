@@ -19,6 +19,9 @@ h2{
     margin: 0;
     padding: 0;
     @include set_text("Raleway", $bold, 1.25em, $moradoBase);
+    @include respond-to($phone){
+        font-size: 1em;
+    }
 }
 //CLASES
 .min-height{
@@ -50,18 +53,54 @@ h2{
     box-shadow: 0 .25em .625em rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(.625em);
 
+    div{
+        margin: auto;
+        @include respond-to($phone){
+            position: relative;
+            margin: 0;
+        }
+        .nav-list-bg{
+            display: none;
+            left: -21em;
+            top: -1em;
+            content: "";
+            padding: 12em;
+            position: absolute;
+            height: 100vh;
+            width: 100%;
+            background: #00000088;
+        }
+    }
+    
+
+    .menu-ham{
+        display: none;
+        @include respond-to($phone){
+            display: block;
+            width: 10%;
+            z-index: 5;
+        }
+    }
+    span{
+        width: 10%;
+    }
     img{
         vertical-align: middle;
         padding-left: .939em;
         height: 1.25em;
         float: right;
     }
+    .logo-nav{
+        @include respond-to($phone){
+            margin: auto;
+        }
+    }
 
     a{
         text-decoration: none;
         color: #ffffff;
         span{
-            font-weight: 700;
+            font-weight: 700;            
         }
     }
 }
@@ -71,16 +110,38 @@ h2{
     padding: 2em 6em 1.5em;
     font-size: .5em;
     line-height: 0.7em;
+    @include respond-to($phone){
+        font-size: .4em;
+    }
+    .col-sm{
+        @include respond-to($phone){
+            padding-bottom: 3em;
+        }
+    }
     .left-text{
         margin: auto 0;
+    }
+    .right-text{
+        @include respond-to($phone){
+            text-align: left;
+        }
     }
     .icons-footer{
         text-align: center;
         display: block;
         margin: auto;
-        img{            
-            height: 2.5em;
+        @include respond-to($phone){
+            width: 50%;
         }
+        img{    
+            height: 2.5em;
+            @include respond-to($phone){
+                height: 4em;
+            }
+        }
+    }
+    @include respond-to($phone){
+        padding: 2em 3em 1.5em;
     }
 }
 .left-text{
@@ -92,10 +153,21 @@ h2{
 //--------------------------------------------INDEX--------------------------------------------//
 .nav-list{
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
     list-style: none;
     text-align: center;
-
+    @include respond-to($phone){
+        z-index: 2;
+        margin: 0;
+        padding: 8em 5em 5em 3em;
+        text-align: left;
+        position: absolute;
+        left: -42em;
+        top: -1em;
+        background: $moradoMedio;
+        height: 100vh;
+        transition: .5s;
+    }
     li{
         margin: 0;
         padding: 0 .313em 0 .313em;
@@ -103,12 +175,20 @@ h2{
         :hover{
             font-weight: 700;
         }
+        @include respond-to($phone){
+            display: block;
+        }
         a{
             margin: 0;
             padding: 0;
             text-decoration: none;    
             display: block;
             color: #ffffff;
+            @include respond-to($phone){
+                color: $moradoBase;
+                padding-bottom: 1.5em;
+                font-size: 1.2em;
+            }
         }
     }
 }
@@ -130,10 +210,16 @@ h2{
             font-weight: $regular;
             font-size: .938em;
             color: #ffffff;
+            @include respond-to($phone){
+                font-size: .45em;
+            }
         }
         h1{
             font-weight: 700;
             font-size: 3em;
+            @include respond-to($phone){
+                font-size: 1.4em;
+            }
         }
     } 
     section{
@@ -162,10 +248,16 @@ h2{
 .quienes-somos{
     margin: 0;
     padding: 2.5em 5em;
+    @include respond-to($phone){
+        padding: 1.5em;
+    }
     h3{
         margin: 0;
         padding: 0;
         @include set_text("Raleway", $regular, .938em, $moradoBase);
+        @include respond-to($phone){
+            font-size: .7em;
+        }
     }
     p{
         margin: 0;
@@ -178,21 +270,37 @@ h2{
         padding: 0;
         width: auto;
         height: 1.5em;
+        @include respond-to($phone){
+            margin: .5em;
+            width: fit-content;
+        }
     }
     .row{
         padding-bottom: 1em;
     }
-    .col-4{
+    .col-sm-4{
         margin: 0 auto;
         padding: .938em;
         width: 30%;
         background-color: $moradoMedio;
         border-radius: .8em;
+        @include respond-to($phone){
+            width: 100%;
+            margin-bottom: 1em;
+        }
     }
 }
 .testimonios{
     padding: 3em 1em;
     background-color: $moradoMedio;
+    @include respond-to($phone){
+        padding: 1.5em .5em;
+    }
+    .testimonios-laterales{
+        @include respond-to($phone){
+            display: none;
+        }
+    }
     h2{
         margin: 0 0 1em;
         padding: 0;
@@ -206,6 +314,10 @@ h2{
             margin: auto;
             width: 2em;
             height: 2em;
+            @include respond-to($phone){
+                height: 1em;
+                width: 1em;
+            }
         }
     }
     .col-4{
@@ -233,6 +345,9 @@ h2{
                 padding-bottom: 4em;
             }
         }
+        @include respond-to($phone){
+            width: 100%;
+        }
     }
     .cita{
         display: block;
@@ -248,10 +363,16 @@ h2{
 .contacto{
     margin: 0;
     padding: 2.5em 5em;
+    @include respond-to($phone){
+        padding: 1em .5em;
+    }
     h3{
         font-size: .7em;
+        @include respond-to($phone){
+            font-size: .5em;
+        }
     }
-    .col-6{
+    .col-sm-6{
         margin: 0;
         padding: 0 1em;
         form{
@@ -271,6 +392,10 @@ h2{
                 &::placeholder{
                     @include set_text("Raleway", $regular, .8em, $moradoLetrasForm);
                 }
+                @include respond-to($phone){
+                    border: .1em solid $moradoLetrasForm;
+                    border-radius: .7em;
+                }
             }
             textarea{
                 display: block;
@@ -288,12 +413,16 @@ h2{
                     outline: none !important;
                     border: .07em solid $moradoBase;
                 }
+                @include respond-to($phone){
+                    border: .1em solid $moradoLetrasForm;
+                    border-radius: .7em;
+                }
             }
             button{
                 display: block;
                 margin: .938em 0;
                 padding: .5em;
-                @include set_text("Raleway", $regular, .7em, $moradoLetrasForm);
+                @include set_text("Raleway", $bold, .7em, $moradoLetrasForm);
                 background: $moradoMuyClaro;
                 border: .07em solid $moradoLetrasForm;
                 border-radius: 1em;
@@ -303,6 +432,15 @@ h2{
                     @include set_text("Raleway", $bold, .7em, $moradoMuyClaro);
                     background: $moradoLetrasForm;
                 }
+                @include respond-to($phone){
+                    border: .1em solid $moradoLetrasForm;
+                    border-radius: 1em;
+                    width: fit-content;
+                    float: right;
+                    padding: .2em .7em;
+                    margin: .5em 0;
+                    font-size: .6em;
+                }
             }
         }
         .card-contacto{
@@ -311,14 +449,25 @@ h2{
             background: $moradoMuyClaro;
             border-radius: 1em;
             height: fit-content;
+            @include respond-to($phone){
+                padding: .2em;
+                border-radius: .5em;
+            }
             .row{
                 margin: auto;
                 height: fit-content;
+                @include respond-to($phone){
+                    padding: 0 0 .2em;
+                }
                 span{
                     display: inline-block;
                     margin: 0;
                     height: 1.5em;
                     width: 1.5em;
+                    @include respond-to($phone){
+                        height: 1.3em;
+                        width: 1.3em;
+                    }
                 }
                 p{
                     font-size: .6em;
@@ -327,6 +476,12 @@ h2{
                     width: fit-content;
                     height: fit-content;
                     color: $moradoLetrasForm;
+                    @include respond-to($phone){
+                        font-size: .4em;
+                        display: block;
+                        width: 100%;
+                        text-align: left;
+                    }
                 }
             }
         }
@@ -336,6 +491,9 @@ h2{
                 text-align: left;
                 width: 100%;
                 @include set_text("Raleway", $bold, .7em, $moradoLetrasForm);
+                @include respond-to($phone){
+                    font-size: .6em;
+                }
             }
             span{
                 display: block;
@@ -343,6 +501,9 @@ h2{
                 border-radius: 1em;
                 img{
                     width: 100%;
+                }
+                @include respond-to($phone){
+                    padding: 0;
                 }
             }
         }
