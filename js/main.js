@@ -1,4 +1,7 @@
 let menuAbierto = false;
+//let selected = document.body.getElementsByClassName("select-box")[0];
+let selected = document.getElementById("txt-select-box");
+let optionContainer = document.body.getElementsByClassName("options-container")[0];
 
 function mostrarMenu(){
     let menu = document.getElementsByClassName("nav-list")[0];
@@ -17,3 +20,17 @@ function mostrarMenu(){
         menuAbierto = false;
     }
 }
+
+function changeSelected(id){
+    selected.innerHTML = document.getElementById(id).innerHTML;
+    optionContainer.classList.remove("active");
+}
+
+document.addEventListener("DOMContentLoaded", (event)=>{
+    console.log("DOM Loaded");
+
+    selected.addEventListener("click", () => {
+        optionContainer.classList.toggle("active");
+        console.log("Click");
+    });
+})

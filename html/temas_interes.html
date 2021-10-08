@@ -16,22 +16,26 @@
     <section class="container-fluid min-height">
 
         <!-- TOP NAV -->
-        <nav class="row nav">
-            <div class="col-2">
-                <a href="../index.html"><span>PUNTO VIOLETA</span></a>
-            </div>
-            <div class="col-8">
+        <nav class="nav">
+            <svg class="menu-ham" width="26" height="23" viewBox="0 0 26 23" fill="currentcolor"
+                xmlns="http://www.w3.org/2000/svg" onclick="mostrarMenu()">
+                <path d="M26 4.6V0H0V4.6H26ZM26 13.8V9.2H0V13.8H26ZM26 23V18.4H0V23H26Z" fill="currentcolor" />
+            </svg>
+            <a class="logo-nav" href="../index.html"><span>PUNTO VIOLETA</span></a>
+            <div>
                 <ul class="nav-list">
-                    <li style="font-weight: 700;"><a href="./temas_interes.html">Temas de interés</a></li>
+                    <li><a href="./temas_interes.html">Temas de interés</a></li>
                     <li><a href="./derechos.html">Derechos</a></li>
                     <li><a href="./redes_comunitarias.html">Redes comunitarias</a></li>
                     <li><a href="./colaboradores.html">Colaboradores</a></li>
                     <li><a href="./galeria.html">Galería</a></li>
                 </ul>
+                <div class="nav-list-bg" onclick="mostrarMenu()"></div>
             </div>
-            <div class="col-2">
+            </div>
+            <span>
                 <a href="#"><img src="../imgs/svg/instagram_icon.svg" alt="instagram_icon"></a>
-            </div>
+            </span>
         </nav>
         <!-- TOP NAV -->
 
@@ -45,16 +49,22 @@
                         signiferumque in cum. Ut molestiae complectitur eam, partiendo necessitatibus ad vix. Putent
                         semper nusquam ...</p>
                 </div>
-                <div class="row">
-                    <div class="col"><a href="#" class="btn-repo">Violencia <br> doméstica</a></div>
-                    <div class="col"><a href="#" class="btn-repo">Voliencia <br> sexual</a></div>
-                    <div class="col"><a href="#" class="btn-repo">Relaciones <br> impropias</a></div>
-                    <div class="col"><a href="#" class="btn-repo">Acoso <br> callejero</a></div>
+                <div class="row select-box">
+                    <div id="txt-select-box">
+                        <p>Violencia doméstica</p><img src="../imgs/svg/icon_dropdown.svg"
+                            alt="icon_dropdown">
+                    </div>
+                    <div class="options-container">
+                        <div class="col option"><a href="#" class="btn-repo">Violencia <br> doméstica</a></div>
+                        <div class="col option"><a href="#" class="btn-repo">Voliencia <br> sexual</a></div>
+                        <div class="col option"><a href="#" class="btn-repo">Relaciones <br> impropias</a></div>
+                        <div class="col option"><a href="#" class="btn-repo">Acoso <br> callejero</a></div>
+                    </div>
                 </div>
             </div>
 
             <div class="row cards-temas-interes">
-                <div class="col-6">
+                <div class="col-sm-6">
                     <div>
                         <h2>Tipos de violencia</h2>
 
@@ -100,7 +110,7 @@
                         <img src="../imgs/ejemplo_infografia.png" alt="Infografía">
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-sm-6">
                     <div>
                         <h2>Señales de alarma</h2>
 
@@ -187,17 +197,17 @@
 
         <!-- FOTTER -->
         <footer class="row footer">
-            <div class="col left-text">
+            <div class="col-sm left-text">
                 <p>©2021</p>
                 <p>Todos los derechos reservados</p>
             </div>
-            <div class="col icons-footer">
+            <div class="col-sm icons-footer">
                 <img src="../imgs/svg/icon_punto-violeta.svg" alt="Logo Punto Violeta">
             </div>
-            <div class="col icons-footer">
+            <div class="col-sm icons-footer">
                 <img src="../imgs/svg/icon_ret.svg" alt="Logo RET">
             </div>
-            <div class="col right-text">
+            <div class="col-sm right-text">
                 <p>By Willy Lara Campos</p>
                 <p>By Ronald Chaves González</p>
                 <p>By Benjamín Álvarez Rodríguez</p>
@@ -206,7 +216,7 @@
         <!-- FOTTER -->
 
     </section>
-
+    <script src="../js/main.js"></script>
 </body>
 
 </html>

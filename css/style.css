@@ -674,8 +674,19 @@ h2 {
   font-size: 1.5em;
   font-weight: 700;
 }
+@media only screen and (max-width: 480px) {
+  .cards h1 {
+    font-size: 0.7em;
+    padding: 4.5em 0 0.5em;
+  }
+}
 .cards .container-cards {
   padding: 0 5em 2em;
+}
+@media only screen and (max-width: 480px) {
+  .cards .container-cards {
+    padding: 0 1em 1em;
+  }
 }
 .cards .container-cards h2 {
   font-family: "Raleway";
@@ -685,6 +696,13 @@ h2 {
   text-align: left;
   padding: 0.25em 0 0.5em;
 }
+@media only screen and (max-width: 480px) {
+  .cards .container-cards h2 {
+    padding-top: 2em;
+    padding-bottom: 0.5em;
+    font-size: 0.5em;
+  }
+}
 .cards .container-cards p {
   font-family: "Raleway";
   font-weight: 400;
@@ -692,6 +710,12 @@ h2 {
   color: #6A3381;
   text-align: left;
   padding: 0.5em 0;
+}
+.cards .container-cards .col-sm-3 .option {
+  display: block;
+}
+.cards .container-cards .col-sm-3 .option .btn-repo {
+  margin: 0 auto 0.5em;
 }
 
 .btn-repo {
@@ -720,6 +744,11 @@ h2 {
   background: #DABEF1;
   border-radius: 0.5em;
   width: 30%;
+}
+@media only screen and (max-width: 480px) {
+  .card-derechos {
+    width: 100%;
+  }
 }
 .card-derechos .card-p {
   margin: 0;
@@ -765,9 +794,19 @@ h2 {
   margin: 0 auto;
   padding: 4em 8em 2em 8em;
 }
+@media only screen and (max-width: 480px) {
+  .temas-interes-header {
+    padding: 2.5em 1.5em 1em;
+  }
+}
 .temas-interes-header h1 {
   font-size: 1.5em;
   font-weight: 700;
+}
+@media only screen and (max-width: 480px) {
+  .temas-interes-header h1 {
+    font-size: 0.7em;
+  }
 }
 .temas-interes-header p {
   margin: 2em 0;
@@ -777,26 +816,114 @@ h2 {
   font-size: 0.6em;
   color: #6A3381;
 }
-.temas-interes-header .btn-repo {
+@media only screen and (max-width: 480px) {
+  .temas-interes-header p {
+    font-size: 0.5em;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .select-box {
+    position: relative;
+  }
+}
+.select-box #txt-select-box {
+  display: none;
+}
+@media only screen and (max-width: 480px) {
+  .select-box #txt-select-box {
+    display: block;
+    background: #DABEF1;
+    border-radius: 0.7em;
+    -webkit-box-shadow: 0 0.25em 0.625em rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0.25em 0.625em rgba(0, 0, 0, 0.1);
+    z-index: 2;
+  }
+}
+.select-box #txt-select-box p {
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: 0.5em;
+  color: #6A3381;
+  display: inline-block;
+  margin: 1em 0;
+  padding: 0;
+  text-align: left;
+}
+@media only screen and (max-width: 480px) {
+  .select-box #txt-select-box img {
+    display: inline-block;
+    margin-left: 1em;
+    width: auto;
+    height: 0.3em;
+  }
+}
+.select-box .options-container {
+  display: block;
+}
+@media only screen and (max-width: 480px) {
+  .select-box .options-container {
+    position: absolute;
+    background: #F3F3F3;
+    width: 100%;
+    padding-top: 2em;
+    border-radius: 1em 0.7em;
+    display: none;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    overflow: hidden;
+    z-index: 0;
+  }
+}
+.select-box .options-container .option {
+  display: inline-block;
+}
+@media only screen and (max-width: 480px) {
+  .select-box .options-container .option {
+    display: block;
+  }
+}
+.select-box .options-container .option .btn-repo {
   margin-right: 1em;
+}
+@media only screen and (max-width: 480px) {
+  .select-box .options-container .option .btn-repo {
+    border: none;
+    font-size: 0.5em;
+    text-align: left;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .select-box .options-container .option .btn-repo br {
+    display: none;
+  }
+}
+.select-box .options-container.active {
+  display: block;
 }
 
 .cards-temas-interes {
   margin: 0;
   padding: 0 4em;
 }
-.cards-temas-interes .col-6 {
+@media only screen and (max-width: 480px) {
+  .cards-temas-interes {
+    padding: 0.5em;
+  }
+}
+.cards-temas-interes .col-sm-6 {
   margin: 0;
   padding: 0.7em 0.7em 0;
 }
-.cards-temas-interes .col-6 div {
+.cards-temas-interes .col-sm-6 div {
   margin: 0 0 1.5em;
   padding: 0;
   background: #DABEF1;
   border-radius: 0.7em;
   overflow: hidden;
 }
-.cards-temas-interes .col-6 div h2 {
+.cards-temas-interes .col-sm-6 div h2 {
   padding: 0.7em;
   background: #6A3381;
   font-size: 0.938em;
@@ -804,25 +931,51 @@ h2 {
   -webkit-box-shadow: 0 0.25em 0.625em rgba(0, 0, 0, 0.1);
           box-shadow: 0 0.25em 0.625em rgba(0, 0, 0, 0.1);
 }
-.cards-temas-interes .col-6 div div {
+@media only screen and (max-width: 480px) {
+  .cards-temas-interes .col-sm-6 div h2 {
+    font-size: 0.6em;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .cards-temas-interes .col-sm-6 div img {
+    width: 100%;
+    height: auto;
+  }
+}
+.cards-temas-interes .col-sm-6 div div {
   margin: 0;
   padding: 1.5em;
 }
-.cards-temas-interes .col-6 div div h3 {
+@media only screen and (max-width: 480px) {
+  .cards-temas-interes .col-sm-6 div div {
+    padding: 0.5em 1em;
+  }
+}
+.cards-temas-interes .col-sm-6 div div h3 {
   text-align: left;
   font-family: "Raleway";
   font-weight: 700;
   font-size: 0.7em;
   color: #6A3381;
 }
-.cards-temas-interes .col-6 div div p {
+@media only screen and (max-width: 480px) {
+  .cards-temas-interes .col-sm-6 div div h3 {
+    font-size: 0.5em;
+  }
+}
+.cards-temas-interes .col-sm-6 div div p {
   text-align: left;
   font-family: "Raleway";
   font-weight: 400;
   font-size: 0.7em;
   color: #6A3381;
 }
-.cards-temas-interes .col-6 div div hr {
+@media only screen and (max-width: 480px) {
+  .cards-temas-interes .col-sm-6 div div p {
+    font-size: 0.5em;
+  }
+}
+.cards-temas-interes .col-sm-6 div div hr {
   margin: 0 auto 1em;
   width: 70%;
   height: 3px;

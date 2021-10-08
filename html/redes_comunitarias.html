@@ -16,22 +16,25 @@
     <section class="container-fluid min-height">
 
         <!-- TOP NAV -->
-        <nav class="row nav">
-            <div class="col-2">
-                <a href="../index.html"><span>PUNTO VIOLETA</span></a>
-            </div>
-            <div class="col-8">
+        <nav class="nav">
+            <svg class="menu-ham" width="26" height="23" viewBox="0 0 26 23" fill="currentcolor" xmlns="http://www.w3.org/2000/svg" onclick="mostrarMenu()">
+                <path d="M26 4.6V0H0V4.6H26ZM26 13.8V9.2H0V13.8H26ZM26 23V18.4H0V23H26Z" fill="currentcolor"/>
+            </svg>
+            <a class="logo-nav" href="../index.html"><span>PUNTO VIOLETA</span></a>
+            <div>
                 <ul class="nav-list">
                     <li><a href="./temas_interes.html">Temas de interés</a></li>
                     <li><a href="./derechos.html">Derechos</a></li>
-                    <li style="font-weight: 700;"><a href="./redes_comunitarias.html">Redes comunitarias</a></li>
+                    <li><a href="./redes_comunitarias.html">Redes comunitarias</a></li>
                     <li><a href="./colaboradores.html">Colaboradores</a></li>
                     <li><a href="./galeria.html">Galería</a></li>
-                </ul>
+                </ul>  
+                <div class="nav-list-bg" onclick="mostrarMenu()"></div>
+                </div>              
             </div>
-            <div class="col-2">
+            <span>
                 <a href="#"><img src="../imgs/svg/instagram_icon.svg" alt="instagram_icon"></a>
-            </div>
+            </span>
         </nav>
         <!-- TOP NAV -->
 
@@ -109,7 +112,7 @@
         <!-- FOTTER -->
 
     </section>
-
+    <script src="../js/main.js"></script>
 </body>
 
 </html>
