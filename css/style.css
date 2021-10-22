@@ -744,6 +744,7 @@ h2 {
   background: #DABEF1;
   border-radius: 0.5em;
   width: 30%;
+  cursor: pointer;
 }
 @media only screen and (max-width: 480px) {
   .card-derechos {
@@ -773,6 +774,12 @@ h2 {
   border-radius: 0.5em;
   width: 30%;
   overflow: hidden;
+  cursor: pointer;
+}
+@media only screen and (max-width: 480px) {
+  .card-galeria {
+    width: 100%;
+  }
 }
 .card-galeria .card-p {
   padding: 1em !important;
@@ -990,12 +997,22 @@ h2 {
   margin: 0;
   padding: 0 4em 2em;
 }
+@media only screen and (max-width: 480px) {
+  .row-card-colaborador {
+    padding: 0 0.5em 1em;
+  }
+}
 .row-card-colaborador .card-colaborador {
   padding: 0;
   margin: 0.5em auto;
   border-radius: 0.5em;
   width: 45%;
   background: #EAE0F0;
+}
+@media only screen and (max-width: 480px) {
+  .row-card-colaborador .card-colaborador {
+    width: 90%;
+  }
 }
 .row-card-colaborador .card-colaborador img {
   margin: 1em auto;
@@ -1010,22 +1027,49 @@ h2 {
   padding: 0.5em 1.5em;
   font-size: 0.6em;
 }
+@media only screen and (max-width: 480px) {
+  .row-card-colaborador .card-colaborador p {
+    text-align: left;
+  }
+}
 .row-card-colaborador .card-colaborador .p-bold {
   font-weight: 700;
+}
+@media only screen and (max-width: 480px) {
+  .row-card-colaborador .card-colaborador .p-bold {
+    text-align: center;
+    font-size: 0.5em;
+  }
 }
 
 .redes-comunitarias-header {
   margin: 0 auto;
   padding: 4em 8em;
 }
+@media only screen and (max-width: 480px) {
+  .redes-comunitarias-header {
+    padding: 2.5em 1.5em 1em;
+  }
+}
 .redes-comunitarias-header h1 {
   font-size: 1.5em;
   font-weight: 700;
   margin-bottom: 1em;
 }
+@media only screen and (max-width: 480px) {
+  .redes-comunitarias-header h1 {
+    font-size: 1.2em;
+  }
+}
 .redes-comunitarias-header h2 {
   text-align: left;
   font-size: 1em;
+}
+@media only screen and (max-width: 480px) {
+  .redes-comunitarias-header h2 {
+    font-size: 0.7em;
+    text-align: center;
+  }
 }
 .redes-comunitarias-header p {
   margin: 2em 0;
@@ -1034,6 +1078,11 @@ h2 {
   font-weight: 400;
   font-size: 0.6em;
   color: #6A3381;
+}
+@media only screen and (max-width: 480px) {
+  .redes-comunitarias-header p {
+    font-size: 0.5em;
+  }
 }
 .redes-comunitarias-header .btn-repo {
   margin-right: 1em;
@@ -1044,10 +1093,15 @@ h2 {
   border-radius: 1em;
   background: #EAE0F0;
 }
+@media only screen and (max-width: 480px) {
+  .redes-comunitarias-header .card-iniciativas {
+    padding: 0.5em;
+  }
+}
 .redes-comunitarias-header .card-iniciativas div {
   margin-top: 0.5em;
 }
-.redes-comunitarias-header .card-iniciativas .col-6 {
+.redes-comunitarias-header .card-iniciativas .col-sm-6 {
   padding: 0 1em;
 }
 .redes-comunitarias-header .card-iniciativas h2 {
@@ -1061,4 +1115,113 @@ h2 {
   height: 1.5em;
   width: auto;
   margin: 1em auto;
+}
+
+.modales {
+  max-width: 60%;
+}
+@media only screen and (max-width: 480px) {
+  .modales {
+    max-width: 100%;
+  }
+}
+.modales .modal-content {
+  background-color: #DABEF1;
+  text-align: left;
+  border-radius: 0.7em;
+  max-height: 70vh;
+  overflow: hidden;
+}
+@media only screen and (max-width: 480px) {
+  .modales .modal-content {
+    max-height: 80vh;
+  }
+}
+.modales .modal-content h5 {
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: 1em;
+  color: #6A3381;
+}
+.modales .modal-content .col-sm-6 {
+  padding: 1em;
+}
+.modales .modal-content .col-imagen-modal {
+  background-color: #F2E7F9;
+  padding: 0;
+  margin: 0;
+}
+.modales .modal-content .span-modal-left {
+  margin: auto;
+  padding: 1em;
+  width: 50%;
+  height: 100%;
+  display: block;
+}
+@media only screen and (max-width: 480px) {
+  .modales .modal-content .span-modal-left {
+    width: 0%;
+    display: none;
+    padding: 0;
+  }
+}
+.modales .modal-content .span-modal-left img {
+  margin: auto 0;
+  display: block;
+  height: auto;
+  width: 100%;
+}
+.modales .modal-content .span-modal-left-galeria {
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+@media only screen and (max-width: 480px) {
+  .modales .modal-content .span-modal-left-galeria {
+    width: 100%;
+  }
+}
+.modales .modal-content .span-modal-left-galeria img {
+  margin: auto 0;
+  display: block;
+  height: auto;
+  width: 100%;
+}
+.modales .modal-content .descripcion-modal {
+  margin: 0.5em 0;
+  height: 40vh;
+  overflow-y: scroll;
+}
+@media only screen and (max-width: 480px) {
+  .modales .modal-content .descripcion-modal {
+    height: 30vh;
+    margin: 1em 0;
+  }
+}
+.modales .modal-content .descripcion-modal::-webkit-scrollbar {
+  width: 0.1em;
+  background: #F2E7F9;
+  border-radius: 0.5em;
+}
+.modales .modal-content .descripcion-modal::-webkit-scrollbar-thumb {
+  background: #6A3381;
+  border-radius: 0.5em;
+}
+.modales .modal-content .descripcion-modal p {
+  font-size: 0.6em;
+  padding-right: 0.5em;
+}
+.modales .modal-content .btn-repo {
+  float: right;
+  background: #6A3381;
+  color: #ffffff;
+  padding: 0.5em 2.5em;
+  border-radius: 2em;
+  font-size: 0.5em;
+}
+.modales .modal-content .btn-repo img {
+  width: auto;
+  height: 1.3em;
+  padding: 0 0.5em;
 }
