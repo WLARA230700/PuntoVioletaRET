@@ -9,6 +9,13 @@ body {
   text-align: center;
   background-color: #F2E7F9;
 }
+body::-webkit-scrollbar {
+  width: 0.3em;
+  background: #F2E7F9;
+}
+body::-webkit-scrollbar-thumb {
+  background: #6A3381;
+}
 
 h2 {
   margin: 0;
@@ -26,6 +33,10 @@ h2 {
 
 .min-height {
   min-height: 100vh;
+}
+
+.min-height-admin {
+  min-height: calc(100vh - 4.3em);
 }
 
 .container-fluid {
@@ -1224,4 +1235,157 @@ h2 {
   width: auto;
   height: 1.3em;
   padding: 0 0.5em;
+}
+
+/*ADMIN*/
+.iniciar-sesion {
+  margin: auto;
+  width: 40%;
+  padding: 2.5em 0;
+}
+.iniciar-sesion h1 {
+  font-size: 1em;
+  font-weight: 700;
+  padding: 1em 0;
+}
+.iniciar-sesion .col-12 {
+  margin: 0;
+  padding: 0 1em;
+}
+.iniciar-sesion .col-12 form input {
+  display: block;
+  margin: 0.938em 0;
+  padding: 0.1em 0.5em;
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 0.7em;
+  color: #C27EDF;
+  background: none;
+  border: 0.07em solid #C27EDF;
+  border-radius: 1em;
+  width: 100%;
+}
+.iniciar-sesion .col-12 form input:focus {
+  outline: none !important;
+  border: 0.07em solid #6A3381;
+}
+.iniciar-sesion .col-12 form input::-webkit-input-placeholder {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 0.8em;
+  color: #C27EDF;
+}
+.iniciar-sesion .col-12 form input::-moz-placeholder {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 0.8em;
+  color: #C27EDF;
+}
+.iniciar-sesion .col-12 form input:-ms-input-placeholder {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 0.8em;
+  color: #C27EDF;
+}
+.iniciar-sesion .col-12 form input::-ms-input-placeholder {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 0.8em;
+  color: #C27EDF;
+}
+.iniciar-sesion .col-12 form input::placeholder {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 0.8em;
+  color: #C27EDF;
+}
+.iniciar-sesion .col-12 form textarea {
+  display: block;
+  margin: 0.938em 0;
+  padding: 0.5em;
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 0.7em;
+  color: #C27EDF;
+  background: none;
+  border: 0.07em solid #C27EDF;
+  border-radius: 1em;
+  width: 100%;
+}
+.iniciar-sesion .col-12 form textarea::-webkit-input-placeholder {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 0.8em;
+  color: #C27EDF;
+}
+.iniciar-sesion .col-12 form textarea::-moz-placeholder {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 0.8em;
+  color: #C27EDF;
+}
+.iniciar-sesion .col-12 form textarea:-ms-input-placeholder {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 0.8em;
+  color: #C27EDF;
+}
+.iniciar-sesion .col-12 form textarea::-ms-input-placeholder {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 0.8em;
+  color: #C27EDF;
+}
+.iniciar-sesion .col-12 form textarea::placeholder {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 0.8em;
+  color: #C27EDF;
+}
+.iniciar-sesion .col-12 form textarea:focus {
+  outline: none !important;
+  border: 0.07em solid #6A3381;
+}
+.iniciar-sesion .col-12 form button {
+  display: block;
+  margin: 0.938em 0;
+  padding: 0.5em;
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: 0.7em;
+  color: #C27EDF;
+  background: #FCF9FF;
+  border: 0.07em solid #C27EDF;
+  border-radius: 1em;
+  width: 100%;
+  text-transform: uppercase;
+}
+.iniciar-sesion .col-12 form button:hover {
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: 0.7em;
+  color: #FCF9FF;
+  background: #C27EDF;
+}
+
+.nav-logo-admin {
+  position: fixed;
+  margin: 0;
+  padding: 0.938em;
+  text-align: left;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 0.5em;
+  color: #6A3381;
+}
+.nav-logo-admin a {
+  text-decoration: none;
+  color: #6A3381;
+}
+.nav-logo-admin a span {
+  font-weight: 700;
 }

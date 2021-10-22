@@ -14,6 +14,13 @@ body {
     @include set_text ('Raleway', 400, 2em, $moradoBase);
     text-align: center;
     background-color: $moradoClaro;
+    &::-webkit-scrollbar{
+        width: .3em;
+        background: $moradoClaro;
+    }
+    &::-webkit-scrollbar-thumb{
+        background: $moradoBase;
+    }
 }
 h2{
     margin: 0;
@@ -26,6 +33,9 @@ h2{
 //CLASES
 .min-height{
     min-height: 100vh;
+}
+.min-height-admin{
+    min-height: calc(100vh - 4.3em);
 }
 .container-fluid{
     margin: 0;
@@ -967,4 +977,89 @@ h2{
         
     }
     
+}
+
+/*ADMIN*/
+.iniciar-sesion{
+    margin: auto;
+    width: 40%;
+    padding: 2.5em 0;
+    h1{
+        font-size: 1em;
+        font-weight: $bold;
+        padding: 1em 0;
+    }
+    .col-12{
+        margin: 0;
+        padding: 0 1em;
+        form{
+            input{
+                display: block;
+                margin: .938em 0;
+                padding: .1em .5em;
+                @include set_text("Raleway", $regular, .7em, $moradoLetrasForm);
+                background: none;
+                border: .07em solid $moradoLetrasForm;
+                border-radius: 1em;
+                width: 100%;
+                &:focus{
+                    outline: none !important;
+                    border: .07em solid $moradoBase;
+                }
+                &::placeholder{
+                    @include set_text("Raleway", $regular, .8em, $moradoLetrasForm);
+                }
+            }
+            textarea{
+                display: block;
+                margin: .938em 0;
+                padding: .5em;
+                @include set_text("Raleway", $regular, .7em, $moradoLetrasForm);
+                background: none;
+                border: .07em solid $moradoLetrasForm;
+                border-radius: 1em;
+                width: 100%;
+                &::placeholder{
+                    @include set_text("Raleway", $regular, .8em, $moradoLetrasForm);
+                }
+                &:focus{
+                    outline: none !important;
+                    border: .07em solid $moradoBase;
+                }
+            }
+            button{
+                display: block;
+                margin: .938em 0;
+                padding: .5em;
+                @include set_text("Raleway", $bold, .7em, $moradoLetrasForm);
+                background: $moradoMuyClaro;
+                border: .07em solid $moradoLetrasForm;
+                border-radius: 1em;
+                width: 100%;
+                text-transform: uppercase;
+                &:hover{
+                    @include set_text("Raleway", $bold, .7em, $moradoMuyClaro);
+                    background: $moradoLetrasForm;
+                }
+            }
+        }
+        
+    }
+}
+
+.nav-logo-admin{
+    position: fixed;
+    margin: 0;
+    padding: .938em;
+    text-align: left;
+    width: 100%;
+    height: fit-content;
+    @include set_text ('Raleway', 400, 0.5em, $moradoBase);
+    a{
+        text-decoration: none;
+        color: $moradoBase;
+        span{
+            font-weight: 700;            
+        }
+    }
 }
