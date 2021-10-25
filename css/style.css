@@ -1389,3 +1389,254 @@ h2 {
 .nav-logo-admin a span {
   font-weight: 700;
 }
+.nav-logo-admin button {
+  margin: 0;
+  padding: 0.2em 0.5em;
+  background: none;
+  color: #6A3381;
+  font-weight: 700;
+  border-radius: 0.6em;
+  border: 0.1em solid #6A3381;
+  float: right;
+}
+.nav-logo-admin button:hover {
+  background: #6A3381;
+  color: #F2E7F9;
+}
+
+.admin-dashboard {
+  margin: 0;
+  padding: 2.5em;
+}
+.admin-dashboard h1 {
+  font-weight: 700;
+}
+.admin-dashboard .col-btn-right {
+  padding: 0.7em 10%;
+  text-align: right;
+}
+.admin-dashboard .col-btn-right .btn-dashboard-agregar {
+  padding: 0.3em 1em;
+  display: inline-block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: auto;
+  font-weight: 700;
+  background: #DABEF1;
+}
+.admin-dashboard .col-btn-right .btn-dashboard-agregar img {
+  padding-right: 0.5em;
+  height: 1.1em;
+}
+.admin-dashboard .col-btn-right .btn-dashboard-agregar:hover {
+  background: #FCF9FF;
+}
+.admin-dashboard .tupla {
+  margin: 0;
+  margin-bottom: 0.5em;
+  margin-right: 10%;
+  padding: 0.1em 0.5em 0.3em;
+  border: 0.1em solid #DABEF1;
+  border-radius: 0.7em;
+  text-align: left;
+}
+.admin-dashboard .tupla img {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding-right: 1em;
+  height: 0.7em;
+}
+.admin-dashboard .tupla p {
+  margin: 0;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 0.6em;
+}
+.admin-dashboard .tupla a {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 0.6em;
+  color: #6A3381;
+}
+.admin-dashboard .tupla .col-6 {
+  margin: 0;
+  padding: 0;
+}
+.admin-dashboard .tupla .col-2 {
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+
+.admin-select-box {
+  position: relative;
+}
+.admin-select-box #txt-select-box {
+  display: block;
+  background: #DABEF1;
+  border-radius: 0.7em;
+  -webkit-box-shadow: 0 0.25em 0.625em rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.25em 0.625em rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+.admin-select-box #txt-select-box p {
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: 0.5em;
+  color: #6A3381;
+  display: inline-block;
+  margin: 1em 0;
+  padding: 0;
+  text-align: left;
+}
+.admin-select-box #txt-select-box img {
+  display: inline-block;
+  margin-left: 1em;
+  width: auto;
+  height: 0.3em;
+}
+.admin-select-box .options-container {
+  position: absolute;
+  background: #F3F3F3;
+  width: 100%;
+  padding-top: 2em;
+  border-radius: 1em 0.7em;
+  display: none;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  overflow: hidden;
+  z-index: 0;
+}
+.admin-select-box .options-container .option {
+  display: block;
+}
+.admin-select-box .options-container .option .btn-repo {
+  border: none;
+  font-size: 0.5em;
+  text-align: left;
+}
+.admin-select-box .options-container.active {
+  display: block;
+}
+
+.form-admin .col-12 {
+  margin: auto;
+  padding: 0 10em;
+}
+.form-admin input {
+  margin: 0.5em 0;
+  padding: 0.1em 0.5em;
+  width: 100%;
+  background: none;
+  border: 0.1em solid #C27EDF;
+  border-radius: 0.7em;
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 0.7em;
+  color: #C27EDF;
+}
+.form-admin input::-webkit-input-placeholder {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 1em;
+  color: #C27EDF;
+}
+.form-admin input::-moz-placeholder {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 1em;
+  color: #C27EDF;
+}
+.form-admin input:-ms-input-placeholder {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 1em;
+  color: #C27EDF;
+}
+.form-admin input::-ms-input-placeholder {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 1em;
+  color: #C27EDF;
+}
+.form-admin input::placeholder {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 1em;
+  color: #C27EDF;
+}
+.form-admin input:focus {
+  outline: none !important;
+  border-color: #6A3381;
+}
+.form-admin textarea {
+  margin: 0.5em 0;
+  padding: 0.1em 0.5em;
+  width: 100%;
+  background: none;
+  border: 0.1em solid #C27EDF;
+  border-radius: 0.7em;
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 0.7em;
+  color: #C27EDF;
+}
+.form-admin textarea::-webkit-input-placeholder {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 1em;
+  color: #C27EDF;
+}
+.form-admin textarea::-moz-placeholder {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 1em;
+  color: #C27EDF;
+}
+.form-admin textarea:-ms-input-placeholder {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 1em;
+  color: #C27EDF;
+}
+.form-admin textarea::-ms-input-placeholder {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 1em;
+  color: #C27EDF;
+}
+.form-admin textarea::placeholder {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 1em;
+  color: #C27EDF;
+}
+.form-admin textarea:focus {
+  outline: none !important;
+  border-color: #6A3381;
+}
+.form-admin button {
+  display: block;
+  margin: 0.938em 0;
+  padding: 0.5em;
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: 0.7em;
+  color: #C27EDF;
+  background: #FCF9FF;
+  border: 0.07em solid #C27EDF;
+  border-radius: 1em;
+  width: 100%;
+  text-transform: uppercase;
+}
+.form-admin button:hover {
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: 0.7em;
+  color: #FCF9FF;
+  background: #C27EDF;
+}

@@ -1062,4 +1062,176 @@ h2{
             font-weight: 700;            
         }
     }
+    button{
+        margin: 0;
+        padding: .2em .5em;
+        background: none;
+        color: $moradoBase;
+        font-weight: $bold;
+        border-radius: .6em;
+        border: .1em solid $moradoBase;
+        float: right;
+        &:hover{
+            background: $moradoBase;
+            color: $moradoClaro;
+        }
+    }
+}
+.admin-dashboard{
+    margin: 0;
+    padding: 2.5em;
+    h1{
+        font-weight: $bold;
+    }
+    .col-btn-right{
+        padding: .7em 10%;
+        text-align: right;
+        .btn-dashboard-agregar{
+            padding: .3em 1em;
+            display: inline-block;
+            width: fit-content;
+            height: auto;
+            font-weight: $bold;
+            background: $moradoMedio;
+            img{
+                padding-right: .5em;
+                height: 1.1em;
+            }
+            &:hover{
+              background: $moradoMuyClaro;
+            }
+        }
+    }
+    .tupla{
+        margin: 0;
+        margin-bottom: .5em;
+        margin-right: 10%;
+        padding: .1em .5em .3em;
+        border: .1em solid $moradoMedio;
+        border-radius: .7em;
+        text-align: left;
+        img{
+            display: inline-flex;
+            padding-right: 1em;
+            height: .7em;
+        }
+        p{
+            margin: 0;
+            display: inline-flex;
+            font-size: .6em;
+        }
+        a{
+            display: inline-flex;
+            font-size: .6em;
+            color: $moradoBase;
+        }
+        .col-6{
+            margin: 0;
+            padding: 0;
+        }
+        .col-2{
+            margin: 0;
+            padding: 0;
+            text-align: right;
+        }
+    }
+}
+.admin-select-box{
+    position: relative;
+    #txt-select-box{
+        display: block;
+        background: $moradoMedio;
+        border-radius: .7em;
+        box-shadow: 0 .25em .625em rgba(0, 0, 0, 0.1);
+        z-index: 2;
+        p{
+            @include set_text("Raleway", $bold, .5em, $moradoBase);
+            display: inline-block;
+            margin: 1em 0;
+            padding: 0;
+            text-align: left;
+        }
+        img{
+            display: inline-block;
+            margin-left: 1em;
+            width: auto;
+            height: .3em;
+        }
+    }
+    .options-container{
+        position: absolute;
+        background: $blanco;
+        width: 100%;
+        padding-top: 2em;
+        border-radius: 1em .7em;
+        display: none;
+        transition: all .5s;
+        overflow: hidden;
+        z-index: 0;
+        .option{
+            display: block;
+            .btn-repo{
+                border: none;
+                font-size: .5em;
+                text-align: left;
+            }
+        }
+    }
+    .options-container.active{
+        display: block;
+    }
+}
+
+.form-admin{
+    .col-12{
+        margin: auto;
+        padding: 0 10em;
+    }
+    input{
+        margin: .5em 0;
+        padding: .1em .5em;
+        width: 100%;
+        background: none;
+        border: .1em solid $moradoLetrasForm;
+        border-radius: .7em;
+        @include set_text('Raleway', $regular, .7em, $moradoLetrasForm);
+        &::placeholder{
+            @include set_text('Raleway', $regular, 1em, $moradoLetrasForm);
+        }
+        &:focus{
+            outline: none !important;
+            border-color: $moradoBase;
+        }
+    }
+    textarea{
+        margin: .5em 0;
+        padding: .1em .5em;
+        width: 100%;
+        background: none;
+        border: .1em solid $moradoLetrasForm;
+        border-radius: .7em;
+        @include set_text('Raleway', $regular, .7em, $moradoLetrasForm);
+        &::placeholder{
+            @include set_text('Raleway', $regular, 1em, $moradoLetrasForm);
+        }
+        &:focus{
+            outline: none !important;
+            border-color: $moradoBase;
+        }
+    }
+    button{
+        display: block;
+        margin: .938em 0;
+        padding: .5em;
+        @include set_text("Raleway", $bold, .7em, $moradoLetrasForm);
+        background: $moradoMuyClaro;
+        border: .07em solid $moradoLetrasForm;
+        border-radius: 1em;
+        width: 100%;
+        text-transform: uppercase;
+        &:hover{
+            @include set_text("Raleway", $bold, .7em, $moradoMuyClaro);
+            background: $moradoLetrasForm;
+        }
+    }
 }
