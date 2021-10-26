@@ -17,7 +17,7 @@
 
         <nav class="nav-logo-admin">
             <a class="logo-nav" href="#"><span>PUNTO VIOLETA</span></a>
-            <button>Cerrar sesión</button>
+            <a class="signout" href="{{ route('signout') }}">Cerrar sesión</a>
         </nav>
 
         <!-- DASHBOARD -->

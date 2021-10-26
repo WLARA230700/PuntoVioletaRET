@@ -16,7 +16,7 @@
     <section class="container-fluid min-height">
 
         <nav class="nav-logo-admin">
-            <a class="logo-nav" href="./admin_login.html"><span>PUNTO VIOLETA</span></a>
+            <a class="logo-nav" href="/login"><span>PUNTO VIOLETA</span></a>
         </nav>
 
         <!-- CONTACTO -->
@@ -26,9 +26,10 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <form action="">
-                        <input type="text" placeholder="Nombre usuario *">
-                        <input type="password" placeholder="Contraseña *">
+                    <form method="POST" action="{{ route('loginVerify') }}">
+                        @csrf
+                        <input name="email" type="email" placeholder="Email *">
+                        <input name="password" type="password" placeholder="Contraseña *">
                         <button type="submit">Enviar</button>
                     </form>
                 </div>

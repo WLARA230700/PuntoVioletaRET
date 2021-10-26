@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,27 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+Route::get('/temas_interes', function () {
+    return view('temas_interes');
+});
+Route::get('/derechos', function () {
+    return view('derechos');
+});
+Route::get('/redes_comunitarias', function () {
+    return view('redes_comunitarias');
+});
+Route::get('/colaboradores', function () {
+    return view('colaboradores');
+});
+Route::get('/galeria', function () {
+    return view('galeria');
+});
+
+
+//ADMIN
+Route::get('/dashboard', [AdminController::class, 'dashboard']);
+Route::get('/login', [AdminController::class, 'index'])->name('login');
+Route::post('/loginVerify', [AdminController::class, 'login'])->name('loginVerify');
+Route::get('/signout', [AdminController::class, 'signOut'])->name('signout');
