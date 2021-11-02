@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DerechosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,3 +40,6 @@ Route::get('/dashboard', [AdminController::class, 'dashboard']);
 Route::get('/login', [AdminController::class, 'index'])->name('login');
 Route::post('/loginVerify', [AdminController::class, 'login'])->name('loginVerify');
 Route::get('/signout', [AdminController::class, 'signOut'])->name('signout');
+Route::get('/addRight', [DerechosController::class, 'index'])->name('addRight');
+Route::post('/addRightPost', [DerechosController::class, 'store'])->name('addRightPost');
+Route::get('/showDerechos', [DerechosController::class, 'showDerechos'])->name('showDerechos');

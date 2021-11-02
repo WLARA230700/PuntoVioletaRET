@@ -1482,6 +1482,7 @@ h2 {
   -webkit-box-shadow: 0 0.25em 0.625em rgba(0, 0, 0, 0.1);
           box-shadow: 0 0.25em 0.625em rgba(0, 0, 0, 0.1);
   z-index: 2;
+  cursor: pointer;
 }
 .admin-select-box #txt-select-box p {
   font-family: "Raleway";
@@ -1504,6 +1505,7 @@ h2 {
   background: #F3F3F3;
   width: 100%;
   padding-top: 2em;
+  padding-bottom: .5em;
   border-radius: 1em 0.7em;
   display: none;
   -webkit-transition: all 0.5s;
@@ -1513,6 +1515,22 @@ h2 {
 }
 .admin-select-box .options-container .option {
   display: block;
+}
+.admin-select-box .options-container .option input{
+  display: none;
+}
+.admin-select-box .options-container .option label{
+  text-align: left;
+  cursor: pointer;
+  font-size: .5em;
+  width: 100%;
+  border-radius: .7em;
+  margin: 0;
+  padding: .5em 1em;
+}
+.admin-select-box .options-container .option label:hover{
+  background-color: #DABEF1;
+  font-weight: 700;
 }
 .admin-select-box .options-container .option .btn-repo {
   border: none;
@@ -1639,4 +1657,9 @@ h2 {
   font-size: 0.7em;
   color: #FCF9FF;
   background: #C27EDF;
+}
+.mensaje-error{
+  color: red;
+  font-size: .5em;
+  font-weight: 700;
 }

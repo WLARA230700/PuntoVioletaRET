@@ -1,23 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('admin.admin_layout')
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../css/style.css">
-    <title>Inicio - Punto Violeta</title>
-</head>
-
-<body>
-
-    <section class="container-fluid min-height">
-
-        <nav class="nav-logo-admin">
-            <a class="logo-nav" href="./admin_login.html"><span>PUNTO VIOLETA</span></a>
-        </nav>
+@section('admin_content')
 
         <!-- FORMULARIO -->
         <div class="row form-admin min-height">
@@ -26,55 +9,47 @@
             </div>
 
             <div class="col-12">
-                <form action="#">
-                    
+                <form id="formId" action="{{ route('addRightPost') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <div class="row admin-select-box">
                         <div id="txt-select-box">
-                            <p>Documentación</p><img src="../../imgs/svg/icon_dropdown.svg" alt="icon_dropdown">
+                            <p id="p-select-box">Documentación</p><img src="../../imgs/svg/icon_dropdown.svg" alt="icon_dropdown">
                         </div>
                         <div class="options-container">
-                            <div onclick="changeSelected(id)" class="col option"><span class="btn-repo">Documentación</span></div>
-                            <div class="col option"><span class="btn-repo">Salud</span></div>
-                            <div class="col option"><span class="btn-repo">Educación</span></div>
-                            <div class="col option"><span class="btn-repo">Vivienda</span></div>
-                            <div class="col option"><span class="btn-repo">Laborales</span></div>
-                            <div class="col option"><span class="btn-repo">Permisos laborales</span></div>
+                            <div onclick="changeSelected('id_documentacion')" class="col option">
+                                <input class="btn-repo" id="Documentacion" type="radio" name="tipo_derecho" value="Documentación" checked>
+                                <label id="id_documentacion" for="Documentacion">Documentación</label>
+                            </div>
+                            <div onclick="changeSelected('id_salud')" class="col option">
+                                <input class="btn-repo" id="Salud" type="radio" name="tipo_derecho" value="Salud">
+                                <label id="id_salud" for="Salud">Salud</label>
+                            </div>
+                            <div onclick="changeSelected('id_educacion')" class="col option">
+                                <input class="btn-repo" id="Educacion" type="radio" name="tipo_derecho" value="Educación">
+                                <label id="id_educacion" for="Educacion">Educación</label>
+                            </div>
+                            <div onclick="changeSelected('id_vivienda')" class="col option">
+                                <input class="btn-repo" id="Vivienda" type="radio" name="tipo_derecho" value="Vivienda">
+                                <label id="id_vivienda" for="Vivienda">Vivienda</label>
+                            </div>
+                            <div onclick="changeSelected('id_laborales')" class="col option">
+                                <input class="btn-repo" id="Laborales" type="radio" name="tipo_derecho" value="Laborales">
+                                <label id="id_laborales" for="Laborales">Laborales</label>
+                            </div>
+                            <div onclick="changeSelected('id_permisos_laborales')" class="col option">
+                                <input class="btn-repo" id="Permisos laborales" type="radio" name="tipo_derecho" value="Permisos laborales">
+                                <label id="id_permisos_laborales" for="Permisos laborales">Permisos laborales</label>
+                            </div>
                         </div>
                     </div>
 
-                    <input type="text" placeholder="Título *">
+                    <input type="text" placeholder="Título *" name="titulo">
                     <textarea name="descripcion" id="descripcion-derecho" cols="30" rows="5" placeholder="Descripción *"></textarea>
-                    <input type="file"></input>
-                    <button type="submit">Agregar</button>
+                    <input name="archivo" type="file" onchange="verificarDerecho(this)"></input>
+                    <button id="btnSubmitAgregarDerecho" type="submit" disabled>Agregar</button>
                 </form>
             </div>
         </div>
         <!-- FORMULARIO -->
 
-        <!-- FOTTER -->
-        <footer class="row footer">
-            <div class="col-sm left-text">
-                <p>©2021</p>
-                <p>Todos los derechos reservados</p>
-            </div>
-            <div class="col-sm icons-footer">
-                <img src="../../imgs/svg/icon_punto-violeta.svg" alt="Logo Punto Violeta">
-            </div>
-            <div class="col-sm icons-footer">
-                <img src="../../imgs/svg/icon_ret.svg" alt="Logo RET">
-            </div> 
-            <div class="col-sm right-text">
-                <p>By Willy Lara Campos</p>
-                <p>By Ronald Chaves González</p>
-                <p>By Benjamín Álvarez Rodríguez</p>
-            </div>
-        </footer>
-        <!-- FOTTER -->
-
-    </section>
-
-    <script src="../../js/main.js"></script>
-
-</body>
-
-</html>
+        @endsection

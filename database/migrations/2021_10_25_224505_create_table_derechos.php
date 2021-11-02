@@ -13,7 +13,7 @@ class CreateTableDerechos extends Migration
      */
     public function up()
     {
-        Schema::create('table_derechos', function (Blueprint $table) {
+        Schema::create('derechos', function (Blueprint $table) {
             $table->id();
             $table->enum('tipo_derecho', ['Documentación', 'Salud', 'Educación', 'Vivienda', 'Laborales', 'Permisos Laborales']);
             $table->string('titulo');
@@ -31,6 +31,6 @@ class CreateTableDerechos extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_derechos');
+        Schema::dropIfExists('derechos');
     }
 }

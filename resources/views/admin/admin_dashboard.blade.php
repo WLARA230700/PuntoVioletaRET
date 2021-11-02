@@ -1,53 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('admin.admin_layout')
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../css/style.css">
-    <title>Inicio - Punto Violeta</title>
-</head>
+@section('admin_content')
+<!-- DASHBOARD -->
 
-<body>
+<div class="row admin-dashboard">
+    <div class="col-12">
+        <h1>Administrador</h1>
+    </div>
+    
+    <div class="col-12 col-btn-right">
+        <a href="{{ route('addRight') }}" class="btn-repo btn-dashboard-agregar"><span><img src="../../imgs/svg/icon_new_document.svg" alt="Agregar Derecho"></span>Agregar</a>
+        <a href="./admin_agregar_imagen.html" class="btn-repo btn-dashboard-agregar"><span><img src="../../imgs/svg/icon_new_img.svg" alt="documento"></span>Agregar</a> 
+    </div>
 
-    <section class="container-fluid min-height">
+    <div class="col-2">
+        <a href="{{ route('showDerechos') }}" class="btn-repo">Documentos</a>
+        <a href="#" class="btn-repo">Infografías</a>
+        <a href="#" class="btn-repo">Fotografías</a>
+    </div>
 
-        <nav class="nav-logo-admin">
-            <a class="logo-nav" href="#"><span>PUNTO VIOLETA</span></a>
-            <a class="signout" href="{{ route('signout') }}">Cerrar sesión</a>
-        </nav>
+    <div class="col-10">
+        @if (!empty($derechos))
 
-        <!-- DASHBOARD -->
-
-        <div class="row admin-dashboard">
-            <div class="col-12">
-                <h1>Administrador</h1>
-            </div>
-            
-            <div class="col-12 col-btn-right">
-                <a href="./admin_agregar_derecho.html" class="btn-repo btn-dashboard-agregar"><span><img src="../../imgs/svg/icon_new_document.svg" alt="documento"></span>Agregar</a>
-                <a href="./admin_agregar_imagen.html" class="btn-repo btn-dashboard-agregar"><span><img src="../../imgs/svg/icon_new_img.svg" alt="documento"></span>Agregar</a> 
-            </div>
-
-            <div class="col-2">
-                <a href="#" class="btn-repo">Documentos</a>
-                <a href="#" class="btn-repo">Infografías</a>
-                <a href="#" class="btn-repo">Fotografías</a>
-            </div>
-
-            <div class="col-10">
+            @foreach($derechos as $derecho)
                 <!--Tupla-->
                 <div class="row tupla">
                     <div class="col-6">
                         <img src="../../imgs/svg/document_icon.svg" alt="documento">
-                        <p>Título del documento</p>
+                        <p>{{ $derecho->titulo }}</p>
                     </div>
 
+                    <?php
+                        $fecha = preg_split("/[:|\s-]/", $derecho->created_at);
+                        $ano = $fecha[0];
+                        $mes = $fecha[1];
+                        $diaNum = $fecha[2];
+                    ?>
+
                     <div class="col-2">
-                        <p>25/04/21</p>
+                        <p><?php echo $diaNum . "/" . $mes . "/" . $ano?></p>
                     </div>
                     <div class="col-2">
                         <a href="#">Modificar</a>
@@ -56,86 +47,79 @@
                         <a href="#">Eliminar</a>
                     </div>
                 </div>
+                <!--Tupla-->
+            @endforeach
+        @endif
+        <!--Tupla-->
+        <div class="row tupla">
+            <div class="col-6">
+                <img src="../../imgs/svg/document_icon.svg" alt="documento">
+                <p>Título del documento</p>
+            </div>
 
-                <div class="row tupla">
-                    <div class="col-6">
-                        <img src="../../imgs/svg/document_icon.svg" alt="documento">
-                        <p>Título del documento</p>
-                    </div>
-
-                    <div class="col-2">
-                        <p>25/04/21</p>
-                    </div>
-                    <div class="col-2">
-                        <a href="#">Modificar</a>
-                    </div>
-                    <div class="col-2">
-                        <a href="#">Eliminar</a>
-                    </div>
-                </div>
-
-                <div class="row tupla">
-                    <div class="col-6">
-                        <img src="../../imgs/svg/document_icon.svg" alt="documento">
-                        <p>Título del documento</p>
-                    </div>
-
-                    <div class="col-2">
-                        <p>25/04/21</p>
-                    </div>
-                    <div class="col-2">
-                        <a href="#">Modificar</a>
-                    </div>
-                    <div class="col-2">
-                        <a href="#">Eliminar</a>
-                    </div>
-                </div>
-
-                <div class="row tupla">
-                    <div class="col-6">
-                        <img src="../../imgs/svg/document_icon.svg" alt="documento">
-                        <p>Título del documento</p>
-                    </div>
-
-                    <div class="col-2">
-                        <p>25/04/21</p>
-                    </div>
-                    <div class="col-2">
-                        <a href="#">Modificar</a>
-                    </div>
-                    <div class="col-2">
-                        <a href="#">Eliminar</a>
-                    </div>
-                </div>
+            <div class="col-2">
+                <p>25/04/21</p>
+            </div>
+            <div class="col-2">
+                <a href="#">Modificar</a>
+            </div>
+            <div class="col-2">
+                <a href="#">Eliminar</a>
             </div>
         </div>
 
-        <!-- DASHBOARD -->
-
-        <!-- FOTTER -->
-        <footer class="row footer">
-            <div class="col-sm left-text">
-                <p>©2021</p>
-                <p>Todos los derechos reservados</p>
+        <div class="row tupla">
+            <div class="col-6">
+                <img src="../../imgs/svg/document_icon.svg" alt="documento">
+                <p>Título del documento</p>
             </div>
-            <div class="col-sm icons-footer">
-                <img src="../../imgs/svg/icon_punto-violeta.svg" alt="Logo Punto Violeta">
+
+            <div class="col-2">
+                <p>25/04/21</p>
             </div>
-            <div class="col-sm icons-footer">
-                <img src="../../imgs/svg/icon_ret.svg" alt="Logo RET">
-            </div> 
-            <div class="col-sm right-text">
-                <p>By Willy Lara Campos</p>
-                <p>By Ronald Chaves González</p>
-                <p>By Benjamín Álvarez Rodríguez</p>
+            <div class="col-2">
+                <a href="#">Modificar</a>
             </div>
-        </footer>
-        <!-- FOTTER -->
+            <div class="col-2">
+                <a href="#">Eliminar</a>
+            </div>
+        </div>
 
-    </section>
+        <div class="row tupla">
+            <div class="col-6">
+                <img src="../../imgs/svg/document_icon.svg" alt="documento">
+                <p>Título del documento</p>
+            </div>
 
-    <script src="./js/main.js"></script>
+            <div class="col-2">
+                <p>25/04/21</p>
+            </div>
+            <div class="col-2">
+                <a href="#">Modificar</a>
+            </div>
+            <div class="col-2">
+                <a href="#">Eliminar</a>
+            </div>
+        </div>
 
-</body>
+        <div class="row tupla">
+            <div class="col-6">
+                <img src="../../imgs/svg/document_icon.svg" alt="documento">
+                <p>Título del documento</p>
+            </div>
 
-</html>
+            <div class="col-2">
+                <p>25/04/21</p>
+            </div>
+            <div class="col-2">
+                <a href="#">Modificar</a>
+            </div>
+            <div class="col-2">
+                <a href="#">Eliminar</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- DASHBOARD -->
+@endsection
