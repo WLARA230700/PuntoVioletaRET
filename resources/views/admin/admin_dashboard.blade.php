@@ -10,7 +10,7 @@
     
     <div class="col-12 col-btn-right">
         <a href="{{ route('addRight') }}" class="btn-repo btn-dashboard-agregar"><span><img src="../../imgs/svg/icon_new_document.svg" alt="Agregar Derecho"></span>Agregar</a>
-        <a href="./admin_agregar_imagen.html" class="btn-repo btn-dashboard-agregar"><span><img src="../../imgs/svg/icon_new_img.svg" alt="documento"></span>Agregar</a> 
+        <a href="" class="btn-repo btn-dashboard-agregar"><span><img src="../../imgs/svg/icon_new_img.svg" alt="documento"></span>Agregar</a> 
     </div>
 
     <div class="col-2">
@@ -41,7 +41,7 @@
                         <p><?php echo $diaNum . "/" . $mes . "/" . $ano?></p>
                     </div>
                     <div class="col-2">
-                        <a href="#">Modificar</a>
+                        <a href="{{ route('modifyRight', ['id' => $derecho->id]) }}">Modificar</a>
                     </div>
                     <div class="col-2">
                         <a href="#">Eliminar</a>

@@ -42,4 +42,6 @@ Route::post('/loginVerify', [AdminController::class, 'login'])->name('loginVerif
 Route::get('/signout', [AdminController::class, 'signOut'])->name('signout');
 Route::get('/addRight', [DerechosController::class, 'index'])->name('addRight');
 Route::post('/addRightPost', [DerechosController::class, 'store'])->name('addRightPost');
-Route::get('/showDerechos', [DerechosController::class, 'showDerechos'])->name('showDerechos');
+Route::get('/showRights', [DerechosController::class, 'showDerechos'])->name('showDerechos');
+Route::get('/modifyRight/{id}', [DerechosController::class, 'edit'])->name('modifyRight');
+Route::post('/modifyRightPost', [DerechosController::class, 'update'])->name('modifyRightPost');
