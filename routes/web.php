@@ -22,7 +22,6 @@ Route::get('/', function () {
 Route::get('/temas_interes', function () {
     return view('temas_interes');
 });
-
 Route::get('/redes_comunitarias', function () {
     return view('redes_comunitarias');
 });
@@ -36,6 +35,7 @@ Route::get('/galeria', function () {
 
 // DB - USER
 Route::get('/derechos/{tipo}', [DerechosController::class, 'showDerechosUser'])->name('derechos');
+Route::get('/galeria/{tipo}', [ImagenesController::class, 'showImagenesUser'])->name('galeria');
 
 
 //ADMIN

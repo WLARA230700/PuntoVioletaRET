@@ -91,7 +91,7 @@
                     </div>                    
                     <div class="row">            
                             @foreach($derechos as $derecho)
-                                <div class="col-sm-4 card-derechos" data-bs-toggle="modal" data-bs-target="#modalDocumentos">
+                                <div class="col-sm-4 card-derechos" data-bs-toggle="modal" data-bs-target="#modal{{ $derecho->id }}">
                                     <img src="../imgs/svg/document_icon.svg" alt="Documento">
                                     <p class="card-p">{{$derecho->titulo}}</p>
                                 </div>
@@ -109,26 +109,26 @@
         <!-- HEADER -->
 
         <!-- MODAL -->
-        <div class="modal fade" id="modalDocumentos" tabindex="-1" role="dialog"
-            aria-labelledby="derecho" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modales" role="document">
-                <div class="modal-content">
-                    <div class="row">
-                        <div class="col-sm-6 col-imagen-modal">
-                            <span class="span-modal-left d-flex align-content-center flex-wrap"><img src="../imgs/svg/icon_document.svg" alt=""></span>
-                        </div>
-                        <div class="col-sm-6">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Derecho 1</h5>
-                            <div class="descripcion-modal">
-                                <p>Descripción del documento
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        @foreach($derechos as $derecho)
+            <div class="modal fade" id="modal{{ $derecho->id }}" tabindex="-1" role="dialog"
+                aria-labelledby="derecho" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modales" role="document">
+                    <div class="modal-content">
+                        <div class="row">
+                            <div class="col-sm-6 col-imagen-modal">
+                                <span class="span-modal-left d-flex align-content-center flex-wrap"><img src="../imgs/svg/icon_document.svg" alt=""></span>
                             </div>
-                            
-                            <button type="button" class="btn-repo"><span><img src="../imgs/svg/icon_download.svg" alt="Descargar"></span>Descargar</button>
+                            <div class="col-sm-6">
+                                <h5 class="modal-title" id="exampleModalLongTitle">{{ $derecho->titulo }}</h5>
+                                <div class="descripcion-modal">
+                                    <p>{{ $derecho->descripcion }}</p>
+                                </div>                                
+                                <button type="button" class="btn-repo"><span><img src="../imgs/svg/icon_download.svg" alt="Descargar"></span>Descargar</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        @endforeach        
         <!-- MODAL -->
 @endsection

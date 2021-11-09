@@ -88,6 +88,11 @@ class ImagenesController extends Controller
         return view('admin.admin_dashboard', compact('infografias'));
     }
 
+    public function showImagenesUser($tipo){
+        $imagenes = DB::select('SELECT * FROM imagenes WHERE tipo_imagen = "'.$tipo.'" ORDER BY created_at DESC');
+        return view('galeria', compact('imagenes'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
