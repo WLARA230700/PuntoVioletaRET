@@ -23,6 +23,13 @@ function verificarDerecho(derecho){
     }
 }
 
+function verificarDerechoModificar(derecho){
+    let archivo = derecho.files[0];
+    if(archivo != null){
+        verificarDerecho(derecho);
+    }
+}
+
 function mostrarMenu(){
     let menu = document.getElementsByClassName("nav-list")[0];
     let menuHam = document.getElementsByClassName("menu-ham")[0];

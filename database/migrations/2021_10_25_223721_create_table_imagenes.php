@@ -13,7 +13,7 @@ class CreateTableImagenes extends Migration
      */
     public function up()
     {
-        Schema::create('table_imagenes', function (Blueprint $table) {
+        Schema::create('imagenes', function (Blueprint $table) {
             $table->id();
             $table->enum('tipo_imagen', ['Infografía', 'Fotografía']);
             $table->string('titulo');
@@ -31,6 +31,6 @@ class CreateTableImagenes extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_imagenes');
+        Schema::dropIfExists('imagenes');
     }
 }

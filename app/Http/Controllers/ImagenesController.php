@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Derecho;
+use App\Models\Imagen;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Carbon\Carbon;
-use Illuminate\Support\Facades\Log;
 
-class DerechosController extends Controller
+class ImagenesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +15,7 @@ class DerechosController extends Controller
      */
     public function index()
     {
-        return view('admin.admin_agregar_derecho');
+        return view('admin.admin_agregar_imagen');
     }
 
     /**
@@ -39,10 +37,10 @@ class DerechosController extends Controller
     public function store(Request $request)
     {
         $request -> validate([
-            'tipo_derecho' => 'required',
+            'tipo_imagen' => 'required',
             'titulo' => 'required',
             'descripcion' => 'required',
-            'archivo' => 'required'
+            'archivo' => 'required|image|mimes:jpeg,png,jpg|max:2048'
         ]);
 
         $data = $request -> all();
@@ -50,18 +48,14 @@ class DerechosController extends Controller
 
         $data['id_admin'] = 1;
         $timestamps = date('Y-m-d H:i:s');
-        //$data['created_at'] = time();
-        //$data['updated_at'] = time();
 
-        $filename = 'derecho-'.$data['tipo_derecho'].time().'.'.$file -> getClientOriginalExtension();
+        $filename = 'imagen-'.$data['tipo_imagen'].time().'.'.$file -> getClientOriginalExtension();
         $data['archivo'] = $filename;
 
-        $path = $file -> storeAs('public/derechos', $filename);
+        $path = $file -> storeAs('public/imagenes', $filename);
 
-        //Derecho::create($data);
-
-        DB::table("derechos")->insert([
-            'tipo_derecho' => $data['tipo_derecho'],
+        DB::table("imagenes")->insert([
+            'tipo_imagen' => $data['tipo_imagen'],
             'titulo' => $data['titulo'],
             'descripcion' => $data['descripcion'],
             'archivo' => $data['archivo'],
@@ -76,67 +70,68 @@ class DerechosController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Derecho  $derecho
+     * @param  \App\Models\Imagen  $imagen
      * @return \Illuminate\Http\Response
      */
-    public function show(Derecho $derecho)
+    public function show(Imagen $imagen)
     {
         //
     }
 
-    public function showDerechos(){
-        $derechos = DB::select('SELECT * FROM derechos ORDER BY created_at DESC');
-        return view('admin.admin_dashboard', compact('derechos'));
+    public function showFotografias(){
+        $fotografias = DB::select('SELECT * FROM imagenes WHERE tipo_imagen = "Fotografía" ORDER BY created_at DESC');
+        return view('admin.admin_dashboard', compact('fotografias'));
+    }
+
+    public function showInfografias(){
+        $infografias = DB::select('SELECT * FROM imagenes WHERE tipo_imagen = "Infografía" ORDER BY created_at DESC');
+        return view('admin.admin_dashboard', compact('infografias'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Derecho  $derecho
+     * @param  \App\Models\Imagen  $imagen
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $derecho = DB::select('SELECT * FROM derechos WHERE id = '.$id);
-        return view('admin.admin_modificar_derecho', compact('derecho'));
+        $imagen = DB::select('SELECT * FROM imagenes WHERE id = '.$id);
+        return view('admin.admin_modificar_imagen', compact('imagen'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Derecho  $derecho
+     * @param  \App\Models\Imagen  $imagen
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, Imagen $imagen)
     {
         $request -> validate([
-            'tipo_derecho' => 'required',
+            'tipo_imagen' => 'required',
             'titulo' => 'required',
-            'descripcion' => 'required'
+            'descripcion' => 'required',
+            'archivo' => 'image|mimes:jpeg,png,jpg|max:2048'
         ]);
 
         $data = $request -> all();
         $file = $request -> file('archivo');
 
-        $derecho = DB::select('SELECT * FROM derechos WHERE id = '.$data['id']);
+        $imagen = DB::select('SELECT * FROM imagenes WHERE id = '.$data['id']);
 
         $data['id_admin'] = 1;
         $timestamps = date('Y-m-d H:i:s');
 
         if ($file != null) {
 
-            $data['archivo'] = $derecho[0]->archivo;
+            $data['archivo'] = $imagen[0]->archivo;
 
-            $path = $file->storeAs('public/derechos', $data['archivo']);
+            $path = $file->storeAs('public/imagenes', $data['archivo']);
 
-            /*$filename = 'derecho-'.$data['tipo_derecho'].time().'.'.$file -> getClientOriginalExtension();
-            $data['archivo'] = $filename;
-
-            $path = $file->storeAs('public/derechos', $filename);*/
-
-            DB::table('derechos')->where('id', $data['id'])->update([
-                'tipo_derecho' => $data['tipo_derecho'],
+            DB::table('imagenes')->where('id', $data['id'])->update([
+                'tipo_imagen' => $data['tipo_imagen'],
                 'titulo' => $data['titulo'],
                 'descripcion' => $data['descripcion'],
                 'archivo' => $data['archivo'],
@@ -147,8 +142,8 @@ class DerechosController extends Controller
 
         }else{
 
-            DB::table('derechos')->where('id', $data['id'])->update([
-                'tipo_derecho' => $data['tipo_derecho'],
+            DB::table('imagenes')->where('id', $data['id'])->update([
+                'tipo_imagen' => $data['tipo_imagen'],
                 'titulo' => $data['titulo'],
                 'descripcion' => $data['descripcion'],
                 'id_admin' => $data['id_admin'],
@@ -162,12 +157,12 @@ class DerechosController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Derecho  $derecho
+     * @param  \App\Models\Imagen  $imagen
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {       
-        DB::table('derechos')->whereId($id)->delete();
+    {
+        DB::table('imagenes')->whereId($id)->delete();
 
         return redirect('dashboard');
     }
