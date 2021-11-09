@@ -749,6 +749,14 @@ h2 {
   color: #6A3381;
 }
 
+.btn-repo-selected {
+  background: #DABEF1;
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: 0.7em;
+  color: #6A3381;
+}
+
 .card-derechos {
   padding: 0.5em;
   margin: 0 0.5em 0.5em 0;

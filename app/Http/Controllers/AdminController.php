@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Hash;
 use Session;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -38,7 +39,8 @@ class AdminController extends Controller
 
     public function dashboard(){
         if(Auth::check()){
-            return view('admin.admin_dashboard');
+            $derechos = DB::select('SELECT * FROM derechos ORDER BY created_at DESC');
+            return view('admin.admin_dashboard', compact('derechos'));
         }
         return redirect('login');
     }
