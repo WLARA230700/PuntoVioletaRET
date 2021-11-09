@@ -89,6 +89,11 @@ class DerechosController extends Controller
         return view('admin.admin_dashboard', compact('derechos'));
     }
 
+    public function showDerechosUser($tipo){
+        $derechos = DB::select('SELECT * FROM derechos WHERE tipo_derecho = "'.$tipo.'" ORDER BY created_at DESC');
+        return view('derechos', compact('derechos'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

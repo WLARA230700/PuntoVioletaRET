@@ -11,57 +11,94 @@
                             <p>Documentación</p><img src="../imgs/svg/icon_dropdown.svg" alt="icon_dropdown">
                         </div>
                         <div class="options-container">
-                            <div class="col option"><a href="#" class="btn-repo">Documentación</a></div>
-                            <div class="col option"><a href="#" class="btn-repo">Salud</a></div>
-                            <div class="col option"><a href="#" class="btn-repo">Educación</a></div>
-                            <div class="col option"><a href="#" class="btn-repo">Vivienda</a></div>
-                            <div class="col option"><a href="#" class="btn-repo">Laborales</a></div>
-                            <div class="col option"><a href="#" class="btn-repo">Permisos Laborales</a></div>
+                            @if(!empty($derechos))
+                                @switch($derechos[0]->tipo_derecho)
+                                    @case("Documentación")
+                                    <div class="col option"><a href="/derechos/Documentación" class="btn-repo btn-repo-selected">Documentación</a></div>
+                                    <div class="col option"><a href="/derechos/Salud" class="btn-repo">Salud</a></div>
+                                    <div class="col option"><a href="/derechos/Educación" class="btn-repo">Educación</a></div>
+                                    <div class="col option"><a href="/derechos/Vivienda" class="btn-repo">Vivienda</a></div>
+                                    <div class="col option"><a href="/derechos/Laborales" class="btn-repo">Laborales</a></div>
+                                    <div class="col option"><a href="/derechos/Permisos Laborales" class="btn-repo">Permisos Laborales</a></div>
+                                    @break
+
+                                    @case("Salud")
+                                    <div class="col option"><a href="/derechos/Documentación" class="btn-repo">Documentación</a></div>
+                                    <div class="col option"><a href="/derechos/Salud" class="btn-repo btn-repo-selected">Salud</a></div>
+                                    <div class="col option"><a href="/derechos/Educación" class="btn-repo">Educación</a></div>
+                                    <div class="col option"><a href="/derechos/Vivienda" class="btn-repo">Vivienda</a></div>
+                                    <div class="col option"><a href="/derechos/Laborales" class="btn-repo">Laborales</a></div>
+                                    <div class="col option"><a href="/derechos/Permisos Laborales" class="btn-repo">Permisos Laborales</a></div>
+                                    @break
+
+                                    @case("Educación")
+                                    <div class="col option"><a href="/derechos/Documentación" class="btn-repo">Documentación</a></div>
+                                    <div class="col option"><a href="/derechos/Salud" class="btn-repo">Salud</a></div>
+                                    <div class="col option"><a href="/derechos/Educación" class="btn-repo btn-repo-selected">Educación</a></div>
+                                    <div class="col option"><a href="/derechos/Vivienda" class="btn-repo">Vivienda</a></div>
+                                    <div class="col option"><a href="/derechos/Laborales" class="btn-repo">Laborales</a></div>
+                                    <div class="col option"><a href="/derechos/Permisos Laborales" class="btn-repo">Permisos Laborales</a></div>
+                                    @break
+
+                                    @case("Vivienda")
+                                    <div class="col option"><a href="/derechos/Documentación" class="btn-repo">Documentación</a></div>
+                                    <div class="col option"><a href="/derechos/Salud" class="btn-repo">Salud</a></div>
+                                    <div class="col option"><a href="/derechos/Educación" class="btn-repo">Educación</a></div>
+                                    <div class="col option"><a href="/derechos/Vivienda" class="btn-repo btn-repo-selected">Vivienda</a></div>
+                                    <div class="col option"><a href="/derechos/Laborales" class="btn-repo">Laborales</a></div>
+                                    <div class="col option"><a href="/derechos/Permisos Laborales" class="btn-repo">Permisos Laborales</a></div>
+                                    @break
+
+                                    @case("Laborales")
+                                    <div class="col option"><a href="/derechos/Documentación" class="btn-repo">Documentación</a></div>
+                                    <div class="col option"><a href="/derechos/Salud" class="btn-repo">Salud</a></div>
+                                    <div class="col option"><a href="/derechos/Educación" class="btn-repo">Educación</a></div>
+                                    <div class="col option"><a href="/derechos/Vivienda" class="btn-repo">Vivienda</a></div>
+                                    <div class="col option"><a href="/derechos/Laborales" class="btn-repo btn-repo-selected">Laborales</a></div>
+                                    <div class="col option"><a href="/derechos/Permisos Laborales" class="btn-repo">Permisos Laborales</a></div>
+                                    @break
+
+                                    @case("Permisos Laborales")
+                                    <div class="col option"><a href="/derechos/Documentación" class="btn-repo">Documentación</a></div>
+                                    <div class="col option"><a href="/derechos/Salud" class="btn-repo">Salud</a></div>
+                                    <div class="col option"><a href="/derechos/Educación" class="btn-repo">Educación</a></div>
+                                    <div class="col option"><a href="/derechos/Vivienda" class="btn-repo">Vivienda</a></div>
+                                    <div class="col option"><a href="/derechos/Laborales" class="btn-repo">Laborales</a></div>
+                                    <div class="col option"><a href="/derechos/Permisos Laborales" class="btn-repo btn-repo-selected">Permisos Laborales</a></div>
+                                    @break
+                                @endswitch
+                            @else
+                            <div class="col option"><a href="/derechos/Documentación" class="btn-repo">Documentación</a></div>
+                                    <div class="col option"><a href="/derechos/Salud" class="btn-repo">Salud</a></div>
+                                    <div class="col option"><a href="/derechos/Educación" class="btn-repo">Educación</a></div>
+                                    <div class="col option"><a href="/derechos/Vivienda" class="btn-repo">Vivienda</a></div>
+                                    <div class="col option"><a href="/derechos/Laborales" class="btn-repo">Laborales</a></div>
+                                    <div class="col option"><a href="/derechos/Permisos Laborales" class="btn-repo">Permisos Laborales</a></div>
+                            @endif
+                            
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-9">
-                    <div class="row">
-                        <h2>Derecho a la Documentación</h2>
+                @if(!empty($derechos))
+                    <div class="row">                    
+                        <h2>Derecho a {{ $derechos[0]->tipo_derecho }}</h2>                        
                     </div>
                     <div class="row">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque cursus at augue ut semper.
                             Praesent mattis sed dui eget placerat. Nullam non erat rutrum magna pharetra luctus eget id
                             erat.</p>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-4 card-derechos" data-bs-toggle="modal" data-bs-target="#modalDocumentos">
-                            <img src="../imgs/svg/document_icon.svg" alt="Documento">
-                            <p class="card-p">Título del documento</p>
-                        </div>
-                        <div class="col-sm-4 card-derechos">
-                            <img src="../imgs/svg/document_icon.svg" alt="Documento">
-                            <p class="card-p">Título del documento con una extensión larga </p>
-                        </div>
-                        <div class="col-sm-4 card-derechos">
-                            <img src="../imgs/svg/document_icon.svg" alt="Documento">
-                            <p class="card-p">Título del documento con una extensión exageradamente larga</p>
-                        </div>
-                        <div class="col-sm-4 card-derechos">
-                            <img src="../imgs/svg/document_icon.svg" alt="Documento">
-                            <p class="card-p">Título del documento</p>
-                        </div>
-                        <div class="col-sm-4 card-derechos">
-                            <img src="../imgs/svg/document_icon.svg" alt="Documento">
-                            <p class="card-p">Título del documento con una extensión larga </p>
-                        </div>
-                        <div class="col-sm-4 card-derechos">
-                            <img src="../imgs/svg/document_icon.svg" alt="Documento">
-                            <p class="card-p">Título del documento con una extensión exageradamente larga</p>
-                        </div>
-                        <div class="col-sm-4 card-derechos">
-                            <img src="../imgs/svg/document_icon.svg" alt="Documento">
-                            <p class="card-p">Título del documento</p>
-                        </div>
-                        <div class="col-sm-4 card-derechos">
-                            <img src="../imgs/svg/document_icon.svg" alt="Documento">
-                            <p class="card-p">Título del documento con una extensión larga </p>
-                        </div>
+                    </div>                    
+                    <div class="row">            
+                            @foreach($derechos as $derecho)
+                                <div class="col-sm-4 card-derechos" data-bs-toggle="modal" data-bs-target="#modalDocumentos">
+                                    <img src="../imgs/svg/document_icon.svg" alt="Documento">
+                                    <p class="card-p">{{$derecho->titulo}}</p>
+                                </div>
+                            @endforeach
+                            @else
+                            <h2>¡No hay registro de este derecho!</h2>
+                        @endif                        
                     </div>
                 </div>
             </div>
@@ -89,8 +126,6 @@
                             
                             <button type="button" class="btn-repo"><span><img src="../imgs/svg/icon_download.svg" alt="Descargar"></span>Descargar</button>
                         </div>
-                        
-
                     </div>
                 </div>
             </div>

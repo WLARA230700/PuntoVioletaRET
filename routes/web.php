@@ -22,9 +22,7 @@ Route::get('/', function () {
 Route::get('/temas_interes', function () {
     return view('temas_interes');
 });
-Route::get('/derechos', function () {
-    return view('derechos');
-});
+
 Route::get('/redes_comunitarias', function () {
     return view('redes_comunitarias');
 });
@@ -34,6 +32,10 @@ Route::get('/colaboradores', function () {
 Route::get('/galeria', function () {
     return view('galeria');
 });
+
+
+// DB - USER
+Route::get('/derechos/{tipo}', [DerechosController::class, 'showDerechosUser'])->name('derechos');
 
 
 //ADMIN
