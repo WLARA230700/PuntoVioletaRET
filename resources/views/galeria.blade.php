@@ -12,29 +12,40 @@
                                 alt="icon_dropdown">
                         </div>
                         <div class="options-container">
-                            <div class="col option"><a href="#" class="btn-repo">Fotografías</a></div>
-                            <div class="col option"><a href="#" class="btn-repo">Video</a></div>
+                        @if(!empty($imagenes))
+                            @switch($imagenes[0]->tipo_imagen)
+                                @case("Fotografía")
+                                    <div class="col option"><a href="/galeria/Fotografía" class="btn-repo btn-repo-selected">Fotografía</a></div>
+                                    <div class="col option"><a href="/galeria/Infografía" class="btn-repo">Infografía</a></div>
+                                @break
+
+                                @case("Infografía")
+                                    <div class="col option"><a href="/galeria/Fotografía" class="btn-repo">Fotografías</a></div>
+                                    <div class="col option"><a href="/galeria/Infografía" class="btn-repo btn-repo-selected">Infografía</a></div>
+                                @break
+                            @endswitch
+                        @else
+                            <div class="col option"><a href="/galeria/Fotografía" class="btn-repo">Fotografías</a></div>
+                            <div class="col option"><a href="/galeria/Infografía" class="btn-repo">Infografía</a></div>
+                        @endif                            
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-9">
+                @if(!empty($imagenes))
                     <div class="row">
-                        <h2>Fotografías</h2>
+                        <h2>{{$imagenes[0]->tipo_imagen}}</h2>
                     </div>
                     <div class="row">
-                        <div class="card-galeria" data-bs-toggle="modal" data-bs-target="#modalGaleria">
-                            <img src="../imgs/fotografia_galeria.png" alt="Fotografía">
-                            <p class="card-p">Título del documento</p>
+                    @foreach($imagenes as $imagen)
+                        <div class="card-galeria" data-bs-toggle="modal" data-bs-target="#modal{{ $imagen->id }}">
+                            <img src="{{ URL::asset('storage/imagenes/'.$imagen->archivo) }}" alt="Fotografía">
+                            <p class="card-p">{{$imagen->titulo}}</p>
                         </div>
-                        <div class="card-galeria">
-                            <img src="../imgs/fotografia_galeria.png" alt="Fotografía">
-                            <p class="card-p">Título del documento con una extensión larga </p>
-                        </div>
-                        <div class="card-galeria">
-                            <img src="../imgs/fotografia_galeria.png" alt="Fotografía">
-                            <p class="card-p">Título del documento con una extensión exageradamente larga</p>
-                        </div>
-                    </div>
+                    @endforeach
+                @else
+                    <h2>¡No hay registro de este tipo de imagen!</h2>
+                @endif
                 </div>
             </div>
         </section>
@@ -44,26 +55,25 @@
         <!-- HEADER -->
 
         <!-- MODAL -->
-        <div class="modal fade" id="modalGaleria" tabindex="-1" role="dialog"
-            aria-labelledby="foto" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modales" role="document">
-                <div class="modal-content">
-                    <div class="row">
-                        <div class="col-sm-6 col-imagen-modal">
-                            <span class="span-modal-left-galeria d-flex align-content-center flex-wrap"><img src="../imgs/fotografia_galeria.png" alt=""></span>
-                        </div>
-                        <div class="col-sm-6">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Imagen 1</h5>
-                            <div class="descripcion-modal">
-                                <p>Descripción del documento
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        @foreach($imagenes as $imagen)
+            <div class="modal fade" id="modal{{ $imagen->id }}" tabindex="-1" role="dialog"
+                aria-labelledby="foto" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modales" role="document">
+                    <div class="modal-content">
+                        <div class="row">
+                            <div class="col-sm-6 col-imagen-modal">
+                                <span class="span-modal-left-galeria d-flex align-content-center flex-wrap"><img src="{{ URL::asset('storage/imagenes/'.$imagen->archivo) }}" alt=""></span>
+                            </div>
+                            <div class="col-sm-6">
+                                <h5 class="modal-title" id="exampleModalLongTitle">{{ $imagen->titulo }}</h5>
+                                <div class="descripcion-modal">
+                                    <p>{{ $imagen->descripcion }}</p>
+                                </div>
                             </div>
                         </div>
-                        
-
                     </div>
                 </div>
             </div>
-        </div>
+        @endforeach
         <!-- MODAL -->
 @endsection
