@@ -36,6 +36,8 @@ Route::get('/galeria', function () {
 // DB - USER
 Route::get('/derechos/{tipo}', [DerechosController::class, 'showDerechosUser'])->name('derechos');
 Route::get('/galeria/{tipo}', [ImagenesController::class, 'showImagenesUser'])->name('galeria');
+//Descargar derecho
+Route::get('/download/{file}', [DerechosController::class, 'descargarDerecho']);
 
 
 //ADMIN

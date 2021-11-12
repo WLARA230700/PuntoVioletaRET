@@ -186,7 +186,7 @@
             </div>
 
             <input type="text" placeholder="Título *" value="{{ $derecho[0]->titulo }}" name="titulo">
-            <textarea name="descripcion" id="descripcion-derecho" cols="30" rows="5" placeholder="Descripción *">{{ $derecho[0]->descripcion }}</textarea>
+            <textarea name="descripcion" id="descripcion-derecho" cols="30" rows="5" placeholder="Descripción *" maxlength="255">{{ $derecho[0]->descripcion }}</textarea>
             <input type="file" onchange="verificarDerechoModificar(this)" name="archivo"></input>
             <input type="hidden" value="{{ $derecho[0]->id }}" name="id">
             <button type="submit" id="btnSubmitAgregarDerecho">Modificar</button>

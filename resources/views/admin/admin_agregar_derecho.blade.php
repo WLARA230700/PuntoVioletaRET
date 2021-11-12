@@ -44,7 +44,7 @@
                     </div>
 
                     <input type="text" placeholder="Título *" name="titulo">
-                    <textarea name="descripcion" id="descripcion-derecho" cols="30" rows="5" placeholder="Descripción *"></textarea>
+                    <textarea name="descripcion" id="descripcion-derecho" cols="30" rows="5" placeholder="Descripción *" maxlength="255"></textarea>
                     <input name="archivo" type="file" onchange="verificarDerecho(this)"></input>
                     <button id="btnSubmitAgregarDerecho" type="submit" disabled>Agregar</button>
                 </form>

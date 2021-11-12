@@ -27,7 +27,7 @@
                     </div>
 
                     <input type="text" placeholder="Título *" name="titulo">
-                    <textarea name="descripcion" id="descripcion-imagen" cols="30" rows="5" placeholder="Descripción *"></textarea>
+                    <textarea name="descripcion" id="descripcion-imagen" cols="30" rows="5" placeholder="Descripción *" maxlength="255"></textarea>
                     <input name="archivo" type="file"></input>
                     <button type="submit">Agregar</button>
                 </form>
