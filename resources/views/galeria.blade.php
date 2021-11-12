@@ -8,8 +8,15 @@
                 <div class="col-sm-3 ">
                     <div class="row select-box">
                         <div id="txt-select-box">
+
+                        @if(!empty($imagenes))
+                            <p>{{ $imagenes[0]->tipo_imagen}}</p><img src="../imgs/svg/icon_dropdown.svg"
+                                alt="icon_dropdown">
+                        @else
                             <p>Fotografías</p><img src="../imgs/svg/icon_dropdown.svg"
                                 alt="icon_dropdown">
+                        @endif
+
                         </div>
                         <div class="options-container">
                         @if(!empty($imagenes))
@@ -62,7 +69,7 @@
                     <div class="modal-content">
                         <div class="row">
                             <div class="col-sm-6 col-imagen-modal">
-                                <span class="span-modal-left-galeria d-flex align-content-center flex-wrap"><img src="{{ URL::asset('storage/imagenes/'.$imagen->archivo) }}" alt=""></span>
+                                <span class="span-modal-left-galeria d-flex align-content-center"><img src="{{ URL::asset('storage/imagenes/'.$imagen->archivo) }}" alt=""></span>
                             </div>
                             <div class="col-sm-6">
                                 <h5 class="modal-title" id="exampleModalLongTitle">{{ $imagen->titulo }}</h5>

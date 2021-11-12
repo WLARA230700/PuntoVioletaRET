@@ -44,7 +44,7 @@
                     </div>
 
                     <input type="text" placeholder="Título *" name="titulo" value="{{ $imagen[0]->titulo }}">
-                    <textarea name="descripcion" id="descripcion-imagen" cols="30" rows="5" placeholder="Descripción *">{{ $imagen[0]->descripcion }}</textarea>
+                    <textarea name="descripcion" id="descripcion-imagen" cols="30" rows="5" placeholder="Descripción *" maxlength="255">{{ $imagen[0]->descripcion }}</textarea>
                     <input name="archivo" type="file"></input>
                     <input type="hidden" value="{{ $imagen[0]->id }}" name="id">
                     <button type="submit">Modificar</button>

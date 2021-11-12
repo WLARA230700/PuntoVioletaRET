@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\Response;
 
 class DerechosController extends Controller
 {
@@ -86,7 +88,8 @@ class DerechosController extends Controller
 
     public function showDerechos(){
         $derechos = DB::select('SELECT * FROM derechos ORDER BY created_at DESC');
-        return view('admin.admin_dashboard', compact('derechos'));
+        $isDerechos = true;
+        return view('admin.admin_dashboard', compact('derechos', 'isDerechos'));
     }
 
     public function showDerechosUser($tipo){
@@ -164,6 +167,14 @@ class DerechosController extends Controller
         return redirect("dashboard");
     }
 
+    public function descargarDerecho($file){
+        $pathToFile = public_path().'\storage\derechos\\'.$file;
+        /*$pathToFile = public_path().'/derechos/'.$file;
+        $headers = ['Content-Type'=>'application/pdf', ];
+        return response()->download($pathToFile, $file, $headers);*/
+        return response()->download($pathToFile);
+    }
+
     /**
      * Remove the specified resource from storage.
      *
@@ -172,6 +183,14 @@ class DerechosController extends Controller
      */
     public function destroy($id)
     {       
+        $filename = DB::select('SELECT * FROM derechos WHERE id = '.$id);
+
+        $pathToFile = '\storage\derechos\\'.$filename[0]->archivo;
+        
+        if(file_exists(public_path($pathToFile))){
+            unlink(public_path($pathToFile));
+        }
+
         DB::table('derechos')->whereId($id)->delete();
 
         return redirect('dashboard');

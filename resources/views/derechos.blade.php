@@ -8,7 +8,13 @@
                 <div class="col-sm-3">
                     <div class="row select-box">
                         <div id="txt-select-box">
+
+                        @if(!empty($derechos))
+                            <p>{{ $derechos[0]->tipo_derecho}}</p><img src="../imgs/svg/icon_dropdown.svg" alt="icon_dropdown">
+                        @else
                             <p>Documentación</p><img src="../imgs/svg/icon_dropdown.svg" alt="icon_dropdown">
+                        @endif
+                        
                         </div>
                         <div class="options-container">
                             @if(!empty($derechos))
@@ -123,7 +129,7 @@
                                 <div class="descripcion-modal">
                                     <p>{{ $derecho->descripcion }}</p>
                                 </div>                                
-                                <button type="button" class="btn-repo"><span><img src="../imgs/svg/icon_download.svg" alt="Descargar"></span>Descargar</button>
+                                <a href="/download/{{ $derecho->archivo }}" class="btn-repo"><span><img src="../imgs/svg/icon_download.svg" alt="Descargar"></span>Descargar</a>
                             </div>
                         </div>
                     </div>

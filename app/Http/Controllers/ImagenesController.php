@@ -80,12 +80,14 @@ class ImagenesController extends Controller
 
     public function showFotografias(){
         $fotografias = DB::select('SELECT * FROM imagenes WHERE tipo_imagen = "Fotografía" ORDER BY created_at DESC');
-        return view('admin.admin_dashboard', compact('fotografias'));
+        $isDerechos = false;
+        return view('admin.admin_dashboard', compact('fotografias', 'isDerechos'));
     }
 
     public function showInfografias(){
         $infografias = DB::select('SELECT * FROM imagenes WHERE tipo_imagen = "Infografía" ORDER BY created_at DESC');
-        return view('admin.admin_dashboard', compact('infografias'));
+        $isDerechos = false;
+        return view('admin.admin_dashboard', compact('infografias', 'isDerechos'));
     }
 
     public function showImagenesUser($tipo){
@@ -167,6 +169,14 @@ class ImagenesController extends Controller
      */
     public function destroy($id)
     {
+        $filename = DB::select('SELECT * FROM imagenes WHERE id = '.$id);
+
+        $pathToFile = '\storage\imagenes\\'.$filename[0]->archivo;
+        
+        if(file_exists(public_path($pathToFile))){
+            unlink(public_path($pathToFile));
+        }
+
         DB::table('imagenes')->whereId($id)->delete();
 
         return redirect('dashboard');
