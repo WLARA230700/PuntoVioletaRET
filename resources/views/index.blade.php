@@ -46,7 +46,7 @@
         <!-- QUIENES SOMOS -->
 
         <!-- TESTIMONIOS -->
-        <section class="min-height testimonios">
+        <!--<section class="min-height testimonios">
             <div class="row">
                 <h2>Testimonios</h2>
             </div>
@@ -87,11 +87,11 @@
                     </span>
                 </div>
             </div>
-        </section>
+        </section>-->
         <!-- TESTIMONIOS -->
 
         <!-- CONTACTO -->
-        <section class="min-height contacto">
+        <!--<section class="min-height contacto">
             <div class="row">
                 <h2>Contacto</h2>
                 <h3>¿Tienes alguna consulta?</h3>
@@ -123,6 +123,6 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section>-->
         <!-- CONTACTO -->
 @endsection
