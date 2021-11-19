@@ -1,6 +1,28 @@
 @extends('layout')
 
 @section('content')
+<?php
+    $tiposDerecho = array(
+        'En Costa Rica, tanto las personas refugiadas como aquellas personas solicitantes de refugio tienen derecho a tener un documento que las identifique y que acredite y regularice su estancia en el país.',
+
+        'Las personas refugiadas y solicitantes de refugio tienen derecho a acceder al sistema de seguridad, que corresponde a la Caja Costarricense del Seguro Social, también conocida como “La Caja”.
+        Para ser atendido o atendida, es necesario afiliarse. Una vez se tenga la afiliación, se tiene derecho a recibir atención médica gratuita, ya sea en los EBAIS, hospitales o clínicas.
+        Si no se cuenta con un seguro, igualmente podrá ser atendido o atendida en caso de una situación de emergencia. Posteriormente se le cobrará el servicio ofrecido.
+        Para recibir atención es necesario estar asegurado o asegurada y portar su documento de identidad.
+        En el caso de niños y niñas o mujeres embarazadas hasta los tres meses de lactancia, pueden recibir atención de los servicios de salud.',
+
+        'La educación en Costa Rica es gratuita y obligatoria. 
+        Las personas refugiadas tendrán derecho al mismo trato que reciben los nacionales respecto a la Educación General Básica, desde primaria hasta el tercer año de secundaria.',
+
+        'El derecho internacional de los derechos humanos reconoce el derecho de toda persona a un nivel de vida adecuado, incluida una vivienda adecuada.',
+
+        'En Costa Rica, toda persona refugiada tiene derecho a trabajar y recibir remuneración, ya sea por cuenta propia o por contratación por parte de una empresa u organización.',
+        
+        'Tres meses después de formalizar la solicitud de refugio, las personas solicitantes podrán pedir una cita por medio de la línea 1311 o el sitio web https://www.migracion.go.cr para solicitar un permiso temporal de trabajo. Para más información sobre los derechos laborales, requisito y permisos es posible llamar al Ministerio de Trabajo y Seguridad Social, a través de la línea gratuita 800-TRABAJO.'
+    );
+
+?>
+
         <!-- HEADER -->
         <section class="min-height cards" id="headerID">
             <h1>Derechos</h1>
@@ -91,9 +113,27 @@
                         <h2>Derecho a {{ $derechos[0]->tipo_derecho }}</h2>                        
                     </div>
                     <div class="row">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque cursus at augue ut semper.
-                            Praesent mattis sed dui eget placerat. Nullam non erat rutrum magna pharetra luctus eget id
-                            erat.</p>
+                    @switch($derechos[0]->tipo_derecho)
+                        @case("Documentación")
+                        <p>{{ $tiposDerecho[0] }}</p>
+                        @break
+                        @case("Salud")
+                        <p>{{ $tiposDerecho[1] }}</p>
+                        @break
+                        @case("Educación")
+                        <p>{{ $tiposDerecho[2] }}</p>
+                        @break
+                        @case("Vivienda")
+                        <p>{{ $tiposDerecho[3] }}</p>
+                        @break
+                        @case("Laborales")
+                        <p>{{ $tiposDerecho[4] }}</p>
+                        @break
+                        @case("Permisos Laborales")
+                        <p>{{ $tiposDerecho[5] }}</p>
+                        @break
+                    @endswitch
+                        
                     </div>                    
                     <div class="row">            
                             @foreach($derechos as $derecho)
