@@ -6,6 +6,11 @@
         <div class="row form-admin min-height">
             <div class="col-12">
                 <h1>Agregar Derecho</h1>
+                @if(session()->has('messageError'))
+                    <div class="alert alert-danger">
+                        {{ session()->get('messageError') }}
+                    </div>
+                @endif
             </div>
 
             <div class="col-12">

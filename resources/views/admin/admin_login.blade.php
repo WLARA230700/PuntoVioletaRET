@@ -32,6 +32,11 @@
                         <input name="password" type="password" placeholder="Contraseña *">
                         <button type="submit">Enviar</button>
                     </form>
+                    @if(session()->has('messageError'))
+                        <div class="alert alert-danger">
+                            {{ session()->get('messageError') }}
+                        </div>
+                    @endif
                 </div>
             </div>
         </section>

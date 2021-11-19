@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Response;
+use Validator;
 
 class DerechosController extends Controller
 {
@@ -40,39 +41,48 @@ class DerechosController extends Controller
      */
     public function store(Request $request)
     {
-        $request -> validate([
-            'tipo_derecho' => 'required',
+        $validator = Validator::make([
+            'tipo_imagen' => $request['tipo_imagen'],
+            'titulo' => $request['titulo'],
+            'descripcion' => $request['descripcion'],
+            'archivo' => $request['archivo']
+        ],
+        [
+            'tipo_imagen' => 'required',
             'titulo' => 'required',
             'descripcion' => 'required',
             'archivo' => 'required'
         ]);
 
-        $data = $request -> all();
-        $file = $request -> file('archivo');
+        if (!$validator->fails()) {
 
-        $data['id_admin'] = 1;
-        $timestamps = date('Y-m-d H:i:s');
-        //$data['created_at'] = time();
-        //$data['updated_at'] = time();
+            $data = $request -> all();
+            $file = $request -> file('archivo');
 
-        $filename = 'derecho-'.$data['tipo_derecho'].time().'.'.$file -> getClientOriginalExtension();
-        $data['archivo'] = $filename;
+            $data['id_admin'] = 1;
+            $timestamps = date('Y-m-d H:i:s');
 
-        $path = $file -> storeAs('public/derechos', $filename);
+            $filename = 'derecho-'.$data['tipo_derecho'].time().'.'.$file -> getClientOriginalExtension();
+            $data['archivo'] = $filename;
 
-        //Derecho::create($data);
+            $path = $file -> storeAs('public/derechos', $filename);
 
-        DB::table("derechos")->insert([
-            'tipo_derecho' => $data['tipo_derecho'],
-            'titulo' => $data['titulo'],
-            'descripcion' => $data['descripcion'],
-            'archivo' => $data['archivo'],
-            'id_admin' => $data['id_admin'],
-            'created_at' => $timestamps,
-            'updated_at' => $timestamps
-        ]);
+            DB::table("derechos")->insert([
+                'tipo_derecho' => $data['tipo_derecho'],
+                'titulo' => $data['titulo'],
+                'descripcion' => $data['descripcion'],
+                'archivo' => $data['archivo'],
+                'id_admin' => $data['id_admin'],
+                'created_at' => $timestamps,
+                'updated_at' => $timestamps
+            ]);
 
-        return redirect("dashboard");
+            return redirect("dashboard");
+
+            
+        }else{
+            return redirect("addRight")->with('messageError', 'Rellene todos los campos');
+        }        
     }
 
     /**
@@ -117,54 +127,63 @@ class DerechosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request)
-    {
-        $request -> validate([
-            'tipo_derecho' => 'required',
+    {   
+        $validator = Validator::make([
+            'tipo_imagen' => $request['tipo_imagen'],
+            'titulo' => $request['titulo'],
+            'descripcion' => $request['descripcion']
+        ],
+        [
+            'tipo_imagen' => 'required',
             'titulo' => 'required',
             'descripcion' => 'required'
         ]);
 
-        $data = $request -> all();
-        $file = $request -> file('archivo');
+        if (!$validator->fails()) {
+            $data = $request -> all();
+            $file = $request -> file('archivo');
 
-        $derecho = DB::select('SELECT * FROM derechos WHERE id = '.$data['id']);
+            $derecho = DB::select('SELECT * FROM derechos WHERE id = '.$data['id']);
 
-        $data['id_admin'] = 1;
-        $timestamps = date('Y-m-d H:i:s');
+            $data['id_admin'] = 1;
+            $timestamps = date('Y-m-d H:i:s');
 
-        if ($file != null) {
+            if ($file != null) {
 
-            $data['archivo'] = $derecho[0]->archivo;
+                $data['archivo'] = $derecho[0]->archivo;
 
-            $path = $file->storeAs('public/derechos', $data['archivo']);
+                $path = $file->storeAs('public/derechos', $data['archivo']);
 
-            /*$filename = 'derecho-'.$data['tipo_derecho'].time().'.'.$file -> getClientOriginalExtension();
-            $data['archivo'] = $filename;
+                /*$filename = 'derecho-'.$data['tipo_derecho'].time().'.'.$file -> getClientOriginalExtension();
+                $data['archivo'] = $filename;
 
-            $path = $file->storeAs('public/derechos', $filename);*/
+                $path = $file->storeAs('public/derechos', $filename);*/
 
-            DB::table('derechos')->where('id', $data['id'])->update([
-                'tipo_derecho' => $data['tipo_derecho'],
-                'titulo' => $data['titulo'],
-                'descripcion' => $data['descripcion'],
-                'archivo' => $data['archivo'],
-                'id_admin' => $data['id_admin'],
-                'updated_at' => $timestamps
-            ]);
+                DB::table('derechos')->where('id', $data['id'])->update([
+                    'tipo_derecho' => $data['tipo_derecho'],
+                    'titulo' => $data['titulo'],
+                    'descripcion' => $data['descripcion'],
+                    'archivo' => $data['archivo'],
+                    'id_admin' => $data['id_admin'],
+                    'updated_at' => $timestamps
+                ]);
 
 
+            }else{
+
+                DB::table('derechos')->where('id', $data['id'])->update([
+                    'tipo_derecho' => $data['tipo_derecho'],
+                    'titulo' => $data['titulo'],
+                    'descripcion' => $data['descripcion'],
+                    'id_admin' => $data['id_admin'],
+                    'updated_at' => $timestamps
+                ]);
+            }
+
+            return redirect("dashboard");
         }else{
-
-            DB::table('derechos')->where('id', $data['id'])->update([
-                'tipo_derecho' => $data['tipo_derecho'],
-                'titulo' => $data['titulo'],
-                'descripcion' => $data['descripcion'],
-                'id_admin' => $data['id_admin'],
-                'updated_at' => $timestamps
-            ]);
+            return redirect("modifyRight/".$request['id'])->with('messageError', 'Rellene el título y la descripción');
         }
-
-        return redirect("dashboard");
     }
 
     public function descargarDerecho($file){

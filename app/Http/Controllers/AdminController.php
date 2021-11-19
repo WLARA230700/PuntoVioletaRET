@@ -34,7 +34,7 @@ class AdminController extends Controller
             return redirect()->intended('dashboard')->withSuccess('Log in');
         }
 
-        return redirect('login')->withSuccess('No logueado');
+        return redirect('login')->with('messageError', 'Correo y/o contraseña inválidos');
     }
 
     public function dashboard(){

@@ -5,6 +5,11 @@
         <div class="row form-admin min-height">
             <div class="col-12">
                 <h1>Agregar Imagen</h1>
+                @if(session()->has('messageError'))
+                    <div class="alert alert-danger">
+                        {{ session()->get('messageError') }}
+                    </div>
+                @endif
             </div>
 
             <div class="col-12">
@@ -30,7 +35,7 @@
                     <textarea name="descripcion" id="descripcion-imagen" cols="30" rows="5" placeholder="Descripción *" maxlength="255"></textarea>
                     <input name="archivo" type="file"></input>
                     <button type="submit">Agregar</button>
-                </form>
+                </form>                
             </div>
         </div>
         <!-- FORMULARIO -->

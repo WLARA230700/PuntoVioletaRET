@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Imagen;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Validator;
 
 class ImagenesController extends Controller
 {
@@ -36,35 +37,74 @@ class ImagenesController extends Controller
      */
     public function store(Request $request)
     {
-        $request -> validate([
+        $validator = Validator::make([
+            'tipo_imagen' => $request['tipo_imagen'],
+            'titulo' => $request['titulo'],
+            'descripcion' => $request['descripcion'],
+            'archivo' => $request['archivo']
+        ],
+        [
             'tipo_imagen' => 'required',
             'titulo' => 'required',
             'descripcion' => 'required',
-            'archivo' => 'required|image|mimes:jpeg,png,jpg|max:2048'
+            'archivo' => 'required'
         ]);
 
-        $data = $request -> all();
-        $file = $request -> file('archivo');
+        if (!$validator->fails()) {
 
-        $data['id_admin'] = 1;
-        $timestamps = date('Y-m-d H:i:s');
+            $validator = Validator::make([
+                'archivo' => $request['archivo']
+            ],
+            [
+                'archivo' => 'image|mimes:jpeg,png,jpg'
+            ]);
 
-        $filename = 'imagen-'.$data['tipo_imagen'].time().'.'.$file -> getClientOriginalExtension();
-        $data['archivo'] = $filename;
+            if (!$validator->fails()) {
+                $validator = Validator::make([
+                    'archivo' => $request['archivo']
+                ],
+                [
+                    'archivo' => 'max:2048'
+                ]);
+    
+                if (!$validator->fails()) {
+                    $data = $request -> all();
+                    $file = $request -> file('archivo');
+    
+                    $data['id_admin'] = 1;
+                    $timestamps = date('Y-m-d H:i:s');
+    
+                    $filename = 'imagen-'.$data['tipo_imagen'].time().'.'.$file -> getClientOriginalExtension();
+                    $data['archivo'] = $filename;
+    
+                    $path = $file -> storeAs('public/imagenes', $filename);
+    
+                    DB::table("imagenes")->insert([
+                        'tipo_imagen' => $data['tipo_imagen'],
+                        'titulo' => $data['titulo'],
+                        'descripcion' => $data['descripcion'],
+                        'archivo' => $data['archivo'],
+                        'id_admin' => $data['id_admin'],
+                        'created_at' => $timestamps,
+                        'updated_at' => $timestamps
+                    ]);
+    
+                    return redirect("dashboard");
+            
+                }else{
+                    return redirect("addImage")->with('messageError', 'Seleccione una imagen menor a 2MB');
+                }
 
-        $path = $file -> storeAs('public/imagenes', $filename);
+            }else{
+                return redirect("addImage")->with('messageError', 'Seleccione una imagen PNG o JPG');
+            }
 
-        DB::table("imagenes")->insert([
-            'tipo_imagen' => $data['tipo_imagen'],
-            'titulo' => $data['titulo'],
-            'descripcion' => $data['descripcion'],
-            'archivo' => $data['archivo'],
-            'id_admin' => $data['id_admin'],
-            'created_at' => $timestamps,
-            'updated_at' => $timestamps
-        ]);
+            
+        }else{
+            return redirect("addImage")->with('messageError', 'Rellene todos los campos');
+        }
 
-        return redirect("dashboard");
+        
     }
 
     /**
@@ -116,49 +156,82 @@ class ImagenesController extends Controller
      */
     public function update(Request $request, Imagen $imagen)
     {
-        $request -> validate([
+        $validator = Validator::make([
+            'tipo_imagen' => $request['tipo_imagen'],
+            'titulo' => $request['titulo'],
+            'descripcion' => $request['descripcion']
+        ],
+        [
             'tipo_imagen' => 'required',
             'titulo' => 'required',
-            'descripcion' => 'required',
-            'archivo' => 'image|mimes:jpeg,png,jpg|max:2048'
+            'descripcion' => 'required'
         ]);
 
-        $data = $request -> all();
-        $file = $request -> file('archivo');
+        if (!$validator->fails()) {
 
-        $imagen = DB::select('SELECT * FROM imagenes WHERE id = '.$data['id']);
-
-        $data['id_admin'] = 1;
-        $timestamps = date('Y-m-d H:i:s');
-
-        if ($file != null) {
-
-            $data['archivo'] = $imagen[0]->archivo;
-
-            $path = $file->storeAs('public/imagenes', $data['archivo']);
-
-            DB::table('imagenes')->where('id', $data['id'])->update([
-                'tipo_imagen' => $data['tipo_imagen'],
-                'titulo' => $data['titulo'],
-                'descripcion' => $data['descripcion'],
-                'archivo' => $data['archivo'],
-                'id_admin' => $data['id_admin'],
-                'updated_at' => $timestamps
+            $validator = Validator::make([
+                'archivo' => $request['archivo']
+            ],
+            [
+                'archivo' => 'image|mimes:jpeg,png,jpg'
             ]);
 
+            if (!$validator->fails()) {
+                $validator = Validator::make([
+                    'archivo' => $request['archivo']
+                ],
+                [
+                    'archivo' => 'max:2048'
+                ]);
+    
+                if (!$validator->fails()) {
 
+                    $data = $request -> all();
+                    $file = $request -> file('archivo');
+            
+                    $imagen = DB::select('SELECT * FROM imagenes WHERE id = '.$data['id']);
+            
+                    $data['id_admin'] = 1;
+                    $timestamps = date('Y-m-d H:i:s');
+            
+                    if ($file != null) {
+            
+                        $data['archivo'] = $imagen[0]->archivo;
+            
+                        $path = $file->storeAs('public/imagenes', $data['archivo']);
+            
+                        DB::table('imagenes')->where('id', $data['id'])->update([
+                            'tipo_imagen' => $data['tipo_imagen'],
+                            'titulo' => $data['titulo'],
+                            'descripcion' => $data['descripcion'],
+                            'archivo' => $data['archivo'],
+                            'id_admin' => $data['id_admin'],
+                            'updated_at' => $timestamps
+                        ]);
+            
+            
+                    }else{
+            
+                        DB::table('imagenes')->where('id', $data['id'])->update([
+                            'tipo_imagen' => $data['tipo_imagen'],
+                            'titulo' => $data['titulo'],
+                            'descripcion' => $data['descripcion'],
+                            'id_admin' => $data['id_admin'],
+                            'updated_at' => $timestamps
+                        ]);
+                    }
+            
+                    return redirect("dashboard");
+
+                }else{
+                    return redirect("modifyImage/".$request['id'])->with('messageError', 'La imagen debe ser menor a 2MB');
+                }
+            }else{
+                return redirect("modifyImage/".$request['id'])->with('messageError', 'La imagen debe ser formato PNG o JPG');
+            }
         }else{
-
-            DB::table('imagenes')->where('id', $data['id'])->update([
-                'tipo_imagen' => $data['tipo_imagen'],
-                'titulo' => $data['titulo'],
-                'descripcion' => $data['descripcion'],
-                'id_admin' => $data['id_admin'],
-                'updated_at' => $timestamps
-            ]);
+            return redirect("modifyImage/".$request['id'])->with('messageError', 'Rellene el título y la descripción');
         }
-
-        return redirect("dashboard");
     }
 
     /**
