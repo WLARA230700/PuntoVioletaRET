@@ -154,11 +154,6 @@ class DerechosController extends Controller
 
                 $path = $file->storeAs('public/derechos', $data['archivo']);
 
-                /*$filename = 'derecho-'.$data['tipo_derecho'].time().'.'.$file -> getClientOriginalExtension();
-                $data['archivo'] = $filename;
-
-                $path = $file->storeAs('public/derechos', $filename);*/
-
                 DB::table('derechos')->where('id', $data['id'])->update([
                     'tipo_derecho' => $data['tipo_derecho'],
                     'titulo' => $data['titulo'],
@@ -188,9 +183,6 @@ class DerechosController extends Controller
 
     public function descargarDerecho($file){
         $pathToFile = public_path().'\storage\derechos\\'.$file;
-        /*$pathToFile = public_path().'/derechos/'.$file;
-        $headers = ['Content-Type'=>'application/pdf', ];
-        return response()->download($pathToFile, $file, $headers);*/
         return response()->download($pathToFile);
     }
 
