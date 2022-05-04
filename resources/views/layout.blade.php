@@ -24,16 +24,17 @@
             <div>
                 <ul class="nav-list">
                     <li><a href="/temas_interes">Temas de interés</a></li>
+                    <li><a href="/nosotras">Nosotras</a></li>
+                    <li><a href="/denuncias">Te acompañamos a denunciar</a></li>
                     <li><a href="/derechos/Documentación">Derechos</a></li>
                     <li><a href="/redes_comunitarias">Redes comunitarias</a></li>
-                    <li><a href="/colaboradores">Colaboradores</a></li>
                     <li><a href="/galeria/Fotografía">Galería</a></li>
                 </ul>  
                 <div class="nav-list-bg" onclick="mostrarMenu()"></div>
                 </div>              
             </div>
             <span>
-                <a href="#"><img src="{{ URL::asset('/imgs/svg/instagram_icon.svg') }}"></a>
+                <a href="https://www.instagram.com/puntovioletaret/"><img src="{{ URL::asset('/imgs/svg/instagram_icon.svg') }}"></a>
             </span>
         </nav>
         <!-- TOP NAV -->
@@ -42,20 +43,24 @@
 
         <!-- FOTTER -->
         <footer class="row footer">
-            <div class="col-sm left-text">
-                <p>©2021</p>
-                <p>Todos los derechos reservados</p>
+            <div class="col-sm-3 left-text">
+                <p>Punto Violeta - RET INTERNACIONAL</p>
+                <p>200 mts al sur del Instituto México, Los Yoses, Montes de Oca.</p>
+                <p>San José, Costa Rica</p>
+                <p>puntovioletaret@gmail.com</p>
+                <p>(506) 6452-9206/4035-6913</p>
             </div>
-            <div class="col-sm icons-footer">
+            <div class="col-sm-3 icons-footer">
                 <img src="{{ URL::asset('/imgs/svg/icon_punto-violeta.svg') }}" alt="Logo Punto Violeta">
             </div>
-            <div class="col-sm icons-footer">
+            <div class="col-sm-3 icons-footer">
                 <img src="{{ URL::asset('/imgs/svg/icon_ret.svg') }}" alt="Logo RET">
             </div> 
-            <div class="col-sm right-text">
+            <div class="col-sm-3 right-text">
+                <p>©2021</p>
+                <p>Todos los derechos reservados</p>
                 <p>By Willy Lara Campos</p>
                 <p>By Ronald Chaves González</p>
-                <p>By Benjamín Álvarez Rodríguez</p>
             </div>
         </footer>
         <!-- FOTTER -->

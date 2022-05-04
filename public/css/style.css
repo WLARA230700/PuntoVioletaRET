@@ -162,7 +162,7 @@ h2 {
   }
 }
 .footer .icons-footer img {
-  height: 2.5em;
+  height: 5em;
 }
 @media only screen and (max-width: 480px) {
   .footer .icons-footer img {
@@ -177,6 +177,10 @@ h2 {
 
 .left-text {
   text-align: left;
+}
+
+.footer p{
+  line-height: 1.3em;
 }
 
 .right-text {

@@ -28,20 +28,24 @@
 
         <!-- FOTTER -->
         <footer class="row footer">
-            <div class="col-sm left-text">
+            <div class="col-sm-3 left-text">
+                <p>Punto Violeta - RET INTERNACIONAL</p>
+                <p>200 mts al sur del Instituto México, Los Yoses, Montes de Oca.</p>
+                <p>San José, Costa Rica</p>
+                <p>puntovioletaret@gmail.com</p>
+                <p>(506) 6452-9206/4035-6913</p>
+            </div>
+            <div class="col-sm-3 icons-footer">
+                <img src="{{ URL::asset('/imgs/svg/icon_punto-violeta.svg') }}" alt="Logo Punto Violeta">
+            </div>
+            <div class="col-sm-3 icons-footer">
+                <img src="{{ URL::asset('/imgs/svg/icon_ret.svg') }}" alt="Logo RET">
+            </div> 
+            <div class="col-sm-3 right-text">
                 <p>©2021</p>
                 <p>Todos los derechos reservados</p>
-            </div>
-            <div class="col-sm icons-footer">
-                <img src="../../imgs/svg/icon_punto-violeta.svg" alt="Logo Punto Violeta">
-            </div>
-            <div class="col-sm icons-footer">
-                <img src="../../imgs/svg/icon_ret.svg" alt="Logo RET">
-            </div> 
-            <div class="col-sm right-text">
                 <p>By Willy Lara Campos</p>
                 <p>By Ronald Chaves González</p>
-                <p>By Benjamín Álvarez Rodríguez</p>
             </div>
         </footer>
         <!-- FOTTER -->
