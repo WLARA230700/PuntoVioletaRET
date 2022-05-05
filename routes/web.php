@@ -22,6 +22,9 @@ Route::get('/', function () {
 Route::get('/temas_interes', function () {
     return view('temas_interes');
 });
+Route::get('/nosotras', function () {
+    return view('nosotras');
+});
 Route::get('/redes_comunitarias', function () {
     return view('redes_comunitarias');
 });

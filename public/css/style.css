@@ -13,7 +13,7 @@ body::-webkit-scrollbar {
   width: 0.3em;
   background: #F2E7F9;
 }
-body::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background: #6A3381;
 }
 
@@ -145,6 +145,34 @@ h2 {
 }
 .footer .left-text {
   margin: auto 0;
+}
+.bold{
+  font-weight: 700 !important;
+}
+.horizontal-scroll-t5apper {
+  height: fit-content;
+  overflow: auto;
+  white-space: nowrap;
+  margin-bottom: 2em;
+}
+.horizontal-scroll-wrapper > div {
+  display: inline-block;
+  margin: 0 1em 0 0;
+  width: 35%;
+  transform-origin: right top;
+  background-color: #6A3381;
+  border-radius: .5em;
+  overflow: hidden; 
+}
+.horizontal-scroll-wrapper > div > p {
+  color: #FCF9FF;
+  margin: .5em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.horizontal-scroll-wrapper > div > img {
+  width: 100%;
 }
 @media only screen and (max-width: 480px) {
   .footer .right-text {
@@ -946,7 +974,17 @@ h2 {
 
 .cards-temas-interes {
   margin: 0;
-  padding: 0 4em;
+  padding: 0;
+}
+.horizontal-scroll-wrapper::-webkit-scrollbar {
+  width: 0.3em;
+  height: 10px;
+  background: #C27EDF;
+  border-radius: .5em;
+}
+.horizontal-scroll-wrapper::-webkit-scrollbar-thumb {
+  background: #6A3381;
+  border-radius: .5em;
 }
 @media only screen and (max-width: 480px) {
   .cards-temas-interes {
@@ -967,11 +1005,12 @@ h2 {
 .cards-temas-interes .col-sm-6 div h2 {
   padding: 0.7em;
   background: #6A3381;
-  font-size: 0.938em;
+  font-size: 0.7em;
   color: #ffffff;
   -webkit-box-shadow: 0 0.25em 0.625em rgba(0, 0, 0, 0.1);
           box-shadow: 0 0.25em 0.625em rgba(0, 0, 0, 0.1);
 }
+
 @media only screen and (max-width: 480px) {
   .cards-temas-interes .col-sm-6 div h2 {
     font-size: 0.6em;
@@ -985,7 +1024,7 @@ h2 {
 }
 .cards-temas-interes .col-sm-6 div div {
   margin: 0;
-  padding: 1.5em;
+  padding: 1em 1.5em;
 }
 @media only screen and (max-width: 480px) {
   .cards-temas-interes .col-sm-6 div div {
@@ -1010,6 +1049,7 @@ h2 {
   font-weight: 400;
   font-size: 0.7em;
   color: #6A3381;
+  margin: .5em;
 }
 @media only screen and (max-width: 480px) {
   .cards-temas-interes .col-sm-6 div div p {
@@ -1724,4 +1764,18 @@ h2 {
   color: #6A3381;
   font-size: .8em;
   font-weight: 300;
+}
+.nosotras-info{
+  font-size: .8em !important;
+  margin: .5em !important;
+}
+.nosotras-img{
+  color: #6A3381 !important;
+  width: 25%;
+  text-align: center;
+  margin-top: 2em;
+}
+.nosotras-img-container{
+  text-align: center !important;
+  width: 100%;
 }
