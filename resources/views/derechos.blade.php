@@ -1,6 +1,7 @@
 @extends('layout')
 
 @section('content')
+
 <?php
     $tiposDerecho = array(
         'En Costa Rica, tanto las personas refugiadas como aquellas personas solicitantes de refugio tienen derecho a tener un documento que las identifique y que acredite y regularice su estancia en el país.',

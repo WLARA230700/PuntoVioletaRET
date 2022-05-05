@@ -31,6 +31,9 @@ Route::get('/colaboradores', function () {
 Route::get('/galeria', function () {
     return view('galeria');
 });
+Route::get('/denuncias', function () {
+    return view('info_violencia_domestica');
+});
 
 
 // DB - USER
