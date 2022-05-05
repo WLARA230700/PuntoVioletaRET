@@ -149,7 +149,7 @@ h2 {
 .bold{
   font-weight: 700 !important;
 }
-.horizontal-scroll-wrapper {
+.horizontal-scroll-t5apper {
   height: fit-content;
   overflow: auto;
   white-space: nowrap;
@@ -162,7 +162,7 @@ h2 {
   transform-origin: right top;
   background-color: #6A3381;
   border-radius: .5em;
-  overflow: hidden;
+  overflow: hidden; 
 }
 .horizontal-scroll-wrapper > div > p {
   color: #FCF9FF;
@@ -1751,4 +1751,18 @@ h2 {
   color: #6A3381;
   font-size: .8em;
   font-weight: 300;
+}
+.nosotras-info{
+  font-size: .8em !important;
+  margin: .5em !important;
+}
+.nosotras-img{
+  color: #6A3381 !important;
+  width: 25%;
+  text-align: center;
+  margin-top: 2em;
+}
+.nosotras-img-container{
+  text-align: center !important;
+  width: 100%;
 }
