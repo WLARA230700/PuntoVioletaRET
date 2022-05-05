@@ -56,7 +56,7 @@
             </div>
             <div class="col-sm-3 icons-footer">
                 <img src="{{ URL::asset('/imgs/svg/icon_ret.svg') }}" alt="Logo RET">
-            </div> 
+            </div>
             <div class="col-sm-3 right-text">
                 <p>©2021</p>
                 <p>Todos los derechos reservados</p>
