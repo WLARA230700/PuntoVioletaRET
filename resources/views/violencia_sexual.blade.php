@@ -15,21 +15,28 @@
                         </div>
                         <div class="options-container">
                             <div class="col option"><a href="/denunciar" class="btn-repo small-btn-repo">Violencia dom&#233;stica</a></div>
-                            <div class="col option"><a href="/medidas-de-proteccion" class="btn-repo small-btn-repo sm-btn-repo-selected">Medidas de protecci&#243;n</a></div>
+                            <div class="col option"><a href="/medidas-de-proteccion" class="btn-repo small-btn-repo">Medidas de protecci&#243;n</a></div>
                             <div class="col option"><a href="/solicitud-medidas-de-proteccion" class="btn-repo small-btn-repo">Solicitud Medidas de Protecci&#243;n</a></div>
                             <div class="col option"><a href="/requisitos-medidas-de-proteccion" class="btn-repo small-btn-repo">Requisitos para solicitud de Medidas de Protecci&#243;n</a></div>
                             <div class="col option"><a href="/derechos/Documentación" class="btn-repo small-btn-repo">Denuncias Penales</a></div>
                             <div class="col option"><a href="/derechos/Documentación" class="btn-repo small-btn-repo">Oficina de atenci&#243;n y protecci&#243;n a la v&#237;ctima</a></div>
-                            <div class="col option"><a href="/violencia-sexual" class="btn-repo small-btn-repo">Violencia Sexual</a></div>
+                            <div class="col option"><a href="/violencia-sexual" class="btn-repo small-btn-repo sm-btn-repo-selected">Violencia Sexual</a></div>
                             <div class="col option"><a href="/pension-alimentaria" class="btn-repo small-btn-repo">Pensi&#243;n Alimentaria</a></div>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-9">
 
-                        <h2>Medidas de protecci&#243;n</h2>
+                        <h2>Violencia sexual</h2>
                         
-                        <p class="info-text-block">Son medidas ordenadas por un juez/a  para garantizar la vida, la integridad y la seguridad de las personas v&#237;ctimas de la violencia dom&#233;stica o de pareja. Con ellas se le proh&#237;be al presunto agresor molestar, perturbar, amenazar, intimidar o acercarse al domicilio, lugar de trabajo o estudio de la solicitante. <br>Una vez las medidas se interpongan se le ordena la salida inmediata del presunto agresor del domicilio donde convive con la v&#237;ctima y se delimita una distancia con la que debe mantenerse al margen.</p>
+                        <p class="info-text-block">La violencia sexual es aquella acción que obliga a una persona a mantener contacto de carácter sexual, físico o verbal, o a participar en otras interacciones sexuales sin su voluntad.<br>Ocurre si la persona es obligada a realizar tales actos mediante el uso de fuerza, intimidación, coerción, chantaje, soborno, manipulación, amenaza o cualquier otro mecanismo que anule o limite la voluntad personal. También hay violencia sexual en los casos en los cuales la persona agredida es obligada a realizar actos sexuales con terceras personas.<br>La violencia sexual también puede darse dentro de las relaciones de pareja, sean éstas de noviazgo, unión libre o matrimonio. Si usted es, o ha sido víctima de violencia sexual, no se sienta sola, existen instituciones y personas que la pueden ayudar.</p>
+
+                        <h3 class="subtitulo_bloque">&#191;A d&#243;nde acudir?</h3>
+
+                        <p class="info-text-block">Lo m&#225;s importante es que puedas acudir a un centro m&#233;dico de inmediato para que puedan brindarte la atenci&#243;n m&#233;dica requerida.<br>El personal m&#233;dico aplicar&#225; el protocolo denominado: “Protocolo de las 72 hrs”.</p>
+
+                        <h3 class="subtitulo_bloque">&#191;De qu&#233; trata?</h3>
+
                     </div>
                 </div>
             </div>

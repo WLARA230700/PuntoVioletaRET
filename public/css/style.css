@@ -790,11 +790,11 @@ h2 {
 }
 
 .small-btn-repo{
-  font-size: .4em;
+  font-size: .5em;
 }
 
 .small-btn-repo:hover{
-  font-size: .4em;
+  font-size: .5em;
 }
 
 .sm-btn-repo-selected{
@@ -1341,13 +1341,21 @@ h2 {
   padding: 0;
   width: 100%;
   text-align: left;
-  font-size: .55em;
+  font-size: .5em;
 }
 .info-text-bullets li::marker{
   /*font-size: .55em;*/
 }
+.info-text-bullets li span{
+  font-weight: 600;
+}
 .info-text-block span{
   font-weight: 600;
+}
+.subtitulo_bloque{
+  text-align: left;
+  font-weight: 600;
+  font-size: .7em;
 }
 
 /*ADMIN*/

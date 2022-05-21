@@ -15,13 +15,13 @@
                         </div>
                         <div class="options-container">
                             <div class="col option"><a href="/denunciar" class="btn-repo small-btn-repo">Violencia dom&#233;stica</a></div>
-                            <div class="col option"><a href="/medidas-de-proteccion" class="btn-repo small-btn-repo sm-btn-repo-selected">Medidas de protecci&#243;n</a></div>
-                            <div class="col option"><a href="/solicitud-medidas-de-proteccion" class="btn-repo small-btn-repo">Solicitud Medidas de Protecci&#243;n</a></div>
-                            <div class="col option"><a href="/derechos/Documentación" class="btn-repo small-btn-repo">Requisitos para solicitud de Medidas de Protecci&#243;n</a></div>
+                            <div class="col option"><a href="/medidas-de-proteccion" class="btn-repo small-btn-repo">Medidas de protecci&#243;n</a></div>
+                            <div class="col option"><a href="/solicitud-medidas-de-proteccion" class="btn-repo small-btn-repo sm-btn-repo-selected">Solicitud Medidas de Protecci&#243;n</a></div>
+                            <div class="col option"><a href="/requisitos-medidas-de-proteccion" class="btn-repo small-btn-repo">Requisitos para solicitud de Medidas de Protecci&#243;n</a></div>
                             <div class="col option"><a href="/derechos/Documentación" class="btn-repo small-btn-repo">Denuncias Penales</a></div>
                             <div class="col option"><a href="/derechos/Documentación" class="btn-repo small-btn-repo">Oficina de atenci&#243;n y protecci&#243;n a la v&#237;ctima</a></div>
-                            <div class="col option"><a href="/derechos/Documentación" class="btn-repo small-btn-repo">Violencia Sexual</a></div>
-                            <div class="col option"><a href="/derechos/Documentación" class="btn-repo small-btn-repo">Pensi&#243;n Alimentaria</a></div>
+                            <div class="col option"><a href="/violencia-sexual" class="btn-repo small-btn-repo">Violencia Sexual</a></div>
+                            <div class="col option"><a href="/pension-alimentaria" class="btn-repo small-btn-repo">Pensi&#243;n Alimentaria</a></div>
                         </div>
                     </div>
                 </div>

@@ -43,6 +43,15 @@ Route::get('/medidas-de-proteccion', function () {
 Route::get('/solicitud-medidas-de-proteccion', function () {
     return view('solicitud_medidas_proteccion');
 });
+Route::get('/requisitos-medidas-de-proteccion', function () {
+    return view('requisitos_medidas_proteccion');
+});
+Route::get('/violencia-sexual', function () {
+    return view('violencia_sexual');
+});
+Route::get('/pension-alimentaria', function () {
+    return view('pension_alimentaria');
+});
 
 
 // DB - USER
