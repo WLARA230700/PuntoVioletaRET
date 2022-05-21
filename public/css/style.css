@@ -789,6 +789,25 @@ h2 {
   color: #6A3381;
 }
 
+.small-btn-repo{
+  font-size: .4em;
+}
+
+.small-btn-repo:hover{
+  font-size: .4em;
+}
+
+.sm-btn-repo-selected{
+  font-size: .4em;
+  color: #6A3381;
+  background: #DABEF1;
+  font-weight: 700;
+}
+
+.sm-btn-repo-selected:hover{
+  font-size: .4em;
+}
+
 .card-derechos {
   padding: 0.5em;
   margin: 0 0.5em 0.5em 0;
@@ -891,7 +910,6 @@ h2 {
     text-align: center;
   }
 }
-
 @media only screen and (max-width: 480px) {
   .select-box {
     position: relative;
@@ -1327,6 +1345,9 @@ h2 {
 }
 .info-text-bullets li::marker{
   /*font-size: .55em;*/
+}
+.info-text-block span{
+  font-weight: 600;
 }
 
 /*ADMIN*/

@@ -25,7 +25,7 @@
                 <ul class="nav-list">
                     <li><a href="/temas_interes">Temas de interés</a></li>
                     <li><a href="/nosotras">Nosotras</a></li>
-                    <li><a href="/denuncias">Te acompañamos a denunciar</a></li>
+                    <li><a href="/denunciar">Te acompañamos a denunciar</a></li>
                     <li><a href="/derechos/Documentación">Derechos</a></li>
                     <li><a href="/redes_comunitarias">Redes comunitarias</a></li>
                     <li><a href="/galeria/Fotografía">Galería</a></li>

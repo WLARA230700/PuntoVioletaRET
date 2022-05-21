@@ -34,8 +34,14 @@ Route::get('/colaboradores', function () {
 Route::get('/galeria', function () {
     return view('galeria');
 });
-Route::get('/denuncias', function () {
-    return view('info_violencia_domestica');
+Route::get('/denunciar', function () {
+    return view('te_acompanamos_denunciar');
+});
+Route::get('/medidas-de-proteccion', function () {
+    return view('medidas_proteccion');
+});
+Route::get('/solicitud-medidas-de-proteccion', function () {
+    return view('solicitud_medidas_proteccion');
 });
 
 

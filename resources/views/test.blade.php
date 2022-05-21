@@ -4,9 +4,9 @@
 
         <!-- HEADER -->
         <section class="min-height cards" id="headerID">
-            <h1>Te acompañamos a denunciar</h1>
+            
             <div class="row container-cards">
-                <div class="col-sm-3">
+                <div class="col-sm-3 flex-wrap sticky-top">
                     <div class="row select-box">
                         <div id="txt-select-box">
 
@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <div class="col-sm-9">
-
+                        <h1>Te acompañamos a denunciar</h1>
                         <h2>Violencia doméstica</h2>
                         
                         <p class="info-text-block">Lorem ipsum dolor sit amet consetetur autem delenit dolor dolor magna clita dolore ea lorem ea elitr nonumy tempor facilisis exerci esse nibh consetetur mazim nonumy vel justo et sadipscing no consetetur justo kasd nonumy diam et molestie elit sed esse kasd te takimata dolor elitr sea magna et kasd suscipit at stet clita rebum mazim erat velit at lorem diam dolor facilisis sit nibh stet sadipscing sadipscing tempor stet elitr sanctus eros invidunt tempor aliquip vero sanctus sed aliquip erat minim lorem hendrerit takimata labore magna diam sit delenit dolor dolor et nulla erat et eleifend ullamcorper nostrud consequat lorem dolores aliquam dignissim aliquam lorem luptatum iriure</p>
