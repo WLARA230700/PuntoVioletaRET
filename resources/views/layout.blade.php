@@ -34,7 +34,7 @@
                 </div>              
             </div>
             <span id="instagram-icon">
-                <a href="https://www.instagram.com/puntovioletaret/"><img src="{{ URL::asset('/imgs/svg/instagram_icon.svg') }}"></a>
+                <a href="https://www.instagram.com/puntovioletaret/" target="_blank"><img src="{{ URL::asset('/imgs/svg/instagram_icon.svg') }}"></a>
             </span>
         </nav>
         <!-- TOP NAV -->
