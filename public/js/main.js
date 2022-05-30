@@ -36,13 +36,17 @@ function mostrarMenu(){
     let menuBg = document.getElementsByClassName("nav-list-bg")[0];
 
     if(!menuAbierto){
-        menu.style.left = -21 + "em";
-        menuBg.style.display = "block";
+        menu.style.left = -90 + "vw";
+        menuBg.style.left = -18 + "em";
+        menuBg.style.opacity = 1;
+        //menuBg.style.display = "block";
         menuHam.style.color = "#6A3381";
         menuAbierto = true;
     }else{
-        menu.style.left = -49 + "em";
-        menuBg.style.display = "none";
+        menu.style.left = -200 + "vw";
+        menuBg.style.left = -60 + "em";
+        menuBg.style.opacity = 0;
+        //menuBg.style.display = "none";
         menuHam.style.color = "#FCF9FF";
         menuAbierto = false;
     }

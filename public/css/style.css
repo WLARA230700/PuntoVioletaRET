@@ -25,7 +25,7 @@ h2 {
   font-size: 1.25em;
   color: #6A3381;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   h2 {
     font-size: 1em;
   }
@@ -77,15 +77,15 @@ h2 {
 .nav div {
   margin: auto;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .nav div {
     position: relative;
     margin: 0;
   }
 }
 .nav div .nav-list-bg {
-  display: none;
-  left: -21em;
+  display: block;
+  left: -200vw;
   top: -1em;
   content: "";
   padding: 12em;
@@ -93,11 +93,12 @@ h2 {
   height: 100vh;
   width: 100%;
   background: #00000088;
+  transition: .3s;
 }
 .nav .menu-ham {
   display: none;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .nav .menu-ham {
     display: block;
     width: 10%;
@@ -121,7 +122,7 @@ h2 {
   vertical-align: middle;
   height: 1.25em;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .nav .logo-nav {
     margin: auto;
   }
@@ -141,12 +142,12 @@ h2 {
   font-size: 0.5em;
   line-height: 0.7em;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .footer {
     font-size: 0.4em;
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .footer .col-sm {
     padding-bottom: 3em;
   }
@@ -172,7 +173,7 @@ h2 {
   border-radius: .5em;
   overflow: hidden; 
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .horizontal-scroll-wrapper > div {
     display: inline-block;
     margin: 0 .5em 0 0;
@@ -189,7 +190,7 @@ h2 {
 .horizontal-scroll-wrapper > div > img {
   width: 100%;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .footer .right-text {
     text-align: left;
   }
@@ -199,7 +200,7 @@ h2 {
   display: block;
   margin: auto;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .footer .icons-footer {
     width: 50%;
   }
@@ -207,12 +208,12 @@ h2 {
 .footer .icons-footer img {
   height: 5em;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .footer .icons-footer img {
     height: 4em;
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .footer {
     padding: 2em 3em 1.5em;
   }
@@ -236,14 +237,14 @@ h2 {
   list-style: none;
   text-align: center;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .nav-list {
     z-index: 2;
     margin: 0;
     padding: 8em 5em 5em 3em;
     text-align: left;
     position: absolute;
-    left: -49em;
+    left: -60em;
     top: -1em;
     background: #DABEF1;
     height: 100vh;
@@ -259,7 +260,7 @@ h2 {
 .nav-list li :hover {
   font-weight: 700;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .nav-list li {
     display: block;
   }
@@ -271,7 +272,7 @@ h2 {
   display: block;
   color: #ffffff;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .nav-list li a {
     color: #6A3381;
     padding-bottom: 1.5em;
@@ -300,7 +301,7 @@ h2 {
   font-size: 0.938em;
   color: #ffffff;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .header div h2 {
     font-size: 0.45em;
   }
@@ -309,7 +310,7 @@ h2 {
   font-weight: 700;
   font-size: 3em;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .header div h1 {
     font-size: 1.4em;
   }
@@ -341,7 +342,7 @@ h2 {
   margin: 0;
   padding: 2.5em 5em;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .quienes-somos {
     padding: 1.5em;
   }
@@ -354,7 +355,7 @@ h2 {
   font-size: 0.938em;
   color: #6A3381;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .quienes-somos h3 {
     font-size: 0.7em;
   }
@@ -374,7 +375,7 @@ h2 {
   width: auto;
   height: 1.5em;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .quienes-somos img {
     margin: 0.5em;
     width: -webkit-fit-content;
@@ -392,7 +393,7 @@ h2 {
   background-color: #DABEF1;
   border-radius: 0.8em;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .quienes-somos .col-sm-4 {
     width: 100%;
     margin-bottom: 1em;
@@ -403,12 +404,12 @@ h2 {
   padding: 3em 1em;
   background-color: #DABEF1;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .testimonios {
     padding: 1.5em 0.5em;
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .testimonios .testimonios-laterales {
     display: none;
   }
@@ -428,7 +429,7 @@ h2 {
   width: 2em;
   height: 2em;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .testimonios .col-1 span {
     height: 1em;
     width: 1em;
@@ -458,7 +459,7 @@ h2 {
   margin: 0;
   padding-bottom: 4em;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .testimonios .col-4 {
     width: 100%;
   }
@@ -477,7 +478,7 @@ h2 {
   margin: 0;
   padding: 2.5em 5em;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .contacto {
     padding: 1em 0.5em;
   }
@@ -485,7 +486,7 @@ h2 {
 .contacto h3 {
   font-size: 0.7em;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .contacto h3 {
     font-size: 0.5em;
   }
@@ -541,7 +542,7 @@ h2 {
   font-size: 0.8em;
   color: #C27EDF;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .contacto .col-sm-6 form input {
     border: 0.1em solid #C27EDF;
     border-radius: 0.7em;
@@ -594,7 +595,7 @@ h2 {
   outline: none !important;
   border: 0.07em solid #6A3381;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .contacto .col-sm-6 form textarea {
     border: 0.1em solid #C27EDF;
     border-radius: 0.7em;
@@ -621,7 +622,7 @@ h2 {
   color: #FCF9FF;
   background: #C27EDF;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .contacto .col-sm-6 form button {
     border: 0.1em solid #C27EDF;
     border-radius: 1em;
@@ -643,7 +644,7 @@ h2 {
   height: -moz-fit-content;
   height: fit-content;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .contacto .col-sm-6 .card-contacto {
     padding: 0.2em;
     border-radius: 0.5em;
@@ -655,7 +656,7 @@ h2 {
   height: -moz-fit-content;
   height: fit-content;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .contacto .col-sm-6 .card-contacto .row {
     padding: 0 0 0.2em;
   }
@@ -666,7 +667,7 @@ h2 {
   height: 1.5em;
   width: 1.5em;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .contacto .col-sm-6 .card-contacto .row span {
     height: 1.3em;
     width: 1.3em;
@@ -684,7 +685,7 @@ h2 {
   height: fit-content;
   color: #C27EDF;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .contacto .col-sm-6 .card-contacto .row p {
     font-size: 0.4em;
     display: block;
@@ -701,7 +702,7 @@ h2 {
   font-size: 0.7em;
   color: #C27EDF;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .contacto .col-sm-6 .card-ubicacion h3 {
     font-size: 0.6em;
   }
@@ -714,7 +715,7 @@ h2 {
 .contacto .col-sm-6 .card-ubicacion span img {
   width: 100%;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .contacto .col-sm-6 .card-ubicacion span {
     padding: 0;
   }
@@ -732,7 +733,7 @@ h2 {
   font-size: 1.5em;
   font-weight: 700;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .cards h1 {
     font-size: 0.7em;
     padding: 4.5em 0 0.5em;
@@ -741,7 +742,7 @@ h2 {
 .cards .container-cards {
   padding: 0 5em 2em;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .cards .container-cards {
     padding: 0 1em 1em;
   }
@@ -754,7 +755,7 @@ h2 {
   text-align: left;
   padding: 0.25em 0 0.5em;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .cards .container-cards h2 {
     padding-top: 2em;
     padding-bottom: 0.5em;
@@ -831,7 +832,7 @@ h2 {
   width: 30%;
   cursor: pointer;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .card-derechos {
     width: 100%;
   }
@@ -861,7 +862,7 @@ h2 {
   overflow: hidden;
   cursor: pointer;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .card-galeria {
     width: 100%;
   }
@@ -887,7 +888,7 @@ h2 {
   -o-object-position: center center;
      object-position: center center;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .card-galeria img {
     width: 100%;
   }
@@ -897,7 +898,7 @@ h2 {
   margin: 0 auto;
   padding: 4em 8em 2em 8em;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .temas-interes-header {
     padding: 2.5em 1.5em 1em;
   }
@@ -906,7 +907,7 @@ h2 {
   font-size: 1.5em;
   font-weight: 700;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .temas-interes-header h1 {
     font-size: 0.7em;
   }
@@ -919,13 +920,13 @@ h2 {
   font-size: 0.6em;
   color: #6A3381;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .temas-interes-header p {
     font-size: 0.5em;
     text-align: center;
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .select-box {
     position: relative;
   }
@@ -933,7 +934,7 @@ h2 {
 .select-box #txt-select-box {
   display: none;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .select-box #txt-select-box {
     display: block;
     background: #DABEF1;
@@ -953,7 +954,7 @@ h2 {
   padding: 0;
   text-align: left;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .select-box #txt-select-box img {
     display: inline-block;
     margin-left: 1em;
@@ -964,7 +965,7 @@ h2 {
 .select-box .options-container {
   display: block;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .select-box .options-container {
     position: absolute;
     background: #F3F3F3;
@@ -981,7 +982,7 @@ h2 {
 .select-box .options-container .option {
   display: inline-block;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .select-box .options-container .option {
     display: block;
   }
@@ -989,14 +990,14 @@ h2 {
 .select-box .options-container .option .btn-repo {
   margin-right: 1em;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .select-box .options-container .option .btn-repo {
     border: none;
     font-size: 0.5em;
     text-align: left;
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .select-box .options-container .option .btn-repo br {
     display: none;
   }
@@ -1019,7 +1020,7 @@ h2 {
   background: #6A3381;
   border-radius: .5em;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .cards-temas-interes {
     padding: 0em;
   }
@@ -1028,7 +1029,7 @@ h2 {
   margin: 0;
   padding: 0.7em 0.7em 0;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .cards-temas-interes .col-sm-6 {
     margin: 0;
     padding: 0;
@@ -1050,12 +1051,12 @@ h2 {
           box-shadow: 0 0.25em 0.625em rgba(0, 0, 0, 0.1);
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .cards-temas-interes .col-sm-6 div h2 {
     font-size: 0.6em;
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .cards-temas-interes .col-sm-6 div img {
     width: 100%;
     height: auto;
@@ -1065,7 +1066,7 @@ h2 {
   margin: 0;
   padding: 1em 1.5em;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .cards-temas-interes .col-sm-6 div div {
     padding: 0.5em 1em;
   }
@@ -1077,7 +1078,7 @@ h2 {
   font-size: 0.7em;
   color: #6A3381;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .cards-temas-interes .col-sm-6 div div h3 {
     font-size: 0.5em;
   }
@@ -1090,7 +1091,7 @@ h2 {
   color: #6A3381;
   margin: .5em;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .cards-temas-interes .col-sm-6 div div p {
     font-size: 0.5em;
   }
@@ -1110,7 +1111,7 @@ h2 {
   margin: 0;
   padding: 0 4em 2em;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .row-card-colaborador {
     padding: 0 0.5em 1em;
   }
@@ -1122,7 +1123,7 @@ h2 {
   width: 45%;
   background: #EAE0F0;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .row-card-colaborador .card-colaborador {
     width: 90%;
   }
@@ -1140,7 +1141,7 @@ h2 {
   padding: 0.5em 1.5em;
   font-size: 0.6em;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .row-card-colaborador .card-colaborador p {
     text-align: left;
   }
@@ -1148,7 +1149,7 @@ h2 {
 .row-card-colaborador .card-colaborador .p-bold {
   font-weight: 700;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .row-card-colaborador .card-colaborador .p-bold {
     text-align: center;
     font-size: 0.5em;
@@ -1159,7 +1160,7 @@ h2 {
   margin: 0 auto;
   padding: 4em 8em;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .redes-comunitarias-header {
     padding: 2.5em 1.5em 1em;
   }
@@ -1169,7 +1170,7 @@ h2 {
   font-weight: 700;
   margin-bottom: 1em;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .redes-comunitarias-header h1 {
     font-size: 0.7em;
   }
@@ -1178,7 +1179,7 @@ h2 {
   text-align: left;
   font-size: 1em;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .redes-comunitarias-header h2 {
     font-size: 0.7em;
     text-align: center;
@@ -1192,7 +1193,7 @@ h2 {
   font-size: 0.6em;
   color: #6A3381;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .redes-comunitarias-header p {
     font-size: 0.6em !important;
   }
@@ -1206,7 +1207,7 @@ h2 {
   border-radius: 1em;
   background: #EAE0F0;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .redes-comunitarias-header .card-iniciativas {
     padding: 0.5em;
   }
@@ -1233,7 +1234,7 @@ h2 {
 .modales {
   max-width: 60%;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .modales {
     max-width: 100%;
   }
@@ -1245,7 +1246,7 @@ h2 {
   max-height: 70vh;
   overflow: hidden;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .modales .modal-content {
     max-height: 80vh;
   }
@@ -1266,7 +1267,7 @@ h2 {
   height: 70vh;
   overflow: hidden;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .modales .modal-content .col-imagen-modal {
     height: 100%;
     overflow: unset;
@@ -1279,7 +1280,7 @@ h2 {
   height: 100%;
   display: block;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .modales .modal-content .span-modal-left {
     width: 0%;
     display: none;
@@ -1299,7 +1300,7 @@ h2 {
   display: block;
   overflow: scroll;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .modales .modal-content .span-modal-left-galeria {
     width: 100%;
     overflow-y: unset;
@@ -1318,7 +1319,7 @@ h2 {
   height: 40vh;
   overflow-y: scroll;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .modales .modal-content .descripcion-modal {
     height: 30vh;
     margin: 1em 0;
@@ -1822,7 +1823,7 @@ h2 {
   text-align: center;
   margin-top: 2em;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 576px) {
   .nosotras-img{
     width: 60%;
   }
