@@ -29,8 +29,7 @@
                     <li><a href="/derechos/Documentación">Derechos</a></li>
                     <li><a href="/redes_comunitarias">Redes comunitarias</a></li>
                     <li><a href="/galeria/Fotografía">Galería</a></li>
-                </ul>  
-                <div class="nav-list-bg" onclick="mostrarMenu()"></div>
+                </ul>
                 </div>              
             </div>
             <span id="instagram-icon">

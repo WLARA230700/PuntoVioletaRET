@@ -1,8 +1,11 @@
 let menuAbierto = false;
+let screen = window.innerWidth;
 //let selected = document.body.getElementsByClassName("select-box")[0];
 let selectedP = document.getElementById("p-select-box");
 let selected = document.getElementById("txt-select-box");
 let optionContainer = document.body.getElementsByClassName("options-container")[0];
+let menu = document.getElementsByClassName("nav-list")[0];
+let menuHam = document.getElementsByClassName("menu-ham")[0];
 
 function verificarDerecho(derecho){
     let btnSubmitAgregarDerecho = document.getElementById("btnSubmitAgregarDerecho");
@@ -31,32 +34,37 @@ function verificarDerechoModificar(derecho){
 }
 
 function mostrarMenu(){
-    let menu = document.getElementsByClassName("nav-list")[0];
-    let menuHam = document.getElementsByClassName("menu-ham")[0];
-    let menuBg = document.getElementsByClassName("nav-list-bg")[0];
-
-    if(!menuAbierto){
-        menu.style.left = -90 + "vw";
-        menuBg.style.left = -18 + "em";
-        menuBg.style.opacity = 1;
-        //menuBg.style.display = "block";
-        menuHam.style.color = "#6A3381";
-        menuAbierto = true;
+    if(screen <= 576){
+        if(!menuAbierto){
+            menu.style.left = -90 + "vw";
+            menuHam.style.color = "#6A3381";
+            menuAbierto = true;
+        }else{
+            menu.style.left = -200 + "vw";
+            menuHam.style.color = "#FCF9FF";
+            menuAbierto = false;
+        }
+        //console.log("phone");
     }else{
-        menu.style.left = -200 + "vw";
-        menuBg.style.left = -60 + "em";
-        menuBg.style.opacity = 0;
-        //menuBg.style.display = "none";
-        menuHam.style.color = "#FCF9FF";
-        menuAbierto = false;
+        if(!menuAbierto){
+            menu.style.left = -96 + "vw";
+            menuHam.style.color = "#6A3381";
+            menuAbierto = true;
+        }else{
+            menu.style.left = -200 + "vw";
+            menuHam.style.color = "#FCF9FF";
+            menuAbierto = false;
+        }
+        //console.log("tablet");
     }
+
+    
 }
 
 function changeSelected(id){
     selectedP.innerHTML = document.getElementById(id).innerHTML;
     optionContainer.classList.remove("active");
 }
-
 document.addEventListener("DOMContentLoaded", (event)=>{
     //console.log("DOM Loaded");
 
@@ -76,4 +84,17 @@ document.addEventListener("DOMContentLoaded", (event)=>{
             //console.log("Click");
         });
     }
+
+    window.addEventListener("resize", function(event){
+        screen = window.innerWidth;
+        //console.log("width: " + screen);
+        if(screen <= 992){
+            if(menuAbierto){
+                menu.style.left = -200 + "vw";
+                menuHam.style.color = "#FCF9FF";
+                menuAbierto = false;
+            }
+        }
+    });
+    
 })

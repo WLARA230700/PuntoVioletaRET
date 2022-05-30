@@ -72,7 +72,7 @@
                                 <span class="span-modal-left-galeria d-flex align-content-center"><img src="{{ URL::asset('storage/imagenes/'.$imagen->archivo) }}" alt=""></span>
                             </div>
                             <div class="col-sm-6">
-                                <h5 class="modal-title" id="exampleModalLongTitle">{{ $imagen->titulo }}</h5>
+                                <h5 class="modal-title" id="exampleModalLongTitle" title="{{ $imagen->titulo }}">{{ $imagen->titulo }}</h5>
                                 <div class="descripcion-modal">
                                     <p>{{ $imagen->descripcion }}</p>
                                 </div>
