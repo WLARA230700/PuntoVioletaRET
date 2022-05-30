@@ -33,7 +33,7 @@
                 <div class="nav-list-bg" onclick="mostrarMenu()"></div>
                 </div>              
             </div>
-            <span>
+            <span id="instagram-icon">
                 <a href="https://www.instagram.com/puntovioletaret/"><img src="{{ URL::asset('/imgs/svg/instagram_icon.svg') }}"></a>
             </span>
         </nav>

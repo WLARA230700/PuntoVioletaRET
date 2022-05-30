@@ -104,14 +104,22 @@ h2 {
     z-index: 5;
   }
 }
+.nav #instagram-icon{
+  display: flex;
+  justify-content: flex-end;
+  width: 10%;
+}
+.nav #instagram-icon img{
+  vertical-align: middle;
+  margin: auto 0;
+  height: 1.25em;
+}
 .nav span {
   width: 10%;
 }
 .nav img {
   vertical-align: middle;
-  padding-left: 0.939em;
   height: 1.25em;
-  float: right;
 }
 @media only screen and (max-width: 480px) {
   .nav .logo-nav {
