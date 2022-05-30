@@ -54,10 +54,22 @@ function changeSelected(id){
 }
 
 document.addEventListener("DOMContentLoaded", (event)=>{
-    console.log("DOM Loaded");
+    //console.log("DOM Loaded");
 
-    selected.addEventListener("click", () => {
-        optionContainer.classList.toggle("active");
-        console.log("Click");
-    });
+    var pathname = window.location.pathname;
+    let navbar = document.getElementsByClassName('nav')[0];
+    if(pathname == "/"){
+        navbar.style.background = "rgba(195, 149, 232, 0.3)";
+        //console.log("Home");
+    }else{
+        navbar.style.background = "rgba(106, 51, 129, 0.8)";
+        //console.log("Other");
+    }
+
+    if(pathname != "/" && pathname != "/temas_interes" && pathname != "/nosotras" && pathname != "/redes_comunitarias"){
+        selected.addEventListener("click", () => {
+            optionContainer.classList.toggle("active");
+            //console.log("Click");
+        });
+    }
 })

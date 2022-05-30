@@ -1163,7 +1163,7 @@ h2 {
 }
 @media only screen and (max-width: 480px) {
   .redes-comunitarias-header h1 {
-    font-size: 1.2em;
+    font-size: 0.7em;
   }
 }
 .redes-comunitarias-header h2 {
@@ -1186,7 +1186,7 @@ h2 {
 }
 @media only screen and (max-width: 480px) {
   .redes-comunitarias-header p {
-    font-size: 0.5em;
+    font-size: 0.6em !important;
   }
 }
 .redes-comunitarias-header .btn-repo {
@@ -1813,6 +1813,15 @@ h2 {
   width: 25%;
   text-align: center;
   margin-top: 2em;
+}
+@media only screen and (max-width: 480px) {
+  .nosotras-img{
+    width: 60%;
+  }
+  .nosotras-info{
+    font-size: .8em !important;
+    margin: 0 !important;
+  }
 }
 .nosotras-img-container{
   text-align: center !important;
