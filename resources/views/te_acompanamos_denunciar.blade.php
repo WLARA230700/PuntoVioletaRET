@@ -30,9 +30,6 @@
                         <h2>Violencia doméstica</h2>
                         
                         <p class="info-text-block">La violencia dom&#233;stica es cualquier situaci&#243;n de maltrato <span>f&#237;sico, psicol&#243;gico, sexual o patrimonial</span>, en el que la persona que realiza el acto violento tiene o tuvo una relaci&#243;n de consanguinidad, afinidad o adopci&#243;n con la persona agredida. <br> La ley Contra la Violencia Dom&#233;stica permite que madres, personas mayores de 12 a&#241;os, personas de 60 o m&#225;s, con discapacidad, aquellas que se encuentren en una  relaci&#243;n  de pareja o est&#233;n viviendo violencia por parte de su expareja puedan solicitar medidas de protecci&#243;n que les garanticen la vida, la integridad y la dignidad.</p>
-                        <ul class="info-text-bullets">
-                            <li>hh</li>
-                        </ul>
                     </div>
                 </div>
             </div>
