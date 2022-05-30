@@ -149,7 +149,7 @@ h2 {
 .bold{
   font-weight: 700 !important;
 }
-.horizontal-scroll-t5apper {
+.horizontal-scroll-wrapper {
   height: fit-content;
   overflow: auto;
   white-space: nowrap;
