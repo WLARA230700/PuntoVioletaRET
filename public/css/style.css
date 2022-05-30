@@ -228,7 +228,7 @@ h2 {
     padding: 8em 5em 5em 3em;
     text-align: left;
     position: absolute;
-    left: -42em;
+    left: -49em;
     top: -1em;
     background: #DABEF1;
     height: 100vh;
@@ -1342,9 +1342,6 @@ h2 {
   width: 100%;
   text-align: left;
   font-size: .5em;
-}
-.info-text-bullets li::marker{
-  /*font-size: .55em;*/
 }
 .info-text-bullets li span{
   font-weight: 600;

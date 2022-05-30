@@ -41,7 +41,7 @@ function mostrarMenu(){
         menuHam.style.color = "#6A3381";
         menuAbierto = true;
     }else{
-        menu.style.left = -42 + "em";
+        menu.style.left = -49 + "em";
         menuBg.style.display = "none";
         menuHam.style.color = "#FCF9FF";
         menuAbierto = false;
