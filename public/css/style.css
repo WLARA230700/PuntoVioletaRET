@@ -164,6 +164,13 @@ h2 {
   border-radius: .5em;
   overflow: hidden; 
 }
+@media only screen and (max-width: 480px) {
+  .horizontal-scroll-wrapper > div {
+    display: inline-block;
+    margin: 0 .5em 0 0;
+    width: 80%;
+  }
+}
 .horizontal-scroll-wrapper > div > p {
   color: #FCF9FF;
   margin: .5em;
@@ -1006,12 +1013,18 @@ h2 {
 }
 @media only screen and (max-width: 480px) {
   .cards-temas-interes {
-    padding: 0.5em;
+    padding: 0em;
   }
 }
 .cards-temas-interes .col-sm-6 {
   margin: 0;
   padding: 0.7em 0.7em 0;
+}
+@media only screen and (max-width: 480px) {
+  .cards-temas-interes .col-sm-6 {
+    margin: 0;
+    padding: 0;
+  }
 }
 .cards-temas-interes .col-sm-6 div {
   margin: 0 0 1.5em;
