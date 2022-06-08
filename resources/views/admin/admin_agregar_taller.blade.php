@@ -13,12 +13,14 @@
             </div>
 
             <div class="col-12">
-            <form id="formId" action="{{ route('addImagePost') }}" method="POST" enctype="multipart/form-data">
+            <form id="formId" action="{{ route('addTallerPost') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
-                    <input type="text" placeholder="Título *" name="titulo">
+                    <input type="text" placeholder="Nombre *" name="nombre">
+                    <input type="date" placeholder="Fecha *" name="fecha">
+                    <input type="text" placeholder="Lugar *" name="lugar">
                     <textarea name="descripcion" id="descripcion-imagen" cols="30" rows="5" placeholder="Descripción *" maxlength="255"></textarea>
-                    <input name="archivo" type="file"></input>
+                    <input name="portada" type="file"></input>
                     <button type="submit">Agregar</button>
                 </form>                
             </div>

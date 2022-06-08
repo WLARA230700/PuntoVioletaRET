@@ -14,18 +14,21 @@
             <?php $tipoContenido = "DERECHOS" ?>
         @endisset
         @switch($tipoContenido)
-        @case('FOTOGRAFIAS')
-            <a href="{{ route('addImage') }}" class="btn-repo btn-dashboard-agregar"><span><img src="../../imgs/svg/icon_new_img.svg" alt="documento"></span>Agregar</a>
-            @break
-        @case('INFOGRAFIAS')
-            <a href="{{ route('addImage') }}" class="btn-repo btn-dashboard-agregar"><span><img src="../../imgs/svg/icon_new_img.svg" alt="documento"></span>Agregar</a>
-            @break
-        @case('USERS')
-            <a href="{{ route('addUser') }}" class="btn-repo btn-dashboard-agregar"><span><img src="../../imgs/svg/icon_user.svg" alt="documento"></span>Agregar</a>
-            @break
-        @case('DERECHOS')
-            <a href="{{ route('addRight') }}" class="btn-repo btn-dashboard-agregar"><span><img src="../../imgs/svg/icon_new_document.svg" alt="Agregar Derecho"></span>Agregar</a>
-            @break
+            @case('FOTOGRAFIAS')
+                <a href="{{ route('addImage') }}" class="btn-repo btn-dashboard-agregar"><span><img src="../../imgs/svg/icon_new_img.svg" alt="Agregar Fotografía"></span>Agregar</a>
+                @break
+            @case('INFOGRAFIAS')
+                <a href="{{ route('addImage') }}" class="btn-repo btn-dashboard-agregar"><span><img src="../../imgs/svg/icon_new_img.svg" alt="Agregar Infografía"></span>Agregar</a>
+                @break
+            @case('USERS')
+                <a href="{{ route('addUser') }}" class="btn-repo btn-dashboard-agregar"><span><img src="../../imgs/svg/icon_user.svg" alt="Agregar Usuario"></span>Agregar</a>
+                @break
+            @case('DERECHOS')
+                <a href="{{ route('addRight') }}" class="btn-repo btn-dashboard-agregar"><span><img src="../../imgs/svg/icon_new_document.svg" alt="Agregar Derecho"></span>Agregar</a>
+                @break
+            @case('TALLERES')
+                <a href="{{ route('addTaller') }}" class="btn-repo btn-dashboard-agregar"><span><img src="../../imgs/svg/icon_taller.svg" alt="Agregar Taller"></span>Agregar</a>
+                @break
         @endswitch
     </div>
 
@@ -272,7 +275,7 @@
                 <!--Tupla-->
                 <div class="row tupla">
                     <div class="col-6">
-                        <img src="../../imgs/svg/document_icon.svg" alt="documento">
+                        <img src="../../imgs/svg/icon_taller.svg" alt="documento">
                         <p>{{ $taller->nombre }}</p>
                     </div>
 
@@ -287,7 +290,7 @@
                         <p><?php echo $diaNum . "/" . $mes . "/" . $ano?></p>
                     </div>
                     <div class="col-2">
-                        <a href="{{ route('modifyRight', ['id' => $taller->id]) }}">Modificar</a>
+                        <a href="{{ route('modifyTaller', ['id' => $taller->id]) }}">Modificar</a>
                     </div>
                     <div class="col-2">
                         <a data-bs-toggle="modal" data-bs-target="#modal{{ $taller->id }}">Eliminar</a>
@@ -307,7 +310,7 @@
                         </div>
                         <div class="modal-footer">
                             <a type="button" class="btn btn-repo" data-bs-dismiss="modal">Cancelar</a>
-                            <a type="button" class="btn btn-repo" href="{{ route('deleteRight', ['id' => $taller->id]) }}">Eliminar</a>
+                            <a type="button" class="btn btn-repo" href="{{ route('deleteTaller', ['id' => $taller->id]) }}">Eliminar</a>
                         </div>
                         </div>
                     </div>

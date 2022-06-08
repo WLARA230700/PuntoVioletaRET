@@ -89,3 +89,6 @@ Route::post('/addUserPost', [AdminController::class, 'store'])->name('addUserPos
 Route::get('/deleteUser/{id}', [AdminController::class, 'destroy'])->name('deleteUser');
 
 Route::get('/showTalleres', [TalleresController::class, 'showTalleres'])->name('showTalleres');
+Route::get('/addTaller', [TalleresController::class, 'index'])->name('addTaller');
+Route::post('/addTallerPost', [TalleresController::class, 'store'])->name('addTallerPost');
+Route::get('/deleteTaller/{id}', [TalleresController::class, 'destroy'])->name('deleteTaller');
