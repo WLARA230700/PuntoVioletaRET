@@ -84,6 +84,8 @@ Route::post('/modifyImagePost', [ImagenesController::class, 'update'])->name('mo
 Route::get('/deleteImage/{id}', [ImagenesController::class, 'destroy'])->name('deleteImage');
 
 Route::get('/showUsers', [AdminController::class, 'showUsers'])->name('showUsers');
+Route::get('/addUser', [AdminController::class, 'indexAddUser'])->name('addUser');
+Route::post('/addUserPost', [AdminController::class, 'store'])->name('addUserPost');
 Route::get('/deleteUser/{id}', [AdminController::class, 'destroy'])->name('deleteUser');
 
 Route::get('/showTalleres', [TalleresController::class, 'showTalleres'])->name('showTalleres');

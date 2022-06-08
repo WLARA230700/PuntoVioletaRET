@@ -8,6 +8,7 @@ use Session;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Validator;
 
 class AdminController extends Controller
 {
@@ -19,6 +20,11 @@ class AdminController extends Controller
     public function index()
     {
         return view('admin.admin_login');
+    }
+
+    public function indexAddUser()
+    {
+        return view('admin.admin_agregar_user');
     }
 
     public function login(Request $request){
@@ -61,7 +67,45 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'password' => $request['password']
+        ],
+        [
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required'
+        ]);
+
+        if (!$validator->fails()) {
+
+            $data = $request -> all();
+            $timestamps = date('Y-m-d H:i:s');
+
+            $pass = Hash::make($data['password']);
+
+            $userVerificationEmail = DB::select('SELECT * FROM users WHERE email = "'.$data['email'].'"');
+
+            if(!isset($userVerificationEmail[0])){
+                DB::table("users")->insert([
+                    'name' => $data['name'],
+                    'email' => $data['email'],
+                    'password' => $pass,
+                    'email_verified_at' =>$timestamps,
+                    'created_at' => $timestamps,
+                    'updated_at' => $timestamps
+                ]);
+    
+                return redirect("dashboard");
+            }else{
+                return redirect("addUser")->with('messageError', 'Digite otro correo electrónico');
+            }           
+
+            
+        }else{
+            return redirect("addUser")->with('messageError', 'Rellene todos los campos');
+        }        
     }
 
     /**
@@ -92,10 +136,6 @@ class AdminController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -104,10 +144,6 @@ class AdminController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
-    {
-        //
-    }
 
     /**
      * Remove the specified resource from storage.

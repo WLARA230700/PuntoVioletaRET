@@ -21,7 +21,7 @@
             <a href="{{ route('addImage') }}" class="btn-repo btn-dashboard-agregar"><span><img src="../../imgs/svg/icon_new_img.svg" alt="documento"></span>Agregar</a>
             @break
         @case('USERS')
-            <a href="{{ route('addImage') }}" class="btn-repo btn-dashboard-agregar"><span><img src="../../imgs/svg/icon_user.svg" alt="documento"></span>Agregar</a>
+            <a href="{{ route('addUser') }}" class="btn-repo btn-dashboard-agregar"><span><img src="../../imgs/svg/icon_user.svg" alt="documento"></span>Agregar</a>
             @break
         @case('DERECHOS')
             <a href="{{ route('addRight') }}" class="btn-repo btn-dashboard-agregar"><span><img src="../../imgs/svg/icon_new_document.svg" alt="Agregar Derecho"></span>Agregar</a>
@@ -223,7 +223,7 @@
                 <div class="row tupla">
                     <div class="col-6">
                         <img src="../../imgs/svg/icon_user.svg" alt="documento">
-                        <p title="{{ $user->name }}">{{ $user->email }}</p>
+                        <p>{{ $user->email }}</p>
                     </div>
 
                     <?php
@@ -234,10 +234,10 @@
                     ?>
 
                     <div class="col-2">
-                        <p><?php echo $diaNum . "/" . $mes . "/" . $ano?></p>
+                        <p>{{ $user->name }}</p>
                     </div>
                     <div class="col-2">
-                        <a href="{{ route('modifyRight', ['id' => $user->id]) }}">Modificar</a>
+                        <p><?php echo $diaNum . "/" . $mes . "/" . $ano?></p>
                     </div>
                     <div class="col-2">
                         <a data-bs-toggle="modal" data-bs-target="#modal{{ $user->id }}">Eliminar</a>
