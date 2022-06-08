@@ -40,6 +40,18 @@
         @else
             <a href="{{ route('showPhotos') }}" class="btn-repo">Fotografías</a>
         @endif
+
+        @if (!empty($user))
+            <a href="{{ route('showUsers') }}" class="btn-repo btn-repo-selected">Usuarios</a>
+        @else
+            <a href="{{ route('showUsers') }}" class="btn-repo">Usuarios</a>
+        @endif
+
+        @if (!empty($taller))
+            <a href="{{ route('showTalleres') }}" class="btn-repo btn-repo-selected">Talleres</a>
+        @else
+            <a href="{{ route('showTalleres') }}" class="btn-repo">Talleres</a>
+        @endif
         
         
     </div>

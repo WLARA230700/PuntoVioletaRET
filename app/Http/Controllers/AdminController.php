@@ -75,6 +75,12 @@ class AdminController extends Controller
         //
     }
 
+    public function showUsers(){
+        $user = DB::select('SELECT * FROM users ORDER BY created_at DESC');
+        $isUser = true;
+        return view('admin.admin_dashboard', compact('user', 'isUser'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

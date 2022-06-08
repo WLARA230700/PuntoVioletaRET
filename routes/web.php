@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DerechosController;
 use App\Http\Controllers\ImagenesController;
+use App\Http\Controllers\TalleresController;
 
 /*
 |--------------------------------------------------------------------------
@@ -78,6 +79,8 @@ Route::get('/addImage', [ImagenesController::class, 'index'])->name('addImage');
 Route::post('/addImagePost', [ImagenesController::class, 'store'])->name('addImagePost');
 Route::get('/showPhotos', [ImagenesController::class, 'showFotografias'])->name('showPhotos');
 Route::get('/showInfografias', [ImagenesController::class, 'showInfografias'])->name('showInfografias');
+Route::get('/showUsers', [AdminController::class, 'showUsers'])->name('showUsers');
+Route::get('/showTalleres', [TalleresController::class, 'showTalleres'])->name('showTalleres');
 Route::get('/modifyImage/{id}', [ImagenesController::class, 'edit'])->name('modifyImage');
 Route::post('/modifyImagePost', [ImagenesController::class, 'update'])->name('modifyImagePost');
 Route::get('/deleteImage/{id}', [ImagenesController::class, 'destroy'])->name('deleteImage');
