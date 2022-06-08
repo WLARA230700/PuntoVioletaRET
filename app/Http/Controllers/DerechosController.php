@@ -99,7 +99,8 @@ class DerechosController extends Controller
     public function showDerechos(){
         $derechos = DB::select('SELECT * FROM derechos ORDER BY created_at DESC');
         $isDerechos = true;
-        return view('admin.admin_dashboard', compact('derechos', 'isDerechos'));
+        $tipoContenido = "DERECHOS";
+        return view('admin.admin_dashboard', compact('derechos', 'tipoContenido'));
     }
 
     public function showDerechosUser($tipo){

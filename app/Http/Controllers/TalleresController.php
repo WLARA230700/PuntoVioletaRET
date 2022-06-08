@@ -11,8 +11,8 @@ class TalleresController extends Controller
     //
 
     public function showTalleres(){
-        $taller = DB::select('SELECT * FROM table_talleres ORDER BY created_at DESC');
+        $talleres = DB::select('SELECT * FROM table_talleres ORDER BY created_at DESC');
         $isTaller = true;
-        return view('admin.admin_dashboard', compact('taller', 'isTaller'));
+        return view('admin.admin_dashboard', compact('talleres', 'isTaller'));
     }
 }

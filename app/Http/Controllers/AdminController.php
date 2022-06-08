@@ -76,9 +76,14 @@ class AdminController extends Controller
     }
 
     public function showUsers(){
-        $user = DB::select('SELECT * FROM users ORDER BY created_at DESC');
+        $users = DB::select('SELECT * FROM users WHERE id<>1 ORDER BY created_at DESC');
         $isUser = true;
-        return view('admin.admin_dashboard', compact('user', 'isUser'));
+        $tipoContenido = "USERS";
+        if(Auth::id() == 1){
+            return view('admin.admin_dashboard', compact('users', 'tipoContenido'));
+        }else{
+            return view('admin.admin_dashboard');
+        }
     }
 
     /**
@@ -110,9 +115,11 @@ class AdminController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy($id)
     {
-        //
+        DB::table('users')->whereId($id)->delete();
+
+        return redirect('dashboard');
     }
 
     public function signOut(){

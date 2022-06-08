@@ -9,17 +9,24 @@
     </div>
     
     <div class="col-12 col-btn-right">
-        @isset($isDerechos)
+        @isset($tipoContenido)
         @else
-            <?php $isDerechos = true ?>
+            <?php $tipoContenido = "DERECHOS" ?>
         @endisset
-
-        @if ($isDerechos)
-            <a href="{{ route('addRight') }}" class="btn-repo btn-dashboard-agregar"><span><img src="../../imgs/svg/icon_new_document.svg" alt="Agregar Derecho"></span>Agregar</a>
-            
-        @else
+        @switch($tipoContenido)
+        @case('FOTOGRAFIAS')
             <a href="{{ route('addImage') }}" class="btn-repo btn-dashboard-agregar"><span><img src="../../imgs/svg/icon_new_img.svg" alt="documento"></span>Agregar</a>
-        @endif
+            @break
+        @case('INFOGRAFIAS')
+            <a href="{{ route('addImage') }}" class="btn-repo btn-dashboard-agregar"><span><img src="../../imgs/svg/icon_new_img.svg" alt="documento"></span>Agregar</a>
+            @break
+        @case('USERS')
+            <a href="{{ route('addImage') }}" class="btn-repo btn-dashboard-agregar"><span><img src="../../imgs/svg/icon_user.svg" alt="documento"></span>Agregar</a>
+            @break
+        @case('DERECHOS')
+            <a href="{{ route('addRight') }}" class="btn-repo btn-dashboard-agregar"><span><img src="../../imgs/svg/icon_new_document.svg" alt="Agregar Derecho"></span>Agregar</a>
+            @break
+        @endswitch
     </div>
 
     <div class="col-2">
@@ -41,13 +48,15 @@
             <a href="{{ route('showPhotos') }}" class="btn-repo">Fotografías</a>
         @endif
 
-        @if (!empty($user))
-            <a href="{{ route('showUsers') }}" class="btn-repo btn-repo-selected">Usuarios</a>
-        @else
-            <a href="{{ route('showUsers') }}" class="btn-repo">Usuarios</a>
+        @if (Auth::id() == 1)
+            @if (!empty($users))
+                <a href="{{ route('showUsers') }}" class="btn-repo btn-repo-selected">Usuarios</a>
+            @else
+                <a href="{{ route('showUsers') }}" class="btn-repo">Usuarios</a>
+            @endif
         @endif
 
-        @if (!empty($taller))
+        @if (!empty($talleres))
             <a href="{{ route('showTalleres') }}" class="btn-repo btn-repo-selected">Talleres</a>
         @else
             <a href="{{ route('showTalleres') }}" class="btn-repo">Talleres</a>
@@ -206,6 +215,107 @@
                 <!--Modal-->
             @endforeach
         @endif
+
+        @if (!empty($users))
+        
+            @foreach($users as $user)
+                <!--Tupla-->
+                <div class="row tupla">
+                    <div class="col-6">
+                        <img src="../../imgs/svg/icon_user.svg" alt="documento">
+                        <p title="{{ $user->name }}">{{ $user->email }}</p>
+                    </div>
+
+                    <?php
+                        $fecha = preg_split("/[:|\s-]/", $user->created_at);
+                        $ano = $fecha[0];
+                        $mes = $fecha[1];
+                        $diaNum = $fecha[2];
+                    ?>
+
+                    <div class="col-2">
+                        <p><?php echo $diaNum . "/" . $mes . "/" . $ano?></p>
+                    </div>
+                    <div class="col-2">
+                        <a href="{{ route('modifyRight', ['id' => $user->id]) }}">Modificar</a>
+                    </div>
+                    <div class="col-2">
+                        <a data-bs-toggle="modal" data-bs-target="#modal{{ $user->id }}">Eliminar</a>
+                    </div>
+                </div>
+                <!--Tupla-->
+
+                <!--Modal-->
+                <div class="modal fade" id="modal{{ $user->id }}" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modal-{{ $user->name }}">Advertencia</h5>
+                        </div>
+                        <div class="modal-body">
+                            <p class="msg-modal-admin">¿Estás seguro que deseas eliminarlo? </br> Esta acción no se puede revertir</p>
+                        </div>
+                        <div class="modal-footer">
+                            <a type="button" class="btn btn-repo" data-bs-dismiss="modal">Cancelar</a>
+                            <a type="button" class="btn btn-repo" href="{{ route('deleteUser', ['id' => $user->id]) }}">Eliminar</a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Modal-->
+            @endforeach
+        @endif
+
+        @if (!empty($talleres))
+        
+            @foreach($talleres as $taller)
+                <!--Tupla-->
+                <div class="row tupla">
+                    <div class="col-6">
+                        <img src="../../imgs/svg/document_icon.svg" alt="documento">
+                        <p>{{ $taller->nombre }}</p>
+                    </div>
+
+                    <?php
+                        $fecha = preg_split("/[:|\s-]/", $taller->created_at);
+                        $ano = $fecha[0];
+                        $mes = $fecha[1];
+                        $diaNum = $fecha[2];
+                    ?>
+
+                    <div class="col-2">
+                        <p><?php echo $diaNum . "/" . $mes . "/" . $ano?></p>
+                    </div>
+                    <div class="col-2">
+                        <a href="{{ route('modifyRight', ['id' => $taller->id]) }}">Modificar</a>
+                    </div>
+                    <div class="col-2">
+                        <a data-bs-toggle="modal" data-bs-target="#modal{{ $taller->id }}">Eliminar</a>
+                    </div>
+                </div>
+                <!--Tupla-->
+
+                <!--Modal-->
+                <div class="modal fade" id="modal{{ $taller->id }}" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modal-{{ $taller->nombre }}">Advertencia</h5>
+                        </div>
+                        <div class="modal-body">
+                            <p class="msg-modal-admin">¿Estás seguro que deseas eliminarlo? </br> Esta acción no se puede revertir</p>
+                        </div>
+                        <div class="modal-footer">
+                            <a type="button" class="btn btn-repo" data-bs-dismiss="modal">Cancelar</a>
+                            <a type="button" class="btn btn-repo" href="{{ route('deleteRight', ['id' => $taller->id]) }}">Eliminar</a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Modal-->
+            @endforeach
+        @endif
+
     </div>
 </div>
 

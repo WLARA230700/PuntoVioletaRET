@@ -120,14 +120,16 @@ class ImagenesController extends Controller
 
     public function showFotografias(){
         $fotografias = DB::select('SELECT * FROM imagenes WHERE tipo_imagen = "Fotografía" ORDER BY created_at DESC');
-        $isDerechos = false;
-        return view('admin.admin_dashboard', compact('fotografias', 'isDerechos'));
+        $isImagen = true;
+        $tipoContenido = "FOTOGRAFIAS";
+        return view('admin.admin_dashboard', compact('fotografias', 'tipoContenido'));
     }
 
     public function showInfografias(){
         $infografias = DB::select('SELECT * FROM imagenes WHERE tipo_imagen = "Infografía" ORDER BY created_at DESC');
-        $isDerechos = false;
-        return view('admin.admin_dashboard', compact('infografias', 'isDerechos'));
+        $isImagen = true;
+        $tipoContenido = "INFOGRAFIAS";
+        return view('admin.admin_dashboard', compact('infografias', 'tipoContenido'));
     }
 
     public function showImagenesUser($tipo){
