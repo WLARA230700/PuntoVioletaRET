@@ -9,64 +9,30 @@
                     <h1>Temas de Interés</h1>
                 </div>
                 <div class="row">
-                    <div class="col">
-                        <h3 class="left-text bold">Eventos</h3>
+                    <div class="col-sm-12">
+                        <h3 class="left-text bold">Talleres</h3>
                         <div class="row">
                             <div class="col">
                                 <div class="horizontal-scroll-wrapper">
+                                @if(!empty($talleres))
+                                    @foreach($talleres as $taller)
+                                        <div>
+                                            <img src="{{ URL::asset('storage/talleres/'.$taller->portada) }}" alt="">
+                                            <p class="bold">{{$taller->nombre}}</p>
+                                            <p>{{$taller->fecha}}</p>
+                                            <p>{{$taller->lugar}}</p>
+                                        </div>
+                                    @endforeach
+                                @else
                                     <div>
-                                        <img src="{{ URL::asset('storage/imagenes/imagen-Fotografía1636419148.jpg') }}" alt="">
-                                        <p class="bold">Nombre de evento</p>
-                                        <p>4 de Mayo de 2022</p>
-                                        <p>Salón de eventos Pedregal</p>
+                                        <p class="bold">No hay talleres registrados</p>
                                     </div>
-                                    <div>
-                                        <img src="{{ URL::asset('storage/imagenes/imagen-Fotografía1636419148.jpg') }}" alt="">
-                                        <p class="bold">Nombre de evento muy largo para verse completo</p>
-                                        <p>Fecha del evento</p>
-                                        <p>Lugar</p>
-                                    </div>
-                                    <div>
-                                        <img src="{{ URL::asset('storage/imagenes/imagen-Fotografía1636419148.jpg') }}" alt="">
-                                        <p class="bold">Nombre de evento</p>
-                                        <p>Fecha del evento</p>
-                                        <p>Lugar</p>
-                                    </div>
-                                    <div>
-                                        <img src="{{ URL::asset('storage/imagenes/imagen-Fotografía1636419148.jpg') }}" alt="">
-                                        <p class="bold">Nombre de evento</p>
-                                        <p>Fecha del evento</p>
-                                        <p>Lugar</p>
-                                    </div>
-                                    <div>
-                                        <img src="{{ URL::asset('storage/imagenes/imagen-Fotografía1636419148.jpg') }}" alt="">
-                                        <p class="bold">Nombre de evento</p>
-                                        <p>Fecha del evento</p>
-                                        <p>Lugar</p>
-                                    </div>
-                                    <div>
-                                        <img src="{{ URL::asset('storage/imagenes/imagen-Fotografía1636419148.jpg') }}" alt="">
-                                        <p class="bold">Nombre de evento</p>
-                                        <p>Fecha del evento</p>
-                                        <p>Lugar</p>
-                                    </div>
-                                    <div>
-                                        <img src="{{ URL::asset('storage/imagenes/imagen-Fotografía1636419148.jpg') }}" alt="">
-                                        <p class="bold">Nombre de evento</p>
-                                        <p>Fecha del evento</p>
-                                        <p>Lugar</p>
-                                    </div>
-                                    <div>
-                                        <img src="{{ URL::asset('storage/imagenes/imagen-Fotografía1636419148.jpg') }}" alt="">
-                                        <p class="bold">Nombre de evento</p>
-                                        <p>Fecha del evento</p>
-                                        <p>Lugar</p>
-                                    </div>
+                                @endif
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col-sm-12">
                         <h3 class="left-text bold">Solicitudes de Refugio</h3>
                         <div class="row cards-temas-interes">
                             <div class="col-sm-6">

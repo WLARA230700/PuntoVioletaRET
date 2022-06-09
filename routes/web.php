@@ -20,9 +20,9 @@ use App\Http\Controllers\TalleresController;
 Route::get('/', function () {
     return view('index');
 });
-Route::get('/temas_interes', function () {
+/*Route::get('/temas_interes', function () {
     return view('temas_interes');
-});
+});*/
 Route::get('/nosotras', function () {
     return view('nosotras');
 });
@@ -58,6 +58,7 @@ Route::get('/pension-alimentaria', function () {
 // DB - USER
 Route::get('/derechos/{tipo}', [DerechosController::class, 'showDerechosUser'])->name('derechos');
 Route::get('/galeria/{tipo}', [ImagenesController::class, 'showImagenesUser'])->name('galeria');
+Route::get('/temas_interes', [TalleresController::class, 'showTalleresUser'])->name('temas_interes');
 //Descargar derecho
 Route::get('/download/{file}', [DerechosController::class, 'descargarDerecho']);
 
@@ -91,4 +92,6 @@ Route::get('/deleteUser/{id}', [AdminController::class, 'destroy'])->name('delet
 Route::get('/showTalleres', [TalleresController::class, 'showTalleres'])->name('showTalleres');
 Route::get('/addTaller', [TalleresController::class, 'index'])->name('addTaller');
 Route::post('/addTallerPost', [TalleresController::class, 'store'])->name('addTallerPost');
+Route::get('/modifyTaller/{id}', [TalleresController::class, 'edit'])->name('modifyTaller');
+Route::post('/modifyTallerPost', [TalleresController::class, 'update'])->name('modifyTallerPost');
 Route::get('/deleteTaller/{id}', [TalleresController::class, 'destroy'])->name('deleteTaller');
