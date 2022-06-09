@@ -16,7 +16,7 @@
                                 <div class="horizontal-scroll-wrapper">
                                 @if(!empty($talleres))
                                     @foreach($talleres as $taller)
-                                        <div>
+                                        <div data-bs-toggle="modal" data-bs-target="#modal{{ $taller->id }}">
                                             <img src="{{ URL::asset('storage/talleres/'.$taller->portada) }}" alt="">
                                             <p class="bold">{{$taller->nombre}}</p>
                                             <p>{{$taller->fecha}}</p>
@@ -68,6 +68,27 @@
             <a href="#headerID"><img src="../imgs/svg/btn_up.svg" alt="btn_up"></a>
         </div>
         <!-- HEADER -->
+
+        <!-- MODAL -->
+        @foreach($talleres as $taller)
+            <div class="modal fade" id="modal{{ $taller->id }}" tabindex="-1" role="dialog" aria-labelledby="foto" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modales" role="document">
+                    <div class="modal-content">
+                        <div class="row">
+                            <div class="col-sm-6 col-taller-modal">
+                                <span class="span-modal-left-galeria d-flex align-content-center"><img src="{{ URL::asset('storage/talleres/'.$taller->portada) }}" alt=""></span>
+                            </div>
+                            <div class="col-sm-6">
+                                <h5 class="modal-title" id="exampleModalLongTitle" title="{{ $taller->nombre }}">{{ $taller->titulo }}</h5>
+                                <div class="descripcion-modal">
+                                    <p>{{ $taller->descripcion }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endforeach
 
 
 @endsection

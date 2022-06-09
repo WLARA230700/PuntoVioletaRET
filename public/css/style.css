@@ -126,6 +126,7 @@ h2 {
   background-color: #6A3381;
   border-radius: .5em;
   overflow: hidden; 
+  cursor: pointer;
 }
 .horizontal-scroll-wrapper > div > p {
   color: #FCF9FF;
